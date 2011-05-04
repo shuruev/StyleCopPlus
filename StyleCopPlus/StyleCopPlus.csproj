@@ -123,6 +123,11 @@
       <DependentUpon>WarningItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Constants.cs" />
+    <Compile Include="Properties\Macro.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Macro.resx</DependentUpon>
+    </Compile>
     <Compile Include="MoreCustom\CustomRulesSettings.cs" />
     <Compile Include="MoreCustom\ICustomRuleOptionsData.cs" />
     <Compile Include="MoreCustom\CustomRuleTag.cs" />
@@ -239,6 +244,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Common\WarningItem.resx">
       <DependentUpon>WarningItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Macro.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Macro.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="MoreCustom\CustomRulesPage.resx">
       <DependentUpon>CustomRulesPage.cs</DependentUpon>

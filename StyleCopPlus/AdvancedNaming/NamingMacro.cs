@@ -24,40 +24,52 @@ namespace StyleCopPlus
 		static NamingMacro()
 		{
 			AddMacro(
-				Resources.MacroPascalCode,
-				Resources.MacroPascalDescription,
-				Resources.MacroPascalRegular,
-				Resources.MacroPascalSample);
+				Macro.PascalCode,
+				Macro.PascalDescription,
+				Macro.PascalRegular,
+				Macro.PascalSample);
 
 			AddMacro(
-				Resources.MacroCamelCode,
-				Resources.MacroCamelDescription,
-				Resources.MacroCamelRegular,
-				Resources.MacroCamelSample);
+				Macro.CamelCode,
+				Macro.CamelDescription,
+				Macro.CamelRegular,
+				Macro.CamelSample);
 
 			AddMacro(
-				Resources.MacroUpperCode,
-				Resources.MacroUpperDescription,
-				Resources.MacroUpperRegular,
-				Resources.MacroUpperSample);
+				Macro.UpperWordsCode,
+				Macro.UpperWordsDescription,
+				Macro.UpperWordsRegular,
+				Macro.UpperWordsSample);
 
 			AddMacro(
-				Resources.MacroLowerCode,
-				Resources.MacroLowerDescription,
-				Resources.MacroLowerRegular,
-				Resources.MacroLowerSample);
+				Macro.LowerWordsCode,
+				Macro.LowerWordsDescription,
+				Macro.LowerWordsRegular,
+				Macro.LowerWordsSample);
 
 			AddMacro(
-				Resources.MacroCapitalizedCode,
-				Resources.MacroCapitalizedDescription,
-				Resources.MacroCapitalizedRegular,
-				Resources.MacroCapitalizedSample);
+				Macro.CapitalizedCode,
+				Macro.CapitalizedDescription,
+				Macro.CapitalizedRegular,
+				Macro.CapitalizedSample);
 
 			AddMacro(
-				Resources.MacroAnyCode,
-				Resources.MacroAnyDescription,
-				Resources.MacroAnyRegular,
-				Resources.MacroAnySample);
+				Macro.UpperOnlyCode,
+				Macro.UpperOnlyDescription,
+				Macro.UpperOnlyRegular,
+				Macro.UpperOnlySample);
+
+			AddMacro(
+				Macro.LowerOnlyCode,
+				Macro.LowerOnlyDescription,
+				Macro.LowerOnlyRegular,
+				Macro.LowerOnlySample);
+
+			AddMacro(
+				Macro.AnyCode,
+				Macro.AnyDescription,
+				Macro.AnyRegular,
+				Macro.AnySample);
 		}
 
 		#region Accessing macros

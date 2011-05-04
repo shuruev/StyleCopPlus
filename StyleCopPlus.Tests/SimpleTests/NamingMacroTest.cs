@@ -281,10 +281,10 @@ namespace StyleCopPlus.Tests.SimpleTests
 
 		#endregion
 
-		#region Macro "Upper"
+		#region Macro "Upper Words"
 
 		[TestMethod]
-		public void Macro_Upper_General()
+		public void Macro_Upper_Words_General()
 		{
 			Regex regex;
 
@@ -301,7 +301,7 @@ namespace StyleCopPlus.Tests.SimpleTests
 		}
 
 		[TestMethod]
-		public void Macro_Upper_Abbreviations()
+		public void Macro_Upper_Words_Abbreviations()
 		{
 			Regex regex;
 
@@ -311,7 +311,7 @@ namespace StyleCopPlus.Tests.SimpleTests
 		}
 
 		[TestMethod]
-		public void Macro_Upper_Single_Letter()
+		public void Macro_Upper_Words_Single_Letter()
 		{
 			Regex regex;
 
@@ -333,7 +333,7 @@ namespace StyleCopPlus.Tests.SimpleTests
 		}
 
 		[TestMethod]
-		public void Macro_Upper_Unicode()
+		public void Macro_Upper_Words_Unicode()
 		{
 			Regex regex;
 
@@ -343,7 +343,7 @@ namespace StyleCopPlus.Tests.SimpleTests
 		}
 
 		[TestMethod]
-		public void Macro_Upper_Digits()
+		public void Macro_Upper_Words_Digits()
 		{
 			Regex regex;
 
@@ -361,10 +361,10 @@ namespace StyleCopPlus.Tests.SimpleTests
 
 		#endregion
 
-		#region Macro "Lower"
+		#region Macro "Lower Words"
 
 		[TestMethod]
-		public void Macro_Lower_General()
+		public void Macro_Lower_Words_General()
 		{
 			Regex regex;
 
@@ -381,7 +381,7 @@ namespace StyleCopPlus.Tests.SimpleTests
 		}
 
 		[TestMethod]
-		public void Macro_Lower_Abbreviations()
+		public void Macro_Lower_Words_Abbreviations()
 		{
 			Regex regex;
 
@@ -391,7 +391,7 @@ namespace StyleCopPlus.Tests.SimpleTests
 		}
 
 		[TestMethod]
-		public void Macro_Lower_Single_Letter()
+		public void Macro_Lower_Words_Single_Letter()
 		{
 			Regex regex;
 
@@ -413,7 +413,7 @@ namespace StyleCopPlus.Tests.SimpleTests
 		}
 
 		[TestMethod]
-		public void Macro_Lower_Unicode()
+		public void Macro_Lower_Words_Unicode()
 		{
 			Regex regex;
 
@@ -423,7 +423,7 @@ namespace StyleCopPlus.Tests.SimpleTests
 		}
 
 		[TestMethod]
-		public void Macro_Lower_Digits()
+		public void Macro_Lower_Words_Digits()
 		{
 			Regex regex;
 
@@ -596,6 +596,160 @@ namespace StyleCopPlus.Tests.SimpleTests
 			Assert.IsTrue(regex.IsMatch("123_Style_Cop"));
 			Assert.IsTrue(regex.IsMatch("Style_123_Cop"));
 			Assert.IsTrue(regex.IsMatch("Style_Cop_123"));
+		}
+
+		#endregion
+
+		#region Macro "Upper Only"
+
+		[TestMethod]
+		public void Macro_Upper_Only_General()
+		{
+			Regex regex;
+
+			regex = BuildSimple("$(AABB)");
+			Assert.IsTrue(regex.IsMatch("STYLE"));
+			Assert.IsFalse(regex.IsMatch("STYLE_COP"));
+			Assert.IsFalse(regex.IsMatch("sTYLECOP"));
+			Assert.IsFalse(regex.IsMatch("STYLECOP+"));
+			Assert.IsFalse(regex.IsMatch("_STYLE"));
+			Assert.IsFalse(regex.IsMatch("STYLE_"));
+		}
+
+		[TestMethod]
+		public void Macro_Upper_Only_Abbreviations()
+		{
+			Regex regex;
+
+			regex = BuildWithAbbreviations("$(AABB)", "A B");
+			Assert.IsTrue(regex.IsMatch("STYLE"));
+			Assert.IsTrue(regex.IsMatch("STYLECOP"));
+		}
+
+		[TestMethod]
+		public void Macro_Upper_Only_Single_Letter()
+		{
+			Regex regex;
+
+			regex = BuildWithAbbreviations("$(AABB)", String.Empty);
+			Assert.IsFalse(regex.IsMatch("a"));
+			Assert.IsTrue(regex.IsMatch("A"));
+
+			regex = BuildWithAbbreviations("$(AABB)", "A");
+			Assert.IsFalse(regex.IsMatch("a"));
+			Assert.IsTrue(regex.IsMatch("A"));
+
+			regex = BuildWithAbbreviations("Pre$(AABB)_POST", String.Empty);
+			Assert.IsFalse(regex.IsMatch("Prea_POST"));
+			Assert.IsTrue(regex.IsMatch("PreA_POST"));
+
+			regex = BuildWithAbbreviations("Pre$(AABB)_POST", "A");
+			Assert.IsFalse(regex.IsMatch("Prea_POST"));
+			Assert.IsTrue(regex.IsMatch("PreA_POST"));
+		}
+
+		[TestMethod]
+		public void Macro_Upper_Only_Unicode()
+		{
+			Regex regex;
+
+			regex = BuildSimple("$(AABB)");
+			Assert.IsTrue(regex.IsMatch("СТАЙЛКОП"));
+			Assert.IsFalse(regex.IsMatch("стайлкоп"));
+		}
+
+		[TestMethod]
+		public void Macro_Upper_Only_Digits()
+		{
+			Regex regex;
+
+			regex = BuildSimple("$(AABB)");
+			Assert.IsTrue(regex.IsMatch("1"));
+			Assert.IsTrue(regex.IsMatch("123"));
+			Assert.IsFalse(regex.IsMatch("123_456"));
+			Assert.IsTrue(regex.IsMatch("1STYLECOP"));
+			Assert.IsTrue(regex.IsMatch("STYLE1COP"));
+			Assert.IsTrue(regex.IsMatch("STYLECOP1"));
+			Assert.IsTrue(regex.IsMatch("123STYLECOP"));
+			Assert.IsTrue(regex.IsMatch("STYLE123COP"));
+			Assert.IsTrue(regex.IsMatch("STYLECOP123"));
+		}
+
+		#endregion
+
+		#region Macro "Lower Only"
+
+		[TestMethod]
+		public void Macro_Lower_Only_General()
+		{
+			Regex regex;
+
+			regex = BuildSimple("$(aabb)");
+			Assert.IsTrue(regex.IsMatch("style"));
+			Assert.IsFalse(regex.IsMatch("style_cop"));
+			Assert.IsFalse(regex.IsMatch("Stylecop"));
+			Assert.IsFalse(regex.IsMatch("stylecop+"));
+			Assert.IsFalse(regex.IsMatch("_style"));
+			Assert.IsFalse(regex.IsMatch("style_"));
+		}
+
+		[TestMethod]
+		public void Macro_Lower_Only_Abbreviations()
+		{
+			Regex regex;
+
+			regex = BuildWithAbbreviations("$(aabb)", "A B");
+			Assert.IsTrue(regex.IsMatch("style"));
+			Assert.IsTrue(regex.IsMatch("stylecop"));
+		}
+
+		[TestMethod]
+		public void Macro_Lower_Only_Single_Letter()
+		{
+			Regex regex;
+
+			regex = BuildWithAbbreviations("$(aabb)", String.Empty);
+			Assert.IsTrue(regex.IsMatch("a"));
+			Assert.IsFalse(regex.IsMatch("A"));
+
+			regex = BuildWithAbbreviations("$(aabb)", "A");
+			Assert.IsTrue(regex.IsMatch("a"));
+			Assert.IsFalse(regex.IsMatch("A"));
+
+			regex = BuildWithAbbreviations("Pre$(aabb)_POST", String.Empty);
+			Assert.IsTrue(regex.IsMatch("Prea_POST"));
+			Assert.IsFalse(regex.IsMatch("PreA_POST"));
+
+			regex = BuildWithAbbreviations("Pre$(aabb)_POST", "A");
+			Assert.IsTrue(regex.IsMatch("Prea_POST"));
+			Assert.IsFalse(regex.IsMatch("PreA_POST"));
+		}
+
+		[TestMethod]
+		public void Macro_Lower_Only_Unicode()
+		{
+			Regex regex;
+
+			regex = BuildSimple("$(aabb)");
+			Assert.IsTrue(regex.IsMatch("стайлкоп"));
+			Assert.IsFalse(regex.IsMatch("СТАЙЛКОП"));
+		}
+
+		[TestMethod]
+		public void Macro_Lower_Only_Digits()
+		{
+			Regex regex;
+
+			regex = BuildSimple("$(aabb)");
+			Assert.IsTrue(regex.IsMatch("1"));
+			Assert.IsTrue(regex.IsMatch("123"));
+			Assert.IsFalse(regex.IsMatch("123_456"));
+			Assert.IsTrue(regex.IsMatch("1stylecop"));
+			Assert.IsTrue(regex.IsMatch("style1cop"));
+			Assert.IsTrue(regex.IsMatch("stylecop1"));
+			Assert.IsTrue(regex.IsMatch("123stylecop"));
+			Assert.IsTrue(regex.IsMatch("style123cop"));
+			Assert.IsTrue(regex.IsMatch("stylecop123"));
 		}
 
 		#endregion

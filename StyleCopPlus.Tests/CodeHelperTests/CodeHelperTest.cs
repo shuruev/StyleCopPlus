@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using StyleCop;
 using StyleCop.CSharp;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace StyleCopPlus.Tests.CodeHelperTests
 {

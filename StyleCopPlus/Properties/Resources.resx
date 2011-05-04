@@ -136,66 +136,6 @@ Please check that:
   <data name="DoNotCheck" xml:space="preserve">
     <value>Do not check</value>
   </data>
-  <data name="MacroCamelCode" xml:space="preserve">
-    <value>aaBb</value>
-  </data>
-  <data name="MacroCamelDescription" xml:space="preserve">
-    <value>camelNamingStyle</value>
-  </data>
-  <data name="MacroCamelRegular" xml:space="preserve">
-    <value>LOWER+((UPPERLOWER+)EXTENSION)*</value>
-  </data>
-  <data name="MacroCamelSample" xml:space="preserve">
-    <value>sampleName</value>
-  </data>
-  <data name="MacroCapitalizedCode" xml:space="preserve">
-    <value>Aa_Bb</value>
-  </data>
-  <data name="MacroCapitalizedDescription" xml:space="preserve">
-    <value>All_Words_Capitalized</value>
-  </data>
-  <data name="MacroCapitalizedRegular" xml:space="preserve">
-    <value>((UPPERLOWER+)EXTENSION|DIGIT+)(_((UPPERLOWER+)EXTENSION|DIGIT+))*|UPPER</value>
-  </data>
-  <data name="MacroCapitalizedSample" xml:space="preserve">
-    <value>Sample_Name</value>
-  </data>
-  <data name="MacroLowerCode" xml:space="preserve">
-    <value>aa_bb</value>
-  </data>
-  <data name="MacroLowerDescription" xml:space="preserve">
-    <value>all_words_lower</value>
-  </data>
-  <data name="MacroLowerRegular" xml:space="preserve">
-    <value>LOWER+(_LOWER+)*</value>
-  </data>
-  <data name="MacroLowerSample" xml:space="preserve">
-    <value>sample_name</value>
-  </data>
-  <data name="MacroPascalCode" xml:space="preserve">
-    <value>AaBb</value>
-  </data>
-  <data name="MacroPascalDescription" xml:space="preserve">
-    <value>PascalNamingStyle</value>
-  </data>
-  <data name="MacroPascalRegular" xml:space="preserve">
-    <value>((UPPERLOWER+)EXTENSION|DIGIT+)+|UPPER</value>
-  </data>
-  <data name="MacroPascalSample" xml:space="preserve">
-    <value>SampleName</value>
-  </data>
-  <data name="MacroUpperCode" xml:space="preserve">
-    <value>AA_BB</value>
-  </data>
-  <data name="MacroUpperDescription" xml:space="preserve">
-    <value>ALL_WORDS_UPPER</value>
-  </data>
-  <data name="MacroUpperRegular" xml:space="preserve">
-    <value>UPPER+(_UPPER+)*</value>
-  </data>
-  <data name="MacroUpperSample" xml:space="preserve">
-    <value>SAMPLE_NAME</value>
-  </data>
   <data name="NamingRuleEditorCaption" xml:space="preserve">
     <value>Edit "{0}" Naming Rule</value>
   </data>
@@ -254,18 +194,6 @@ Please check that:
   </data>
   <data name="DerivedClassFriendlyName" xml:space="preserve">
     <value>Derived class</value>
-  </data>
-  <data name="MacroAnyCode" xml:space="preserve">
-    <value>*</value>
-  </data>
-  <data name="MacroAnyDescription" xml:space="preserve">
-    <value>AnyName_withoutRULES</value>
-  </data>
-  <data name="MacroAnyRegular" xml:space="preserve">
-    <value>.*</value>
-  </data>
-  <data name="MacroAnySample" xml:space="preserve">
-    <value>*</value>
   </data>
   <data name="GroupEntities" xml:space="preserve">
     <value>Entities</value>
