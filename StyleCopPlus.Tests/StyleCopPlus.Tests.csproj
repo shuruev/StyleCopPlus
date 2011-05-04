@@ -138,9 +138,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\StyleCopPlus.CSharp.Rules\StyleCopPlus.CSharp.Rules.csproj">
+    <ProjectReference Include="..\StyleCopPlus\StyleCopPlus.csproj">
       <Project>{BDC82CFD-67BF-4562-8BBD-E374C9538297}</Project>
-      <Name>StyleCopPlus.CSharp.Rules</Name>
+      <Name>StyleCopPlus</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

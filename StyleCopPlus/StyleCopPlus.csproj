@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>StyleCopPlus</RootNamespace>
-    <AssemblyName>StyleCopPlus.CSharp.Rules</AssemblyName>
+    <AssemblyName>StyleCopPlus</AssemblyName>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>

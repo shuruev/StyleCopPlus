@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StyleCopPlus.CSharp.Rules", "StyleCopPlus.CSharp.Rules\StyleCopPlus.CSharp.Rules.csproj", "{BDC82CFD-67BF-4562-8BBD-E374C9538297}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StyleCopPlus.Tests", "StyleCopPlus.Tests\StyleCopPlus.Tests.csproj", "{440553E2-2EB0-487C-9F72-8C3B4852BD6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StyleCopPlus", "StyleCopPlus\StyleCopPlus.csproj", "{BDC82CFD-67BF-4562-8BBD-E374C9538297}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,14 +11,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BDC82CFD-67BF-4562-8BBD-E374C9538297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BDC82CFD-67BF-4562-8BBD-E374C9538297}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BDC82CFD-67BF-4562-8BBD-E374C9538297}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BDC82CFD-67BF-4562-8BBD-E374C9538297}.Release|Any CPU.Build.0 = Release|Any CPU
 		{440553E2-2EB0-487C-9F72-8C3B4852BD6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{440553E2-2EB0-487C-9F72-8C3B4852BD6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{440553E2-2EB0-487C-9F72-8C3B4852BD6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{440553E2-2EB0-487C-9F72-8C3B4852BD6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDC82CFD-67BF-4562-8BBD-E374C9538297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDC82CFD-67BF-4562-8BBD-E374C9538297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDC82CFD-67BF-4562-8BBD-E374C9538297}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDC82CFD-67BF-4562-8BBD-E374C9538297}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
