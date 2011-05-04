@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BDC82CFD-67BF-4562-8BBD-E374C9538297}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StyleCopPlus</RootNamespace>
+    <AssemblyName>StyleCopPlus.CSharp.Rules</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\..\Test.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="StyleCop" />
+    <Reference Include="StyleCop.CSharp" />
+    <Reference Include="StyleCop.CSharp.Rules" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdvancedNaming\AdvancedNamingRules.cs" />
+    <Compile Include="AdvancedNaming\SpecialSettings\AbbreviationsSpecialSetting.cs" />
+    <Compile Include="AdvancedNaming\SpecialSettings\WordsSpecialSetting.cs" />
+    <Compile Include="AdvancedNaming\SpecialSettings\DerivingsSpecialSetting.cs" />
+    <Compile Include="AdvancedNaming\SpecialSettings\SimpleSpecialSetting.cs" />
+    <Compile Include="AdvancedNaming\SpecialSettings\ITextValidator.cs" />
+    <Compile Include="AdvancedNaming\SpecialSettings\ICharValidator.cs" />
+    <Compile Include="AdvancedNaming\SpecialSettings\ISpecialSetting.cs" />
+    <Compile Include="AdvancedNaming\IAdvancedNamingEditor.cs" />
+    <Compile Include="AdvancedNaming\SpecialSettings\SpecialSettingEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdvancedNaming\SpecialSettings\SpecialSettingEditor.Designer.cs">
+      <DependentUpon>SpecialSettingEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdvancedNaming\NamingMacro.cs" />
+    <Compile Include="AdvancedNaming\NamingRuleEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdvancedNaming\NamingRuleEditor.Designer.cs">
+      <DependentUpon>NamingRuleEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdvancedNaming\NamingRulesPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdvancedNaming\NamingRulesPage.Designer.cs">
+      <DependentUpon>NamingRulesPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdvancedNaming\CurrentNamingSettings.cs" />
+    <Compile Include="Analyzers\SpecialRunningParameters.cs" />
+    <Compile Include="CodeHelper\TypeParameterItem.cs" />
+    <Compile Include="CodeHelper\ParameterItem.cs" />
+    <Compile Include="CodeHelper\LabelItem.cs" />
+    <Compile Include="Common\DisplayExample.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\DisplayExample.Designer.cs">
+      <DependentUpon>DisplayExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\WarningArea.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\WarningArea.Designer.cs">
+      <DependentUpon>WarningArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\WarningItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\WarningItem.Designer.cs">
+      <DependentUpon>WarningItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Constants.cs" />
+    <Compile Include="MoreCustom\CustomRulesSettings.cs" />
+    <Compile Include="MoreCustom\ICustomRuleOptionsData.cs" />
+    <Compile Include="MoreCustom\CustomRuleTag.cs" />
+    <Compile Include="MoreCustom\CustomRules.cs" />
+    <Compile Include="MoreCustom\Options\CharLimitOptionsData.cs" />
+    <Compile Include="MoreCustom\Options\CustomRuleCharLimitOptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MoreCustom\Options\CustomRuleCharLimitOptions.Designer.cs">
+      <DependentUpon>CustomRuleCharLimitOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MoreCustom\Options\CustomRuleLastLineOptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MoreCustom\Options\CustomRuleLastLineOptions.Designer.cs">
+      <DependentUpon>CustomRuleLastLineOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MoreCustom\Options\LastLineOptionsData.cs" />
+    <Compile Include="MoreCustom\Options\LastLineMode.cs" />
+    <Compile Include="MoreCustom\Options\LimitOptionsData.cs" />
+    <Compile Include="MoreCustom\Options\IndentOptionsData.cs" />
+    <Compile Include="MoreCustom\Options\IndentMode.cs" />
+    <Compile Include="MoreCustom\Options\CustomRuleLimitOptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MoreCustom\Options\CustomRuleLimitOptions.Designer.cs">
+      <DependentUpon>CustomRuleLimitOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MoreCustom\Options\CustomRuleOptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MoreCustom\Options\CustomRuleOptions.Designer.cs">
+      <DependentUpon>CustomRuleOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MoreCustom\Options\CustomRuleIndentOptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MoreCustom\Options\CustomRuleIndentOptions.Designer.cs">
+      <DependentUpon>CustomRuleIndentOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MoreCustom\Options\NumericValue.cs" />
+    <Compile Include="MoreCustom\Rules\CustomRuleSP2103.cs" />
+    <Compile Include="MoreCustom\Rules\CustomRuleSP2102.cs" />
+    <Compile Include="MoreCustom\Rules\CustomRuleSP2100.cs" />
+    <Compile Include="MoreCustom\Rules\CustomRuleSP2101.cs" />
+    <Compile Include="MoreCustom\Rules\CustomRuleSP2002.cs" />
+    <Compile Include="MoreCustom\Rules\CustomRuleSP2001.cs" />
+    <Compile Include="MoreCustom\CustomRule.cs" />
+    <Compile Include="MoreCustom\CustomRulesPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MoreCustom\CustomRulesPage.Designer.cs">
+      <DependentUpon>CustomRulesPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MoreCustom\Rules\CustomRuleSP2000.cs" />
+    <Compile Include="MoreCustom\Rules\CustomRulesResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomRulesResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyPage\SettingsGrabber.cs" />
+    <Compile Include="StyleCop43Compatibility.cs" />
+    <Compile Include="ExtendedOriginal\CustomDocumentationRules.cs" />
+    <Compile Include="ExtendedOriginal\CustomLayoutRules.cs" />
+    <Compile Include="ExtendedOriginal\CustomNamingRules.cs" />
+    <Compile Include="Analyzers\StyleCopPlusRules.cs" />
+    <Compile Include="ExtendedOriginal\CustomCsParser.cs" />
+    <Compile Include="CodeHelper\CodeHelper.cs" />
+    <Compile Include="CodeHelper\LocalDeclarationItem.cs" />
+    <Compile Include="Common\Native.cs" />
+    <Compile Include="Common\HighlightTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\HighlightTextBox.designer.cs">
+      <DependentUpon>HighlightTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Messages.cs" />
+    <Compile Include="Common\Colors.cs" />
+    <Compile Include="Common\Pictures.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MoreCustom\MoreCustomRules.cs" />
+    <Compile Include="ExtendedOriginal\ExtendedOriginalRules.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyPage\SettingTag.cs" />
+    <Compile Include="AdvancedNaming\NamingSettings.cs" />
+    <Compile Include="PropertyPage\SettingsManager.cs" />
+    <Compile Include="PropertyPage\PropertyPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertyPage\PropertyPage.Designer.cs">
+      <DependentUpon>PropertyPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rules.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AdvancedNaming\NamingRuleEditor.resx">
+      <DependentUpon>NamingRuleEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdvancedNaming\NamingRulesPage.resx">
+      <DependentUpon>NamingRulesPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\DisplayExample.resx">
+      <DependentUpon>DisplayExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\HighlightTextBox.resx">
+      <DependentUpon>HighlightTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\WarningArea.resx">
+      <DependentUpon>WarningArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\WarningItem.resx">
+      <DependentUpon>WarningItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoreCustom\CustomRulesPage.resx">
+      <DependentUpon>CustomRulesPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoreCustom\Options\CustomRuleCharLimitOptions.resx">
+      <DependentUpon>CustomRuleCharLimitOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoreCustom\Options\CustomRuleLastLineOptions.resx">
+      <DependentUpon>CustomRuleLastLineOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoreCustom\Options\CustomRuleLimitOptions.resx">
+      <DependentUpon>CustomRuleLimitOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoreCustom\Options\CustomRuleOptions.resx">
+      <DependentUpon>CustomRuleOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoreCustom\Options\CustomRuleIndentOptions.resx">
+      <DependentUpon>CustomRuleIndentOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoreCustom\Rules\CustomRulesResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CustomRulesResources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>StyleCopPlus.CSharp.Rules</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyPage\PropertyPage.resx">
+      <DependentUpon>PropertyPage.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AdvancedNaming\SpecialSettings\SpecialSettingEditor.resx">
+      <DependentUpon>SpecialSettingEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StyleCopPlusRules.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StyleCopPlusLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StyleCopPlusTitle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RuleDisabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RuleEnabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CapitalLetter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RightArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TwoLetters.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CurlBottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CurlBottomLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CurlRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CurlBottomRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CurlTopRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CurlBottomRightTransparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MoreCustom\Rules\ExampleImages\ExampleSP2000.png" />
+    <None Include="MoreCustom\Rules\ExampleImages\ExampleSP2001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MoreCustom\Rules\ExampleImages\ExampleSP2002.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MoreCustom\Rules\ExampleImages\ExampleSP2100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MoreCustom\Rules\ExampleImages\ExampleSP2101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MoreCustom\Rules\ExampleImages\ExampleSP2102.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MoreCustom\Rules\ExampleImages\ExampleSP2103.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

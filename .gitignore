@@ -1,0 +1,8 @@
+bin
+obj
+TestResults
+*.user
+*.suo
+*.Publish.xml
+Settings.StyleCop
+StyleCop.Cache

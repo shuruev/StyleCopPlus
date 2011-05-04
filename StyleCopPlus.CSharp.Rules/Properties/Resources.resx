@@ -1,0 +1,369 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SpecialSettingEditorWarningAbbreviations" xml:space="preserve">
+    <value>It seems that your abbreviations string has wrong syntax.
+
+Please check that:
+- string literals don't contain any characters except UPPERCASE letters and digits
+- string literals are separated by whitespaces</value>
+  </data>
+  <data name="CaptionError" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="CaptionInformation" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="CaptionWarning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="DoNotCheck" xml:space="preserve">
+    <value>Do not check</value>
+  </data>
+  <data name="MacroCamelCode" xml:space="preserve">
+    <value>aaBb</value>
+  </data>
+  <data name="MacroCamelDescription" xml:space="preserve">
+    <value>camelNamingStyle</value>
+  </data>
+  <data name="MacroCamelRegular" xml:space="preserve">
+    <value>LOWER+((UPPERLOWER+)EXTENSION)*</value>
+  </data>
+  <data name="MacroCamelSample" xml:space="preserve">
+    <value>sampleName</value>
+  </data>
+  <data name="MacroCapitalizedCode" xml:space="preserve">
+    <value>Aa_Bb</value>
+  </data>
+  <data name="MacroCapitalizedDescription" xml:space="preserve">
+    <value>All_Words_Capitalized</value>
+  </data>
+  <data name="MacroCapitalizedRegular" xml:space="preserve">
+    <value>((UPPERLOWER+)EXTENSION|DIGIT+)(_((UPPERLOWER+)EXTENSION|DIGIT+))*|UPPER</value>
+  </data>
+  <data name="MacroCapitalizedSample" xml:space="preserve">
+    <value>Sample_Name</value>
+  </data>
+  <data name="MacroLowerCode" xml:space="preserve">
+    <value>aa_bb</value>
+  </data>
+  <data name="MacroLowerDescription" xml:space="preserve">
+    <value>all_words_lower</value>
+  </data>
+  <data name="MacroLowerRegular" xml:space="preserve">
+    <value>LOWER+(_LOWER+)*</value>
+  </data>
+  <data name="MacroLowerSample" xml:space="preserve">
+    <value>sample_name</value>
+  </data>
+  <data name="MacroPascalCode" xml:space="preserve">
+    <value>AaBb</value>
+  </data>
+  <data name="MacroPascalDescription" xml:space="preserve">
+    <value>PascalNamingStyle</value>
+  </data>
+  <data name="MacroPascalRegular" xml:space="preserve">
+    <value>((UPPERLOWER+)EXTENSION|DIGIT+)+|UPPER</value>
+  </data>
+  <data name="MacroPascalSample" xml:space="preserve">
+    <value>SampleName</value>
+  </data>
+  <data name="MacroUpperCode" xml:space="preserve">
+    <value>AA_BB</value>
+  </data>
+  <data name="MacroUpperDescription" xml:space="preserve">
+    <value>ALL_WORDS_UPPER</value>
+  </data>
+  <data name="MacroUpperRegular" xml:space="preserve">
+    <value>UPPER+(_UPPER+)*</value>
+  </data>
+  <data name="MacroUpperSample" xml:space="preserve">
+    <value>SAMPLE_NAME</value>
+  </data>
+  <data name="NamingRuleEditorCaption" xml:space="preserve">
+    <value>Edit "{0}" Naming Rule</value>
+  </data>
+  <data name="NamingRuleEditorWarning" xml:space="preserve">
+    <value>It seems that your rule definition string has wrong syntax.
+
+Please check that:
+- it doesn't contain whitespace characters
+- all macros are written correctly
+- string literals don't contain any characters except letters, digits and underscore
+- you are using "Turn off" option instead of empty definition</value>
+  </data>
+  <data name="ResetSettingQuestion" xml:space="preserve">
+    <value>Are you sure want to cancel all modification for this setting?
+
+It will be reset to its inherited (default) value:
+- {0}</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="RuleDisabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RuleDisabled.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RuleEnabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RuleEnabled.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StandardConstructorSummaryText" xml:space="preserve">
+    <value>Initializes a new instance.</value>
+  </data>
+  <data name="StandardDestructorSummaryText" xml:space="preserve">
+    <value>Finalizes an instance.</value>
+  </data>
+  <data name="StyleCopPlusLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StyleCopPlusLogo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StyleCopPlusTitle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StyleCopPlusTitle.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CapitalLetter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CapitalLetter.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RightArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RightArrow.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SpecialSettingEditorWarningDerivings" xml:space="preserve">
+    <value>It seems that your derivings string has wrong syntax.
+
+Please check that:
+- string literals don't contain any characters except letters, digits and underscore
+- string literals are separated by whitespaces</value>
+  </data>
+  <data name="SpecialSettingEditorCaption" xml:space="preserve">
+    <value>Edit "{0}" Setting</value>
+  </data>
+  <data name="DerivingExample" xml:space="preserve">
+    <value>...{0}</value>
+  </data>
+  <data name="DerivedClassFriendlyName" xml:space="preserve">
+    <value>Derived class</value>
+  </data>
+  <data name="MacroAnyCode" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="MacroAnyDescription" xml:space="preserve">
+    <value>AnyName_withoutRULES</value>
+  </data>
+  <data name="MacroAnyRegular" xml:space="preserve">
+    <value>.*</value>
+  </data>
+  <data name="MacroAnySample" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="GroupEntities" xml:space="preserve">
+    <value>Entities</value>
+  </data>
+  <data name="GroupSpecial" xml:space="preserve">
+    <value>Special</value>
+  </data>
+  <data name="GroupFields" xml:space="preserve">
+    <value>Fields and Properties</value>
+  </data>
+  <data name="GroupMethods" xml:space="preserve">
+    <value>Methods, Events and Delegates</value>
+  </data>
+  <data name="GroupParameters" xml:space="preserve">
+    <value>Parameters, Variables and Labels</value>
+  </data>
+  <data name="SpecialSettingEditorHelpAbbreviations" xml:space="preserve">
+    <value>Please specify a list of naming abbreviations, that should be considered
+as separate words in $(AaBb), $(aaBb) and $(Aa_Bb) macros.
+Use UPPERCASE letters and digits, separating them by whitespaces.</value>
+  </data>
+  <data name="SpecialSettingEditorHelpDerivings" xml:space="preserve">
+    <value>Please specify a list of classes, whose names should always
+be added to the end of the name for derived class.
+Use letters, digits and underscore, separating them by whitespaces.</value>
+  </data>
+  <data name="TwoLetters" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TwoLetters.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SpecialSettingEditorHelpWords" xml:space="preserve">
+    <value>Please specify a list of complex words, that should be considered
+as one word in $(Aa_Bb) macro.
+Use letters and digits, separating them by whitespaces.</value>
+  </data>
+  <data name="SpecialSettingEditorWarningWords" xml:space="preserve">
+    <value>It seems that your words string has wrong syntax.
+
+Please check that:
+- string literals don't contain any characters except letters and digits
+- string literals are separated by whitespaces</value>
+  </data>
+  <data name="ExtendedRuleConflictError" xml:space="preserve">
+    <value>Extended rule {0} from StyleCop+ conflicts with enabled original rule from StyleCop. Disable {1} rule in StyleCop if you want to use extended StyleCop+ rule.</value>
+  </data>
+  <data name="Warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Warning.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WarningDisabledAdvancedNamingRulesDescription" xml:space="preserve">
+    <value>Advanced naming rules are currently disabled.
+You can enable them from Rules tab.</value>
+  </data>
+  <data name="WarningDisabledAdvancedNamingRulesCode" xml:space="preserve">
+    <value>DisabledAdvancedNamingRules</value>
+  </data>
+  <data name="WarningDontUseOriginalNamingRulesDescription" xml:space="preserve">
+    <value>It seems that some original naming rules (SA13xx) are still enabled.
+There is no need to use them together with advanced naming rules.</value>
+  </data>
+  <data name="WarningDontUseOriginalNamingRulesCode" xml:space="preserve">
+    <value>DontUseOriginalNamingRules</value>
+  </data>
+  <data name="CurlBottom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CurlBottom.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CurlBottomLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CurlBottomLeft.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CurlBottomRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CurlBottomRight.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CurlRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CurlRight.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CurlTopRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CurlTopRight.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CurlBottomRightTransparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CurlBottomRightTransparent.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EmptyExampleDescription" xml:space="preserve">
+    <value>Select a rule from the list above.</value>
+  </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>Disabled</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Enabled</value>
+  </data>
+  <data name="GroupFormatting" xml:space="preserve">
+    <value>Formatting</value>
+  </data>
+  <data name="GroupMaintainability" xml:space="preserve">
+    <value>Maintainability</value>
+  </data>
+  <data name="Help" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WarningUrl" xml:space="preserve">
+    <value>http://stylecopplus.codeplex.com/wikipage?title=Warnings#{0}</value>
+  </data>
+</root>
