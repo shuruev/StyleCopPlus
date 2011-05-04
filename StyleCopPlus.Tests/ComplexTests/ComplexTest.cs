@@ -263,7 +263,7 @@ namespace StyleCopPlus.Tests.ComplexTests
 				File.Delete(m_tempFileName);
 			}
 
-			File.WriteAllText(m_tempFileName, StyleCop43Compatibility.ModifySourceForTest(sourceCode));
+			File.WriteAllText(m_tempFileName, sourceCode);
 
 			StyleCopPlusRunner runner = new StyleCopPlusRunner();
 			runner.Run(

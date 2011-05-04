@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Reflection;
 using StyleCop;
 using StyleCop.CSharp;
 using StyleCopPlus.Properties;
@@ -11,7 +13,6 @@ namespace StyleCopPlus
 	public class ExtendedOriginalRules
 	{
 		internal const string AllowConstructorsFor1502 = "SP1502_AllowConstructors";
-		internal const string AllowNestedCodeBlocksFor1509 = "SP1509_AllowNestedCodeBlocks";
 		internal const string AllowJoinedAccessorsFor1513 = "SP1513_AllowJoinedAccessors";
 		internal const string AllowJoinedAccessorsFor1516 = "SP1516_AllowJoinedAccessors";
 
@@ -47,19 +48,19 @@ namespace StyleCopPlus
 			m_customLayoutAnalyzer = new CustomLayoutRules();
 			m_customDocumentationAnalyzer = new CustomDocumentationRules();
 
-			StyleCop43Compatibility.InitializeCustomAnalyzer(
+			InitializeCustomAnalyzer(
 				m_parent.Core,
 				m_customCore,
 				Constants.NamingRulesAnalyzerId,
 				m_customNamingAnalyzer);
 
-			StyleCop43Compatibility.InitializeCustomAnalyzer(
+			InitializeCustomAnalyzer(
 				m_parent.Core,
 				m_customCore,
 				Constants.LayoutRulesAnalyzerId,
 				m_customLayoutAnalyzer);
 
-			StyleCop43Compatibility.InitializeCustomAnalyzer(
+			InitializeCustomAnalyzer(
 				m_parent.Core,
 				m_customCore,
 				Constants.DocumentationRulesAnalyzerId,
@@ -72,7 +73,6 @@ namespace StyleCopPlus
 		public void AnalyzeDocument(CodeDocument document)
 		{
 			CheckOriginalRule(document, Constants.LayoutRulesAnalyzerId, Rules.ElementMustNotBeOnSingleLine);
-			CheckOriginalRule(document, Constants.LayoutRulesAnalyzerId, Rules.OpeningCurlyBracketsMustNotBePrecededByBlankLine);
 			CheckOriginalRule(document, Constants.LayoutRulesAnalyzerId, Rules.ClosingCurlyBracketMustBeFollowedByBlankLine);
 			CheckOriginalRule(document, Constants.LayoutRulesAnalyzerId, Rules.ElementsMustBeSeparatedByBlankLine);
 
@@ -86,16 +86,12 @@ namespace StyleCopPlus
 		/// </summary>
 		private void OnCustomViolationEncountered(object sender, ViolationEventArgs e)
 		{
-			StyleCop43Compatibility.RemoveCustomViolation(e);
+			RemoveCustomViolation(e);
 
 			switch (e.Violation.Rule.CheckId)
 			{
 				case "SA1502":
 					Handle1502(e);
-					break;
-
-				case "SA1509":
-					Handle1509(e);
 					break;
 
 				case "SA1513":
@@ -114,6 +110,94 @@ namespace StyleCopPlus
 					Handle1643(e);
 					break;
 			}
+		}
+
+		/// <summary>
+		/// Initializes custom analyzer based on the standard one.
+		/// </summary>
+		public static void InitializeCustomAnalyzer(
+			StyleCopCore originalCore,
+			StyleCopCore customCore,
+			string originalAnalyzerId,
+			SourceAnalyzer customAnalyzer)
+		{
+			Dictionary<string, SourceAnalyzer> originalAnalyzers = (Dictionary<string, SourceAnalyzer>)typeof(StyleCopCore).InvokeMember(
+				"analyzers",
+				BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.GetField,
+				null,
+				originalCore,
+				null);
+
+			SourceAnalyzer originalAnalyzer = originalAnalyzers[originalAnalyzerId];
+
+			Dictionary<string, Rule> originalRules = (Dictionary<string, Rule>)typeof(StyleCopAddIn).InvokeMember(
+				"rules",
+				BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.GetField,
+				null,
+				originalAnalyzer,
+				null);
+
+			typeof(StyleCopAddIn).InvokeMember(
+				"core",
+				BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.SetField,
+				null,
+				customAnalyzer,
+				new object[] { customCore });
+
+			Dictionary<string, Rule> customRules = new Dictionary<string, Rule>();
+			foreach (KeyValuePair<string, Rule> pair in originalRules)
+			{
+				Rule originalRule = pair.Value;
+				Rule customRule = (Rule)typeof(Rule).InvokeMember(
+					"Rule",
+					BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.CreateInstance,
+					null,
+					customCore,
+					new object[]
+					{
+						originalRule.Name,
+						originalRule.Namespace,
+						originalRule.CheckId,
+						originalRule.Context,
+						originalRule.Warning,
+						originalRule.Description,
+						originalRule.RuleGroup,
+						true,
+						false
+					});
+				customRules[pair.Key] = customRule;
+			}
+
+			typeof(StyleCopAddIn).InvokeMember(
+				"rules",
+				BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.SetField,
+				null,
+				customAnalyzer,
+				new object[] { customRules });
+
+			CustomCsParser customParser = new CustomCsParser();
+
+			typeof(SourceAnalyzer).InvokeMember(
+				"parser",
+				BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.SetField,
+				null,
+				customAnalyzer,
+				new object[] { customParser });
+		}
+
+		/// <summary>
+		/// Removes violation got from the custom analyzer.
+		/// </summary>
+		public static void RemoveCustomViolation(ViolationEventArgs e)
+		{
+			Dictionary<int, Violation> violations = (Dictionary<int, Violation>)typeof(CsElement).InvokeMember(
+				"violations",
+				BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.GetField,
+				null,
+				e.Element,
+				null);
+
+			violations.Remove(e.Violation.Key);
 		}
 
 		#endregion
@@ -136,34 +220,8 @@ namespace StyleCopPlus
 			m_parent.AddViolation(
 				element,
 				e.LineNumber,
-				Rules.OpeningCurlyBracketsMustNotBePrecededByBlankLine,
+				Rules.ElementMustNotBeOnSingleLine,
 				element.FriendlyTypeText);
-		}
-
-		/// <summary>
-		/// Handles SA1509 violation.
-		/// </summary>
-		private void Handle1509(ViolationEventArgs e)
-		{
-			CsElement element = (CsElement)e.Element;
-
-			if (ReadSetting(e, AllowNestedCodeBlocksFor1509))
-			{
-				Node<CsToken> node = CodeHelper.GetNodeByLine((CsDocument)element.Document, e.LineNumber);
-				if (node != null)
-				{
-					Node<CsToken> prev = CodeHelper.FindPreviousValueableNode(node);
-					if (prev.Value.CsTokenType == CsTokenType.Semicolon
-						|| prev.Value.CsTokenType == CsTokenType.CloseCurlyBracket)
-						return;
-				}
-			}
-
-			m_parent.AddViolation(
-				element,
-				e.LineNumber,
-				Rules.OpeningCurlyBracketsMustNotBePrecededByBlankLine,
-				new object[0]);
 		}
 
 		/// <summary>
@@ -177,22 +235,6 @@ namespace StyleCopPlus
 			{
 				if (element.ElementType == ElementType.Accessor)
 					return;
-
-				if (StyleCop43Compatibility.IsStyleCop43())
-				{
-					Node<CsToken> node = CodeHelper.GetNodeByLine((CsDocument)element.Document, e.LineNumber);
-					if (node != null)
-					{
-						Node<CsToken> next1 = CodeHelper.FindNextValueableNode(node);
-						if (next1.Value.CsTokenType == CsTokenType.CloseCurlyBracket)
-						{
-							Node<CsToken> next2 = CodeHelper.FindNextValueableNode(next1);
-							if (next2.Value.CsTokenType == CsTokenType.Get
-								|| next2.Value.CsTokenType == CsTokenType.Set)
-								return;
-						}
-					}
-				}
 			}
 
 			m_parent.AddViolation(
@@ -212,22 +254,6 @@ namespace StyleCopPlus
 			{
 				if (element.ElementType == ElementType.Accessor)
 					return;
-
-				if (StyleCop43Compatibility.IsStyleCop43())
-				{
-					Node<CsToken> node = CodeHelper.GetNodeByLine((CsDocument)element.Document, e.LineNumber);
-					if (node != null)
-					{
-						Node<CsToken> next1 = CodeHelper.FindNextValueableNode(node);
-						if (next1.Value.CsTokenType == CsTokenType.CloseCurlyBracket)
-						{
-							Node<CsToken> next2 = CodeHelper.FindNextValueableNode(next1);
-							if (next2.Value.CsTokenType == CsTokenType.Get
-								|| next2.Value.CsTokenType == CsTokenType.Set)
-								return;
-						}
-					}
-				}
 			}
 
 			m_parent.AddViolation(
@@ -249,7 +275,7 @@ namespace StyleCopPlus
 			m_parent.AddViolation(
 				element,
 				Rules.ConstructorSummaryDocumentationMustBeginWithStandardText,
-				new object[] { StyleCop43Compatibility.GetExampleSummaryTextForConstructor(m_customDocumentationAnalyzer, element) });
+				new object[] { GetExampleSummaryTextForConstructor(m_customDocumentationAnalyzer, element) });
 		}
 
 		/// <summary>
@@ -266,7 +292,7 @@ namespace StyleCopPlus
 			m_parent.AddViolation(
 				element,
 				Rules.DestructorSummaryDocumentationMustBeginWithStandardText,
-				new object[] { StyleCop43Compatibility.GetExampleSummaryTextForDestructor(m_customDocumentationAnalyzer) });
+				new object[] { GetExampleSummaryTextForDestructor(m_customDocumentationAnalyzer) });
 		}
 
 		#endregion
@@ -285,18 +311,8 @@ namespace StyleCopPlus
 
 			SourceAnalyzer analyzer = m_parent.Core.GetAnalyzer(analyzerId);
 
-			if (StyleCop43Compatibility.IsStyleCop43())
-			{
-				string settingName = String.Format("{0}#Enabled", rule);
-				BooleanProperty enabled = (BooleanProperty)analyzer.GetSetting(document.Settings, settingName);
-				if (!enabled.Value)
-					return;
-			}
-			else
-			{
-				if (!analyzer.IsRuleEnabled(document, ruleName))
-					return;
-			}
+			if (!analyzer.IsRuleEnabled(document, ruleName))
+				return;
 
 			string message = String.Format(
 				Resources.ExtendedRuleConflictError,
@@ -315,6 +331,37 @@ namespace StyleCopPlus
 				m_parent,
 				e.Element.Document.Settings,
 				settingName);
+		}
+
+		#endregion
+
+		#region Calling specific private methods from original analyzers
+
+		/// <summary>
+		/// Gets example summary text for constructor.
+		/// </summary>
+		public static string GetExampleSummaryTextForConstructor(SourceAnalyzer customDocumentationAnalyzer, ICodeUnit constructor)
+		{
+			string type = (constructor.Parent is Struct) ? "struct" : "class";
+			return (string)typeof(DocumentationRules).InvokeMember(
+				"GetExampleSummaryTextForConstructorType",
+				BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.InvokeMethod,
+				null,
+				customDocumentationAnalyzer,
+				new object[] { constructor, type });
+		}
+
+		/// <summary>
+		/// Gets example summary text for destructor.
+		/// </summary>
+		public static string GetExampleSummaryTextForDestructor(SourceAnalyzer customDocumentationAnalyzer)
+		{
+			return (string)typeof(DocumentationRules).InvokeMember(
+				"GetExampleSummaryTextForDestructor",
+				BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.InvokeMethod,
+				null,
+				customDocumentationAnalyzer,
+				null);
 		}
 
 		#endregion

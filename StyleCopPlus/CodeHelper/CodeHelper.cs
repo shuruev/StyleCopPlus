@@ -249,12 +249,6 @@ namespace StyleCopPlus
 					|| node.Value.CsTokenType == CsTokenType.Where)
 					break;
 
-				if (StyleCop43Compatibility.IsStyleCop43())
-				{
-					if (node.Value.Text == "where")
-						break;
-				}
-
 				if (node.Value.CsTokenClass == CsTokenClass.GenericType)
 				{
 					GenericType type = (GenericType)node.Value;
@@ -324,7 +318,9 @@ namespace StyleCopPlus
 					declarations.Add(new LocalDeclarationItem
 						{
 							Name = variable.Name,
-							LineNumber = StyleCop43Compatibility.GetVariableLineNumber(variable)
+							// TODO: variable can span multiple lines,
+							// probably this should become a separate method.
+							LineNumber = variable.Location.LineNumber + variable.Location.LineSpan - 1
 						});
 				}
 
@@ -436,15 +432,12 @@ namespace StyleCopPlus
 		/// <summary>
 		/// Gets first code element at specified line number.
 		/// </summary>
-		/// <remarks>
-		/// Returns object because it is ICodeElement for 4.4 and CodeElement for 4.3.
-		/// </remarks>
-		public static object GetElementByLine(CsDocument document, int lineNumber)
+		public static ICodeElement GetElementByLine(CsDocument document, int lineNumber)
 		{
 			object[] args = new object[] { lineNumber, null };
 			document.WalkDocument(FindByLineElementVisitor, null, args);
 
-			return args[1];
+			return (ICodeElement)args[1];
 		}
 
 		/// <summary>

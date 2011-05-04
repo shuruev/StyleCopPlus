@@ -18,11 +18,6 @@
 		ElementMustNotBeOnSingleLine,
 
 		/// <summary>
-		/// Extends original SA1509 rule.
-		/// </summary>
-		OpeningCurlyBracketsMustNotBePrecededByBlankLine,
-
-		/// <summary>
 		/// Extends original SA1513 rule.
 		/// </summary>
 		ClosingCurlyBracketMustBeFollowedByBlankLine,

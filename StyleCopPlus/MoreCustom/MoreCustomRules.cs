@@ -418,7 +418,7 @@ namespace StyleCopPlus
 			params object[] values)
 		{
 			m_parent.AddViolation(
-				StyleCop43Compatibility.GetElementByLine(document, lineNumber) ?? document.RootElement,
+				CodeHelper.GetElementByLine(document, lineNumber) ?? document.RootElement,
 				lineNumber,
 				rule,
 				values);

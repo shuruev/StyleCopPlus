@@ -21,7 +21,7 @@ namespace StyleCopPlus.Tests.CodeHelperTests
 		private static CsDocument BuildCodeDocument(string sourceCode)
 		{
 			string tempFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CodeHelperTest.cs");
-			File.WriteAllText(tempFile, StyleCop43Compatibility.ModifySourceForTest(sourceCode));
+			File.WriteAllText(tempFile, sourceCode);
 
 			CodeProject project = new CodeProject(0, string.Empty, new Configuration(null));
 			CsParser parser = new CsParser();
@@ -42,7 +42,7 @@ namespace StyleCopPlus.Tests.CodeHelperTests
 		{
 			return GetElementByName(
 				document.RootElement.ChildElements,
-				StyleCop43Compatibility.ModifySourceForTest(name),
+				name,
 				false);
 		}
 
@@ -125,11 +125,8 @@ namespace StyleCopPlus.Tests.CodeHelperTests
 			Assert.AreEqual(expectedName, declaration.Name);
 			Assert.AreEqual(expectedIsConstant, declaration.IsConstant);
 
-			if (!StyleCop43Compatibility.IsStyleCop43())
-			{
-				Assert.IsTrue(declaration.LineNumber.HasValue);
-				Assert.AreEqual(expectedLineNumber, declaration.LineNumber);
-			}
+			Assert.IsTrue(declaration.LineNumber.HasValue);
+			Assert.AreEqual(expectedLineNumber, declaration.LineNumber);
 		}
 
 		/// <summary>

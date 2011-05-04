@@ -189,7 +189,6 @@
       <DependentUpon>CustomRulesResources.resx</DependentUpon>
     </Compile>
     <Compile Include="PropertyPage\SettingsGrabber.cs" />
-    <Compile Include="StyleCop43Compatibility.cs" />
     <Compile Include="ExtendedOriginal\CustomDocumentationRules.cs" />
     <Compile Include="ExtendedOriginal\CustomLayoutRules.cs" />
     <Compile Include="ExtendedOriginal\CustomNamingRules.cs" />

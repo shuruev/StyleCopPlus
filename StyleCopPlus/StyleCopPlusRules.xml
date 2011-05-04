@@ -39,7 +39,6 @@
 		<StringProperty Name="AdvancedNaming_LocalConstant" DefaultValue="$(aaBb)" FriendlyName="Local constant" Description="Naming rules for local constant." />
 		<StringProperty Name="AdvancedNaming_Label" DefaultValue="$(aaBb)" FriendlyName="Label" Description="Naming rules for labels." />
 		<BooleanProperty Name="SP1502_AllowConstructors" DefaultValue="True" FriendlyName="SP1502: Allow for constructors" Description="Allows constructors to be placed on a single line (for SP1502 rule)." />
-		<BooleanProperty Name="SP1509_AllowNestedCodeBlocks" DefaultValue="True" FriendlyName="SP1509: Allow nested code blocks" Description="Allows using nested code blocks (for SP1509 rule)." />
 		<BooleanProperty Name="SP1513_AllowJoinedAccessors" DefaultValue="True" FriendlyName="SP1513: Allow joined property accessors" Description="Allows placing property getters and setters close to each other (for SP1513 rule)." />
 		<BooleanProperty Name="SP1516_AllowJoinedAccessors" DefaultValue="True" FriendlyName="SP1516: Allow joined property accessors" Description="Allows placing property getters and setters close to each other (for SP1516 rule)." />
 		<StringProperty Name="SP2001_Mode" DefaultValue="Tabs:False" FriendlyName="None" Description="None" />
@@ -58,10 +57,6 @@
 			<Rule Name="ElementMustNotBeOnSingleLine" CheckId="SP1502" DisabledByDefault="true">
 				<Context>The {0} must not be placed on a single line. The opening and closing curly brackets must each be placed on their own line.</Context>
 				<Description>Extends original SA1502 rule (disable SA1502 when using this rule). See more options clicking StyleCop+ node in the tree.</Description>
-			</Rule>
-			<Rule Name="OpeningCurlyBracketsMustNotBePrecededByBlankLine" CheckId="SP1509" DisabledByDefault="true">
-				<Context>An opening curly bracket must not be preceded by a blank line.</Context>
-				<Description>Extends original SA1509 rule (disable SA1509 when using this rule). See more options clicking StyleCop+ node in the tree.</Description>
 			</Rule>
 			<Rule Name="ClosingCurlyBracketMustBeFollowedByBlankLine" CheckId="SP1513" DisabledByDefault="true">
 				<Context>Statements or elements wrapped in curly brackets must be followed by a blank line.</Context>
