@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("Plug-in that extends original StyleCop features.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Oleg Shuruev")]
-[assembly: AssemblyProduct("StyleCopPlus")]
+[assembly: AssemblyProduct("StyleCop+")]
 [assembly: AssemblyCopyright("Copyright © Oleg Shuruev 2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
