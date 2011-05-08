@@ -7,3 +7,4 @@ TestResults
 Settings.StyleCop
 StyleCop.Cache
 _ReSharper.*/
+build/
