@@ -53,10 +53,16 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="StyleCop" />
-    <Reference Include="StyleCop.CSharp" />
-    <Reference Include="StyleCop.CSharp.Rules" />
+    <Reference Include="StyleCop">
+      <HintPath>..\packages\StyleCop.4.5.13.0\lib\StyleCop.dll</HintPath>
+    </Reference>
+    <Reference Include="StyleCop.CSharp">
+      <HintPath>..\packages\StyleCop.4.5.13.0\lib\StyleCop.CSharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="StyleCop.CSharp.Rules">
+      <HintPath>..\packages\StyleCop.4.5.13.0\lib\StyleCop.CSharp.Rules.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -93,6 +99,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ComplexTests\ComplexTest.cs" />
     <Compile Include="ComplexTests\StyleCopPlusRunner.cs" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CodeHelperTests\Source\Source.resx">

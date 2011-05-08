@@ -6,3 +6,5 @@ TestResults
 *.Publish.xml
 Settings.StyleCop
 StyleCop.Cache
+_ReSharper.*/
+build/
