@@ -14,9 +14,8 @@ namespace StyleCopPlus
 	{
 		private static readonly Color s_borderColor = Color.FromArgb(118, 118, 118);
 
-		private Image m_sample;
-		private string m_exampleUrl;
 		private string m_exampleDescription;
+		private string m_exampleUrl;
 
 		/// <summary>
 		/// Initializes a new instance.
@@ -24,6 +23,7 @@ namespace StyleCopPlus
 		public DisplayExample()
 		{
 			InitializeComponent();
+
 			Clear();
 		}
 
@@ -34,22 +34,29 @@ namespace StyleCopPlus
 			InvalidateAll();
 		}
 
-		private void DisplayExample_BackColorChanged(object sender, EventArgs e)
+		private void pictureUpper_Paint(object sender, PaintEventArgs e)
 		{
-			UpdateCurlSample();
-			InvalidateAll();
+			PictureBox box = (PictureBox)sender;
+			e.Graphics.DrawImage(Resources.CurlBottomRightTransparent, box.Width - 72, box.Height - 25);
 		}
 
-		private void pictureExample_Paint(object sender, PaintEventArgs e)
+		private void pictureLower_Paint(object sender, PaintEventArgs e)
 		{
-			if (m_sample == null)
-				UpdateCurlSample();
+			PictureBox box = (PictureBox)sender;
 
-			if (m_sample != null)
+			if (pictureUpper.Image != null)
 			{
-				PictureBox box = (PictureBox)sender;
-				e.Graphics.DrawImage(m_sample, box.Width - 72, box.Height - 78);
+				e.Graphics.DrawImage(
+					pictureUpper.Image,
+					new Rectangle(0, 0, box.Width, box.Height),
+					0,
+					pictureUpper.Height,
+					box.Width,
+					box.Height,
+					GraphicsUnit.Pixel);
 			}
+
+			e.Graphics.DrawImage(Resources.CurlBottomRightTransparent, box.Width - 24, box.Height - 78);
 		}
 
 		private void backgroundUpper_Paint(object sender, PaintEventArgs e)
@@ -61,7 +68,7 @@ namespace StyleCopPlus
 				e.Graphics.DrawLine(pen, 0, 0, 0, box.Height);
 			}
 
-			Rectangle rectLeft = new Rectangle(1, 1, box.Width - 90, 35);
+			Rectangle rectLeft = new Rectangle(1, 1, box.Width - 105, 35);
 			using (LinearGradientBrush brush = new LinearGradientBrush(
 				rectLeft,
 				SystemColors.Info,
@@ -148,36 +155,16 @@ namespace StyleCopPlus
 		#region Service methods
 
 		/// <summary>
-		/// Updates curl sample using current backgorund color.
-		/// </summary>
-		private void UpdateCurlSample()
-		{
-			Point[] points = new Point[7];
-			points[0] = new Point(0, 96);
-			points[1] = new Point(0, 85);
-			points[2] = new Point(16, 85);
-			points[3] = new Point(85, 10);
-			points[4] = new Point(85, 0);
-			points[5] = new Point(96, 0);
-			points[6] = new Point(96, 96);
-
-			m_sample = new Bitmap(96, 96);
-			using (SolidBrush brush = new SolidBrush(BackColor))
-			{
-				Graphics graphics = Graphics.FromImage(m_sample);
-				graphics.FillPolygon(brush, points);
-				graphics.DrawImage(Resources.CurlBottomRightTransparent, 0, 0);
-			}
-		}
-
-		/// <summary>
 		/// Invalidate all custom-drawn control areas.
 		/// </summary>
 		private void InvalidateAll()
 		{
-			pictureExample.Invalidate();
+			pictureUpper.Invalidate();
+			pictureLower.Invalidate();
+
 			backgroundUpper.Invalidate();
 			backgroundLower.Invalidate();
+
 			borderBottomLeft.Invalidate();
 			borderTopRight.Invalidate();
 		}
@@ -191,10 +178,10 @@ namespace StyleCopPlus
 		/// </summary>
 		public void Clear()
 		{
-			m_exampleUrl = null;
 			m_exampleDescription = null;
+			m_exampleUrl = null;
 
-			pictureExample.Image = null;
+			pictureUpper.Image = null;
 			pictureDetails.Visible = false;
 			linkDetails.Visible = false;
 
@@ -206,10 +193,10 @@ namespace StyleCopPlus
 		/// </summary>
 		public void Display(Image exampleImage, string exampleDescription, string exampleUrl)
 		{
-			m_exampleUrl = exampleUrl;
 			m_exampleDescription = exampleDescription;
+			m_exampleUrl = exampleUrl;
 
-			pictureExample.Image = exampleImage;
+			pictureUpper.Image = exampleImage;
 			pictureDetails.Visible = true;
 			linkDetails.Visible = true;
 

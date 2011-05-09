@@ -33,20 +33,22 @@
 			this.borderTopRight = new System.Windows.Forms.PictureBox();
 			this.borderBottom = new System.Windows.Forms.PictureBox();
 			this.borderBottomLeft = new System.Windows.Forms.PictureBox();
-			this.pictureExample = new System.Windows.Forms.PictureBox();
+			this.pictureUpper = new System.Windows.Forms.PictureBox();
 			this.backgroundUpper = new System.Windows.Forms.PictureBox();
 			this.backgroundLower = new System.Windows.Forms.PictureBox();
 			this.linkDetails = new System.Windows.Forms.LinkLabel();
 			this.pictureDetails = new System.Windows.Forms.PictureBox();
+			this.pictureLower = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.borderBottomRight)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.borderRight)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.borderTopRight)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.borderBottom)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.borderBottomLeft)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureExample)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureUpper)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.backgroundUpper)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.backgroundLower)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureDetails)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureLower)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// borderBottomRight
@@ -103,18 +105,18 @@
 			this.borderBottomLeft.TabStop = false;
 			this.borderBottomLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.borderBottomLeft_Paint);
 			// 
-			// pictureExample
+			// pictureUpper
 			// 
-			this.pictureExample.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+			this.pictureUpper.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
 						| System.Windows.Forms.AnchorStyles.Left)
 						| System.Windows.Forms.AnchorStyles.Right)));
-			this.pictureExample.BackColor = System.Drawing.Color.White;
-			this.pictureExample.Location = new System.Drawing.Point(8, 36);
-			this.pictureExample.Name = "pictureExample";
-			this.pictureExample.Size = new System.Drawing.Size(368, 146);
-			this.pictureExample.TabIndex = 5;
-			this.pictureExample.TabStop = false;
-			this.pictureExample.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureExample_Paint);
+			this.pictureUpper.BackColor = System.Drawing.Color.White;
+			this.pictureUpper.Location = new System.Drawing.Point(8, 36);
+			this.pictureUpper.Name = "pictureUpper";
+			this.pictureUpper.Size = new System.Drawing.Size(368, 93);
+			this.pictureUpper.TabIndex = 5;
+			this.pictureUpper.TabStop = false;
+			this.pictureUpper.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureUpper_Paint);
 			// 
 			// backgroundUpper
 			// 
@@ -170,13 +172,26 @@
 			this.pictureDetails.TabIndex = 8;
 			this.pictureDetails.TabStop = false;
 			// 
+			// pictureLower
+			// 
+			this.pictureLower.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+						| System.Windows.Forms.AnchorStyles.Right)));
+			this.pictureLower.BackColor = System.Drawing.Color.White;
+			this.pictureLower.Location = new System.Drawing.Point(8, 129);
+			this.pictureLower.Name = "pictureLower";
+			this.pictureLower.Size = new System.Drawing.Size(320, 53);
+			this.pictureLower.TabIndex = 9;
+			this.pictureLower.TabStop = false;
+			this.pictureLower.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureLower_Paint);
+			// 
 			// DisplayExample
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.pictureLower);
 			this.Controls.Add(this.pictureDetails);
 			this.Controls.Add(this.linkDetails);
-			this.Controls.Add(this.pictureExample);
+			this.Controls.Add(this.pictureUpper);
 			this.Controls.Add(this.borderBottomLeft);
 			this.Controls.Add(this.borderBottom);
 			this.Controls.Add(this.borderTopRight);
@@ -184,20 +199,19 @@
 			this.Controls.Add(this.borderBottomRight);
 			this.Controls.Add(this.backgroundUpper);
 			this.Controls.Add(this.backgroundLower);
-			this.MinimumSize = new System.Drawing.Size(240, 120);
 			this.Name = "DisplayExample";
 			this.Size = new System.Drawing.Size(400, 200);
-			this.BackColorChanged += new System.EventHandler(this.DisplayExample_BackColorChanged);
 			this.SizeChanged += new System.EventHandler(this.DisplayExample_SizeChanged);
 			((System.ComponentModel.ISupportInitialize)(this.borderBottomRight)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.borderRight)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.borderTopRight)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.borderBottom)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.borderBottomLeft)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureExample)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureUpper)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.backgroundUpper)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.backgroundLower)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureDetails)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureLower)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -210,10 +224,11 @@
 		private System.Windows.Forms.PictureBox borderTopRight;
 		private System.Windows.Forms.PictureBox borderBottom;
 		private System.Windows.Forms.PictureBox borderBottomLeft;
-		private System.Windows.Forms.PictureBox pictureExample;
+		private System.Windows.Forms.PictureBox pictureUpper;
 		private System.Windows.Forms.PictureBox backgroundUpper;
 		private System.Windows.Forms.PictureBox backgroundLower;
 		private System.Windows.Forms.LinkLabel linkDetails;
 		private System.Windows.Forms.PictureBox pictureDetails;
+		private System.Windows.Forms.PictureBox pictureLower;
 	}
 }

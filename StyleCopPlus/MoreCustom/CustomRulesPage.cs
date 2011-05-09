@@ -21,6 +21,8 @@ namespace StyleCopPlus
 			InitializeComponent();
 
 			listRules.SmallImageList = Pictures.GetList();
+
+			tableMain_SizeChanged(null, EventArgs.Empty);
 		}
 
 		#region Properties
@@ -56,6 +58,42 @@ namespace StyleCopPlus
 			UpdateWarnings();
 			UpdateAllListItems();
 			UpdateControls();
+		}
+
+		private void tableMain_SizeChanged(object sender, EventArgs e)
+		{
+			ColumnStyle columnLeft = new ColumnStyle(SizeType.Absolute, 200);
+			ColumnStyle columnRight = new ColumnStyle(SizeType.Absolute, 220);
+			ColumnStyle columnFill = new ColumnStyle(SizeType.Percent, 100);
+			RowStyle rowTop = new RowStyle(SizeType.Absolute, 145);
+			RowStyle rowBottom = new RowStyle(SizeType.Absolute, 256);
+			RowStyle rowFill = new RowStyle(SizeType.Percent, 100);
+
+			tableMain.SuspendLayout();
+
+			if (tableMain.Width > columnLeft.Width + columnRight.Width)
+			{
+				tableMain.ColumnStyles[0] = columnFill;
+				tableMain.ColumnStyles[1] = columnRight;
+			}
+			else
+			{
+				tableMain.ColumnStyles[0] = columnLeft;
+				tableMain.ColumnStyles[1] = columnFill;
+			}
+
+			if (tableMain.Height > rowTop.Height + rowBottom.Height)
+			{
+				tableMain.RowStyles[0] = rowFill;
+				tableMain.RowStyles[1] = rowBottom;
+			}
+			else
+			{
+				tableMain.RowStyles[0] = rowTop;
+				tableMain.RowStyles[1] = rowFill;
+			}
+
+			tableMain.ResumeLayout();
 		}
 
 		private void listRules_SelectedIndexChanged(object sender, EventArgs e)
