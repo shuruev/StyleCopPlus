@@ -20,12 +20,12 @@ namespace StyleCopPlus
 		/// <summary>
 		/// Creates definition string from specified text.
 		/// </summary>
-		string ParseFromText(string text);
+		string ParseFrom(string text);
 
 		/// <summary>
 		/// Creates text from definition string.
 		/// </summary>
-		string ConvertToText(string ruleDefinition);
+		string ConvertTo(string ruleDefinition);
 
 		/// <summary>
 		/// Highlights rich text box with definition string.

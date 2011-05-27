@@ -4,7 +4,7 @@ using StyleCopPlus.Properties;
 namespace StyleCopPlus
 {
 	/// <summary>
-	/// Allows to setup words setting.
+	/// Special setting for complex words.
 	/// </summary>
 	public class WordsSpecialSetting : SimpleSpecialSetting
 	{

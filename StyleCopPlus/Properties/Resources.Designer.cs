@@ -60,6 +60,13 @@ namespace StyleCopPlus.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap AtSign {
+            get {
+                object obj = ResourceManager.GetObject("AtSign", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap CapitalLetter {
             get {
                 object obj = ResourceManager.GetObject("CapitalLetter", resourceCulture);
@@ -190,6 +197,43 @@ namespace StyleCopPlus.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap English {
+            get {
+                object obj = ResourceManager.GetObject("English", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please specify where you would like to prohibit
+        ///using @ character in name..
+        /// </summary>
+        internal static string EntitySettingEditorHelpBlockAt {
+            get {
+                return ResourceManager.GetString("EntitySettingEditorHelpBlockAt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please specify where you would like to prohibit
+        ///using short names (less than 4 characters)..
+        /// </summary>
+        internal static string EntitySettingEditorHelpCheckLength {
+            get {
+                return ResourceManager.GetString("EntitySettingEditorHelpCheckLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please specify where you would like to prohibit
+        ///using non-English characters in names..
+        /// </summary>
+        internal static string EntitySettingEditorHelpEnglishOnly {
+            get {
+                return ResourceManager.GetString("EntitySettingEditorHelpEnglishOnly", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Extended rule {0} from StyleCop+ conflicts with enabled original rule from StyleCop. Disable {1} rule in StyleCop if you want to use extended StyleCop+ rule..
         /// </summary>
@@ -265,6 +309,13 @@ namespace StyleCopPlus.Properties {
         internal static System.Drawing.Bitmap Help {
             get {
                 object obj = ResourceManager.GetObject("Help", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap NameLength {
+            get {
+                object obj = ResourceManager.GetObject("NameLength", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

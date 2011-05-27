@@ -17,6 +17,9 @@ namespace StyleCopPlus
 		internal const string CapitalLetter = "CapitalLetter";
 		internal const string TwoLetters = "TwoLetters";
 		internal const string RightArrow = "RightArrow";
+		internal const string AtSign = "AtSign";
+		internal const string English = "English";
+		internal const string NameLength = "NameLength";
 		internal const string Warning = "Warning";
 
 		#endregion
@@ -32,6 +35,9 @@ namespace StyleCopPlus
 			s_images.Add(CapitalLetter, Resources.CapitalLetter);
 			s_images.Add(TwoLetters, Resources.TwoLetters);
 			s_images.Add(RightArrow, Resources.RightArrow);
+			s_images.Add(AtSign, Resources.AtSign);
+			s_images.Add(English, Resources.English);
+			s_images.Add(NameLength, Resources.NameLength);
 			s_images.Add(Warning, Resources.Warning);
 		}
 

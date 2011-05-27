@@ -294,4 +294,25 @@ There is no need to use them together with advanced naming rules.</value>
   <data name="WarningUrl" xml:space="preserve">
     <value>http://stylecopplus.codeplex.com/wikipage?title=Warnings#{0}</value>
   </data>
+  <data name="AtSign" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AtSign.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NameLength" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NameLength.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="English" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\English.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EntitySettingEditorHelpBlockAt" xml:space="preserve">
+    <value>Please specify where you would like to prohibit
+using @ character in name.</value>
+  </data>
+  <data name="EntitySettingEditorHelpCheckLength" xml:space="preserve">
+    <value>Please specify where you would like to prohibit
+using short names (less than 4 characters).</value>
+  </data>
+  <data name="EntitySettingEditorHelpEnglishOnly" xml:space="preserve">
+    <value>Please specify where you would like to prohibit
+using non-English characters in names.</value>
+  </data>
 </root>

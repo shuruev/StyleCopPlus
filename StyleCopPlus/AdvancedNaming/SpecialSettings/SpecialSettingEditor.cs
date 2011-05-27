@@ -52,7 +52,7 @@ namespace StyleCopPlus
 
 			if (!String.IsNullOrEmpty(TargetRule))
 			{
-				textEditor.RichTextBox.Text = SpecialSetting.ConvertToText(TargetRule);
+				textEditor.RichTextBox.Text = SpecialSetting.ConvertTo(TargetRule);
 			}
 		}
 
@@ -70,7 +70,7 @@ namespace StyleCopPlus
 				return;
 			}
 
-			TargetRule = SpecialSetting.ParseFromText(textEditor.RichTextBox.Text);
+			TargetRule = SpecialSetting.ParseFrom(textEditor.RichTextBox.Text);
 			DialogResult = DialogResult.OK;
 		}
 

@@ -4,7 +4,7 @@ using StyleCopPlus.Properties;
 namespace StyleCopPlus
 {
 	/// <summary>
-	/// Allows to setup derivings setting.
+	/// Special setting for derived classes.
 	/// </summary>
 	public class DerivingsSpecialSetting : SimpleSpecialSetting
 	{

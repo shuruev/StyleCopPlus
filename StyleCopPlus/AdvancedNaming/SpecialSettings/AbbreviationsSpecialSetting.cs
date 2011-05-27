@@ -4,7 +4,7 @@ using StyleCopPlus.Properties;
 namespace StyleCopPlus
 {
 	/// <summary>
-	/// Allows to setup abbreviations setting.
+	/// Special setting for abbreviations.
 	/// </summary>
 	public class AbbreviationsSpecialSetting : SimpleSpecialSetting
 	{

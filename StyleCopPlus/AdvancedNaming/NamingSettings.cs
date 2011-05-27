@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using StyleCopPlus.Properties;
 
@@ -11,6 +12,9 @@ namespace StyleCopPlus
 		internal const string Abbreviations = "AdvancedNaming_Abbreviations";
 		internal const string Words = "AdvancedNaming_Words";
 		internal const string Derivings = "AdvancedNaming_Derivings";
+		internal const string BlockAt = "AdvancedNaming_BlockAt";
+		internal const string EnglishOnly = "AdvancedNaming_EnglishOnly";
+		internal const string CheckLength = "AdvancedNaming_CheckLength";
 
 		internal const string Namespace = "AdvancedNaming_Namespace";
 		internal const string ClassNotInternal = "AdvancedNaming_ClassNotInternal";
@@ -60,6 +64,9 @@ namespace StyleCopPlus
 			Add(Abbreviations, false, Resources.GroupSpecial);
 			Add(Words, false, Resources.GroupSpecial);
 			Add(Derivings, false, Resources.GroupSpecial);
+			Add(BlockAt, false, Resources.GroupSpecial);
+			Add(EnglishOnly, false, Resources.GroupSpecial);
+			Add(CheckLength, false, Resources.GroupSpecial);
 
 			Add(Namespace, true, Resources.GroupEntities);
 			Add(ClassNotInternal, true, Resources.GroupEntities);
@@ -160,18 +167,96 @@ namespace StyleCopPlus
 					{
 						SpecialSetting = new AbbreviationsSpecialSetting()
 					};
+
 				case Words:
 					return new SpecialSettingEditor
 					{
 						SpecialSetting = new WordsSpecialSetting()
 					};
+
 				case Derivings:
 					return new SpecialSettingEditor
 					{
 						SpecialSetting = new DerivingsSpecialSetting()
 					};
+
+				case BlockAt:
+					return new EntitySettingEditor
+					{
+						EntitySetting = new BlockAtEntitySetting()
+					};
+
+				case EnglishOnly:
+					return new EntitySettingEditor
+					{
+						EntitySetting = new EnglishOnlyEntitySetting()
+					};
+
+				case CheckLength:
+					return new EntitySettingEditor
+					{
+						EntitySetting = new CheckLengthEntitySetting()
+					};
+
 				default:
 					return new NamingRuleEditor();
+			}
+		}
+
+		/// <summary>
+		/// Gets image key for specified setting.
+		/// </summary>
+		public static string GetImageKey(string settingName, bool enabled)
+		{
+			switch (settingName)
+			{
+				case Abbreviations:
+					return Pictures.CapitalLetter;
+
+				case Words:
+					return Pictures.TwoLetters;
+
+				case Derivings:
+					return Pictures.RightArrow;
+
+				case BlockAt:
+					return Pictures.AtSign;
+
+				case EnglishOnly:
+					return Pictures.English;
+
+				case CheckLength:
+					return Pictures.NameLength;
+
+				default:
+					return enabled ? Pictures.RuleEnabled : Pictures.RuleDisabled;
+			}
+		}
+
+		/// <summary>
+		/// Gets preview text for specified setting value.
+		/// </summary>
+		public static string GetPreviewText(string settingName, string settingValue)
+		{
+			if (String.IsNullOrEmpty(settingValue))
+				return Resources.DoNotCheck;
+
+			if (IsCommon(settingName))
+				return NamingMacro.BuildExample(settingValue);
+
+			switch (settingName)
+			{
+				case BlockAt:
+					return new BlockAtEntitySetting().GetPreviewText(settingValue);
+
+				case EnglishOnly:
+					return new EnglishOnlyEntitySetting().GetPreviewText(settingValue);
+
+				case CheckLength:
+					return new CheckLengthEntitySetting().GetPreviewText(settingValue);
+
+				default:
+					return settingValue;
 			}
 		}
 	}

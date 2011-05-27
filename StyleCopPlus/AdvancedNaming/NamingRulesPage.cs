@@ -215,42 +215,12 @@ namespace StyleCopPlus
 			ListViewItem.ListViewSubItem sub = lvi.SubItems[1];
 
 			sub.Font = tag.Modified ? m_bold : m_regular;
-			sub.Text = GetPreviewText(tag.SettingName, tag.MergedValue);
+			sub.Text = NamingSettings.GetPreviewText(tag.SettingName, tag.MergedValue);
 
-			switch (tag.SettingName)
-			{
-				case NamingSettings.Abbreviations:
-					lvi.ImageKey = Pictures.CapitalLetter;
-					break;
+			string settingName = tag.SettingName;
+			bool enabled = !String.IsNullOrEmpty(tag.MergedValue);
 
-				case NamingSettings.Words:
-					lvi.ImageKey = Pictures.TwoLetters;
-					break;
-
-				case NamingSettings.Derivings:
-					lvi.ImageKey = Pictures.RightArrow;
-					break;
-
-				default:
-					lvi.ImageKey = String.IsNullOrEmpty(tag.MergedValue) ?
-						Pictures.RuleDisabled :
-						Pictures.RuleEnabled;
-					break;
-			}
-		}
-
-		/// <summary>
-		/// Gets preview text for specified setting value.
-		/// </summary>
-		private static string GetPreviewText(string settingName, string settingValue)
-		{
-			if (String.IsNullOrEmpty(settingValue))
-				return Resources.DoNotCheck;
-
-			if (NamingSettings.IsCommon(settingName))
-				return NamingMacro.BuildExample(settingValue);
-
-			return settingValue;
+			lvi.ImageKey = NamingSettings.GetImageKey(settingName, enabled);
 		}
 
 		/// <summary>
@@ -314,7 +284,7 @@ namespace StyleCopPlus
 			ListViewItem lvi = listRules.SelectedItems[0];
 			SettingTag tag = (SettingTag)lvi.Tag;
 
-			string preview = GetPreviewText(tag.SettingName, tag.InheritedValue);
+			string preview = NamingSettings.GetPreviewText(tag.SettingName, tag.InheritedValue);
 			if (Messages.ShowWarningYesNo(this, Resources.ResetSettingQuestion, preview) != DialogResult.Yes)
 				return;
 

@@ -65,6 +65,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdvancedNaming\AdvancedNamingRules.cs" />
+    <Compile Include="AdvancedNaming\EntitySettings\BlockAtEntitySetting.cs" />
+    <Compile Include="AdvancedNaming\EntitySettings\CheckLengthEntitySetting.cs" />
+    <Compile Include="AdvancedNaming\EntitySettings\EnglishOnlyEntitySetting.cs" />
+    <Compile Include="AdvancedNaming\EntitySettings\EntityTypeExtensions.cs" />
+    <Compile Include="AdvancedNaming\EntitySettings\EntityType.cs" />
+    <Compile Include="AdvancedNaming\EntitySettings\EntitySettingEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdvancedNaming\EntitySettings\EntitySettingEditor.Designer.cs">
+      <DependentUpon>EntitySettingEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdvancedNaming\EntitySettings\IEntitySetting.cs" />
+    <Compile Include="AdvancedNaming\EntitySettings\EntitySetting.cs" />
     <Compile Include="AdvancedNaming\SpecialSettings\AbbreviationsSpecialSetting.cs" />
     <Compile Include="AdvancedNaming\SpecialSettings\WordsSpecialSetting.cs" />
     <Compile Include="AdvancedNaming\SpecialSettings\DerivingsSpecialSetting.cs" />
@@ -93,7 +106,7 @@
       <DependentUpon>NamingRulesPage.cs</DependentUpon>
     </Compile>
     <Compile Include="AdvancedNaming\CurrentNamingSettings.cs" />
-    <Compile Include="Analyzers\SpecialRunningParameters.cs" />
+    <Compile Include="SpecialRunningParameters.cs" />
     <Compile Include="CodeHelper\TypeParameterItem.cs" />
     <Compile Include="CodeHelper\ParameterItem.cs" />
     <Compile Include="CodeHelper\LabelItem.cs" />
@@ -185,7 +198,7 @@
     <Compile Include="ExtendedOriginal\CustomDocumentationRules.cs" />
     <Compile Include="ExtendedOriginal\CustomLayoutRules.cs" />
     <Compile Include="ExtendedOriginal\CustomNamingRules.cs" />
-    <Compile Include="Analyzers\StyleCopPlusRules.cs" />
+    <Compile Include="StyleCopPlusRules.cs" />
     <Compile Include="ExtendedOriginal\CustomCsParser.cs" />
     <Compile Include="CodeHelper\CodeHelper.cs" />
     <Compile Include="CodeHelper\LocalDeclarationItem.cs" />
@@ -219,6 +232,9 @@
     <Compile Include="Rules.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AdvancedNaming\EntitySettings\EntitySettingEditor.resx">
+      <DependentUpon>EntitySettingEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdvancedNaming\NamingRuleEditor.resx">
       <DependentUpon>NamingRuleEditor.cs</DependentUpon>
     </EmbeddedResource>
@@ -363,6 +379,16 @@
   <ItemGroup>
     <None Include="MoreCustom\Rules\ExampleImages\ExampleSP2103.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\English.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AtSign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NameLength.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

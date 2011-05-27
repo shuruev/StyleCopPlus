@@ -4,9 +4,12 @@
 		Plug-in that extends original StyleCop features. See StyleCop+ tab for detailed settings.
 	</Description>
 	<Properties>
-		<StringProperty Name="AdvancedNaming_Abbreviations" DefaultValue="A B C X ID 3D OK" FriendlyName="Abbreviations" Description="Abbreviations used in naming rules." />
-		<StringProperty Name="AdvancedNaming_Words" DefaultValue="StyleCop FxCop" FriendlyName="Complex words" Description="Words used in naming rules." />
-		<StringProperty Name="AdvancedNaming_Derivings" DefaultValue="Attribute Exception EventArgs Stream" FriendlyName="Important base classes" Description="Derivings used in naming rules." />
+		<StringProperty Name="AdvancedNaming_Abbreviations" DefaultValue="A B C X ID 3D OK" FriendlyName="Abbreviations" Description="Special setting for abbreviations." />
+		<StringProperty Name="AdvancedNaming_Words" DefaultValue="StyleCop FxCop" FriendlyName="Complex words" Description="Special setting for complex words." />
+		<StringProperty Name="AdvancedNaming_Derivings" DefaultValue="Attribute Exception EventArgs Stream" FriendlyName="Important base classes" Description="Special setting for derived classes." />
+		<StringProperty Name="AdvancedNaming_BlockAt" DefaultValue="All" FriendlyName="Block @ character" Description="Special setting for blocking @ character." />
+		<StringProperty Name="AdvancedNaming_EnglishOnly" DefaultValue="All" FriendlyName="English letters only" Description="Special setting for using English letters only." />
+		<StringProperty Name="AdvancedNaming_CheckLength" DefaultValue="All" FriendlyName="At least 4 characters" Description="Special setting for checking name length." />
 		<StringProperty Name="AdvancedNaming_Namespace" DefaultValue="$(AaBb)" FriendlyName="Namespace" Description="Naming rules for namespace." />
 		<StringProperty Name="AdvancedNaming_ClassNotInternal" DefaultValue="$(AaBb)" FriendlyName="Class (not internal)" Description="Naming rules for non-internal class." />
 		<StringProperty Name="AdvancedNaming_ClassInternal" DefaultValue="$(AaBb):$(AA_BB)" FriendlyName="Class (internal)" Description="Naming rules for internal class." />

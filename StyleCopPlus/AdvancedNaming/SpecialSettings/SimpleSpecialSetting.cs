@@ -20,7 +20,7 @@ namespace StyleCopPlus
 		/// <summary>
 		/// Creates definition string from specified text.
 		/// </summary>
-		public string ParseFromText(string text)
+		public string ParseFrom(string text)
 		{
 			return NamingMacro.ParseWhitespacedSettingFromText(text);
 		}
@@ -28,7 +28,7 @@ namespace StyleCopPlus
 		/// <summary>
 		/// Creates text from definition string.
 		/// </summary>
-		public string ConvertToText(string ruleDefinition)
+		public string ConvertTo(string ruleDefinition)
 		{
 			return NamingMacro.ConvertWhitespacedSettingToText(ruleDefinition);
 		}
