@@ -10,31 +10,33 @@ namespace StyleCopPlus
 	/// </summary>
 	public class CurrentNamingSettings
 	{
-		private readonly Dictionary<string, string> m_names;
-		private readonly Dictionary<string, string> m_examples;
-		private readonly Dictionary<string, Regex> m_regulars;
-		private readonly List<string> m_derivings;
+		private Dictionary<string, string> m_names;
+		private Dictionary<string, string> m_examples;
+		private Dictionary<string, Regex> m_regulars;
 
-		/// <summary>
-		/// Initializes a new instance.
-		/// </summary>
-		public CurrentNamingSettings()
-		{
-			m_names = new Dictionary<string, string>();
-			m_examples = new Dictionary<string, string>();
-			m_regulars = new Dictionary<string, Regex>();
-			m_derivings = new List<string>();
-		}
+		private List<string> m_derivings;
+		private EntityType m_blockAt;
 
 		/// <summary>
 		/// Initializes settings from specified document.
 		/// </summary>
 		public void Initialize(SourceAnalyzer analyzer, CodeDocument document)
 		{
-			m_names.Clear();
-			m_examples.Clear();
-			m_regulars.Clear();
-			m_derivings.Clear();
+			InitializeCommon(analyzer, document);
+			InitializeDerivings(analyzer, document);
+			InitializeBlockAt(analyzer, document);
+		}
+
+		#region Common settings
+
+		/// <summary>
+		/// Initializes common settings.
+		/// </summary>
+		private void InitializeCommon(SourceAnalyzer analyzer, CodeDocument document)
+		{
+			m_names = new Dictionary<string, string>();
+			m_examples = new Dictionary<string, string>();
+			m_regulars = new Dictionary<string, Regex>();
 
 			string abbreviations = SettingsManager.GetValue<string>(
 				analyzer,
@@ -66,16 +68,6 @@ namespace StyleCopPlus
 					m_regulars.Add(setting, regex);
 				}
 			}
-
-			string derivings = SettingsManager.GetValue<string>(
-				analyzer,
-				document.Settings,
-				NamingSettings.Derivings);
-
-			m_derivings.AddRange(
-				derivings.Split(
-					new[] { ' ' },
-					StringSplitOptions.RemoveEmptyEntries));
 		}
 
 		/// <summary>
@@ -102,6 +94,28 @@ namespace StyleCopPlus
 			return m_regulars[settingName];
 		}
 
+		#endregion
+
+		#region Checking derived classes
+
+		/// <summary>
+		/// Initializes setting for checking derived classes.
+		/// </summary>
+		private void InitializeDerivings(SourceAnalyzer analyzer, CodeDocument document)
+		{
+			m_derivings = new List<string>();
+
+			string derivings = SettingsManager.GetValue<string>(
+				analyzer,
+				document.Settings,
+				NamingSettings.Derivings);
+
+			m_derivings.AddRange(
+				derivings.Split(
+					new[] { ' ' },
+					StringSplitOptions.RemoveEmptyEntries));
+		}
+
 		/// <summary>
 		/// Checks whether derived name is correct.
 		/// </summary>
@@ -123,5 +137,53 @@ namespace StyleCopPlus
 
 			return true;
 		}
+
+		#endregion
+
+		#region Blocking @ character
+
+		/// <summary>
+		/// Initializes setting for blocking @ character.
+		/// </summary>
+		private void InitializeBlockAt(SourceAnalyzer analyzer, CodeDocument document)
+		{
+			string definition = SettingsManager.GetValue<string>(
+				analyzer,
+				document.Settings,
+				NamingSettings.BlockAt);
+
+			m_blockAt = new BlockAtEntitySetting().ConvertTo(definition);
+		}
+
+		/// <summary>
+		/// Resolves entity type for specified setting name.
+		/// </summary>
+		private static EntityType ResolveEntity(string settingName)
+		{
+			switch (settingName)
+			{
+				case NamingSettings.Namespace:
+					return EntityType.Types;
+				default:
+					return EntityType.None;
+			}
+		}
+
+		/// <summary>
+		/// Checks whether name with @ character is correct.
+		/// </summary>
+		public bool CheckBlockAt(string settingName, string nameToCheck)
+		{
+			if (!nameToCheck.StartsWith("@"))
+				return true;
+
+			EntityType entityToCheck = ResolveEntity(settingName);
+			if ((m_blockAt & entityToCheck) == entityToCheck)
+				return true;
+
+			return false;
+		}
+
+		#endregion
 	}
 }

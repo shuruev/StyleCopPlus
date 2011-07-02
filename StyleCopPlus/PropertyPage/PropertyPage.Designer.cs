@@ -38,6 +38,7 @@
 			this.panelTitleBorder = new System.Windows.Forms.Panel();
 			this.panelTitle = new System.Windows.Forms.Panel();
 			this.pictureTitle = new System.Windows.Forms.PictureBox();
+			this.labelVersion = new System.Windows.Forms.Label();
 			this.tabPages.SuspendLayout();
 			this.pageNaming.SuspendLayout();
 			this.pageCustom.SuspendLayout();
@@ -50,9 +51,9 @@
 			// 
 			// tabPages
 			// 
-			this.tabPages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.tabPages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.tabPages.Controls.Add(this.pageNaming);
 			this.tabPages.Controls.Add(this.pageCustom);
 			this.tabPages.Location = new System.Drawing.Point(3, 75);
@@ -97,7 +98,8 @@
 			this.customRulesPage.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.customRulesPage.Location = new System.Drawing.Point(3, 3);
 			this.customRulesPage.Name = "customRulesPage";
-			this.customRulesPage.Size = new System.Drawing.Size(620, 370);
+			this.customRulesPage.Page = null;
+			this.customRulesPage.Size = new System.Drawing.Size(186, 68);
 			this.customRulesPage.TabIndex = 0;
 			// 
 			// pictureLogo
@@ -122,8 +124,8 @@
 			// 
 			// panelTitleBorder
 			// 
-			this.panelTitleBorder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.panelTitleBorder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.panelTitleBorder.BackColor = System.Drawing.SystemColors.ControlDark;
 			this.panelTitleBorder.Controls.Add(this.panelTitle);
 			this.panelTitleBorder.Location = new System.Drawing.Point(75, 3);
@@ -133,9 +135,9 @@
 			// 
 			// panelTitle
 			// 
-			this.panelTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.panelTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.panelTitle.BackColor = System.Drawing.Color.White;
 			this.panelTitle.Controls.Add(this.pictureTitle);
 			this.panelTitle.Location = new System.Drawing.Point(1, 1);
@@ -154,10 +156,21 @@
 			this.pictureTitle.TabIndex = 0;
 			this.pictureTitle.TabStop = false;
 			// 
+			// labelVersion
+			// 
+			this.labelVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.labelVersion.Location = new System.Drawing.Point(535, 77);
+			this.labelVersion.Name = "labelVersion";
+			this.labelVersion.Size = new System.Drawing.Size(100, 16);
+			this.labelVersion.TabIndex = 3;
+			this.labelVersion.Text = "[version]";
+			this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
 			// PropertyPage
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.labelVersion);
 			this.Controls.Add(this.panelTitleBorder);
 			this.Controls.Add(this.panelLogoBorder);
 			this.Controls.Add(this.tabPages);
@@ -189,5 +202,6 @@
 		private System.Windows.Forms.PictureBox pictureTitle;
 		private System.Windows.Forms.TabPage pageCustom;
 		private CustomRulesPage customRulesPage;
+		private System.Windows.Forms.Label labelVersion;
 	}
 }

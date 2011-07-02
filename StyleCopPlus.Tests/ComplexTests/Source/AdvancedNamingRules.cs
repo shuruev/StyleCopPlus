@@ -1,4 +1,36 @@
-﻿#region AdvancedNamingRules // Methods
+﻿#region AdvancedNamingRules // Blocking @ (All)
+
+//# (AdvancedNaming_BlockAt = All)
+
+//# [OK]
+//# All names are correct.
+namespace StyleCopPlus.Tests
+{
+	public class TestClass
+	{
+		public void TestMethod()
+		{
+		}
+	}
+}
+//# [END]
+
+//# [ERROR]
+//# Namespace contains @ character.
+namespace @StyleCopPlus.Tests
+{
+	public class TestClass
+	{
+		public void TestMethod()
+		{
+		}
+	}
+}
+//# [END]
+
+#endregion
+
+#region AdvancedNamingRules // Methods
 
 //# [OK]
 //# Method name is correct.

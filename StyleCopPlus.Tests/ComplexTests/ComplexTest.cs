@@ -285,7 +285,7 @@ namespace StyleCopPlus.Tests.ComplexTests
 			else
 			{
 				message = String.Format(
-					"{0} ({1}): {2}",
+					"{0} / {1}: {2}",
 					targetRule,
 					comment,
 					description);

@@ -267,8 +267,8 @@ namespace StyleCopPlus
 			string[] parts = element.Declaration.Name.Split('.');
 			foreach (string part in parts)
 			{
-				if (!CheckName(element, null, settings, NamingSettings.Namespace, part))
-					break;
+				CheckBlockAt(element, null, settings, NamingSettings.Namespace, part);
+				CheckName(element, null, settings, NamingSettings.Namespace, part);
 			}
 		}
 
@@ -418,7 +418,7 @@ namespace StyleCopPlus
 		/// <summary>
 		/// Checks specified name.
 		/// </summary>
-		private bool CheckName(
+		private void CheckName(
 			CsElement element,
 			int? lineNumber,
 			CurrentNamingSettings settings,
@@ -427,14 +427,13 @@ namespace StyleCopPlus
 		{
 			Regex regex = settings.GetRegex(settingName);
 			if (regex == null)
-				return true;
+				return;
 
 			nameToCheck = CodeHelper.ExtractPureName(nameToCheck);
 			if (regex.IsMatch(nameToCheck))
-				return true;
+				return;
 
 			AddViolation(element, lineNumber, settings, settingName, nameToCheck);
-			return false;
 		}
 
 		/// <summary>
@@ -461,6 +460,30 @@ namespace StyleCopPlus
 				null,
 				friendlyName,
 				name,
+				example);
+		}
+
+		/// <summary>
+		/// Checks whether name with @ character is correct.
+		/// </summary>
+		private void CheckBlockAt(
+			CsElement element,
+			int? lineNumber,
+			CurrentNamingSettings settings,
+			string settingName,
+			string nameToCheck)
+		{
+			if (settings.CheckBlockAt(settingName, nameToCheck))
+				return;
+
+			string friendlyName = settings.GetFriendlyName(settingName);
+			string example = Resources.BlockAtExample;
+
+			AddViolation(
+				element,
+				lineNumber,
+				friendlyName,
+				nameToCheck,
 				example);
 		}
 

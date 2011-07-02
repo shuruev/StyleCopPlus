@@ -1,5 +1,8 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Reflection;
+using System.Windows.Forms;
 using StyleCop;
+using StyleCopPlus.Properties;
 
 namespace StyleCopPlus
 {
@@ -19,6 +22,9 @@ namespace StyleCopPlus
 		public PropertyPage()
 		{
 			InitializeComponent();
+
+			Version version = Assembly.GetExecutingAssembly().GetName().Version;
+			labelVersion.Text = String.Format(Resources.Version, version.Major, version.Minor);
 		}
 
 		/// <summary>

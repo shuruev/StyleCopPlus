@@ -64,9 +64,9 @@ namespace StyleCopPlus
 			Add(Abbreviations, false, Resources.GroupSpecial);
 			Add(Words, false, Resources.GroupSpecial);
 			Add(Derivings, false, Resources.GroupSpecial);
-			/* xxx Add(BlockAt, false, Resources.GroupSpecial);
+			Add(BlockAt, false, Resources.GroupSpecial);
 			Add(EnglishOnly, false, Resources.GroupSpecial);
-			Add(CheckLength, false, Resources.GroupSpecial);*/
+			Add(CheckLength, false, Resources.GroupSpecial);
 
 			Add(Namespace, true, Resources.GroupEntities);
 			Add(ClassNotInternal, true, Resources.GroupEntities);

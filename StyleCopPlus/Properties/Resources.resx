@@ -315,4 +315,10 @@ using short names (less than 4 characters).</value>
     <value>Please specify where you would like to prohibit
 using non-English characters in names.</value>
   </data>
+  <data name="Version" xml:space="preserve">
+    <value>version {0}.{1}</value>
+  </data>
+  <data name="BlockAtExample" xml:space="preserve">
+    <value>usage of @ character is prohibited</value>
+  </data>
 </root>
