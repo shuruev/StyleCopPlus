@@ -30,6 +30,41 @@ namespace @StyleCopPlus.Tests
 
 #endregion
 
+#region AdvancedNamingRules // Namespaces
+
+//# (AdvancedNaming_Namespace = NAM$(*))
+//# (AdvancedNaming_BlockAt = )
+
+//# [OK]
+//# Namespace name is correct.
+namespace NAM1
+{
+}
+//# [END]
+
+//# [OK]
+//# Namespace name is correct.
+namespace NAM1.NAM2.@NAM3
+{
+}
+//# [END]
+
+//# [ERROR]
+//# One part of namespace name is incorrect.
+namespace NAM1.NeM2.@NAM3
+{
+}
+//# [END]
+
+//# [ERROR:2]
+//# Two parts of namespace name are incorrect.
+namespace NeM1.NAM2.@NeM3
+{
+}
+//# [END]
+
+#endregion
+
 #region AdvancedNamingRules // Methods
 
 //# [OK]

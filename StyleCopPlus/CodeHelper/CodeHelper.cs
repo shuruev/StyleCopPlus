@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Xml;
@@ -142,11 +143,44 @@ namespace StyleCopPlus
 		#region Working with element names
 
 		/// <summary>
-		/// Extracts pure name from the declaration.
+		/// Extracts names that should be checked.
 		/// </summary>
-		public static string ExtractPureName(string declarationName)
+		public static string[] ExtractNamesToCheck(string fullName, string settingName)
 		{
-			string text = declarationName.TrimStart('@');
+			if (settingName == NamingSettings.Namespace)
+			{
+				return fullName.Split('.');
+			}
+
+			return new[] { fullName };
+		}
+
+		/// <summary>
+		/// Gets name with usage of @ character.
+		/// </summary>
+		public static string GetNameWithAt(IEnumerable<CsToken> fullTokens, string fullName)
+		{
+			string clearName = fullName.Replace("@", String.Empty);
+			foreach (CsToken token in fullTokens)
+			{
+				// xxx decoding here
+				string clearText = token.Text.Replace("@", String.Empty);
+				if (clearText == clearName)
+					return token.Text;
+			}
+
+			return fullName;
+		}
+
+		/// <summary>
+		/// Extracts pure name to check.
+		/// </summary>
+		public static string ExtractPureName(string nameToCheck, bool removeAt)
+		{
+			string text = nameToCheck;
+
+			if (removeAt)
+				text = text.Replace("@", String.Empty);
 
 			string[] parts = text.Split('.');
 			text = parts[parts.Length - 1];
@@ -200,6 +234,7 @@ namespace StyleCopPlus
 				result.Add(new ParameterItem
 					{
 						Name = parameter.Name,
+						Tokens= parameter.Tokens,
 						LineNumber = parameter.LineNumber
 					});
 			}
@@ -274,6 +309,7 @@ namespace StyleCopPlus
 							result.Add(new TypeParameterItem
 								{
 									Name = inner.Value.Text,
+									Tokens = new[] { inner.Value },
 									LineNumber = inner.Value.LineNumber
 								});
 						}
@@ -318,6 +354,7 @@ namespace StyleCopPlus
 					declarations.Add(new LocalDeclarationItem
 						{
 							Name = variable.Name,
+							Tokens = statement.Tokens,
 							// TODO: variable can span multiple lines,
 							// probably this should become a separate method.
 							LineNumber = variable.Location.LineNumber + variable.Location.LineSpan - 1
@@ -335,6 +372,7 @@ namespace StyleCopPlus
 					declarations.Add(new LocalDeclarationItem
 						{
 							Name = declarator.Identifier.Text,
+							Tokens = declarator.Tokens,
 							IsConstant = declaration.Constant,
 							LineNumber = declarator.LineNumber
 						});
@@ -371,6 +409,7 @@ namespace StyleCopPlus
 			result.Add(new LabelItem
 				{
 					Name = label.Identifier.Text,
+					Tokens = label.Tokens,
 					LineNumber = label.LineNumber
 				});
 

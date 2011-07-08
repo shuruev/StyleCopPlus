@@ -171,25 +171,30 @@ namespace StyleCopPlus.Tests.CodeHelperTests
 			string name;
 
 			name = "Exception";
-			Assert.AreEqual("Exception", CodeHelper.ExtractPureName(name));
+			Assert.AreEqual("Exception", CodeHelper.ExtractPureName(name, true));
 
 			name = "System.Exception";
-			Assert.AreEqual("Exception", CodeHelper.ExtractPureName(name));
+			Assert.AreEqual("Exception", CodeHelper.ExtractPureName(name, true));
 
 			name = "Dictionary<int, bool>";
-			Assert.AreEqual("Dictionary", CodeHelper.ExtractPureName(name));
+			Assert.AreEqual("Dictionary", CodeHelper.ExtractPureName(name, true));
 
 			name = "System.Collections.Dictionary<int, bool>";
-			Assert.AreEqual("Dictionary", CodeHelper.ExtractPureName(name));
+			Assert.AreEqual("Dictionary", CodeHelper.ExtractPureName(name, true));
 
 			name = "IDisposable.Dispose";
-			Assert.AreEqual("Dispose", CodeHelper.ExtractPureName(name));
+			Assert.AreEqual("Dispose", CodeHelper.ExtractPureName(name, true));
 
 			name = "value";
-			Assert.AreEqual("value", CodeHelper.ExtractPureName(name));
+			Assert.AreEqual("value", CodeHelper.ExtractPureName(name, true));
+
+			name = "System.Collections.@Dictionary<int, bool>";
+			Assert.AreEqual("Dictionary", CodeHelper.ExtractPureName(name, true));
+			Assert.AreEqual("@Dictionary", CodeHelper.ExtractPureName(name, false));
 
 			name = "@value";
-			Assert.AreEqual("value", CodeHelper.ExtractPureName(name));
+			Assert.AreEqual("value", CodeHelper.ExtractPureName(name, true));
+			Assert.AreEqual("@value", CodeHelper.ExtractPureName(name, false));
 		}
 
 		#endregion

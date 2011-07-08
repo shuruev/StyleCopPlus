@@ -1,4 +1,7 @@
-﻿namespace StyleCopPlus
+﻿using System.Collections.Generic;
+using StyleCop.CSharp;
+
+namespace StyleCopPlus
 {
 	/// <summary>
 	/// Local declaration item.
@@ -9,6 +12,11 @@
 		/// Gets or sets local declaration name.
 		/// </summary>
 		public string Name { get; set; }
+
+		/// <summary>
+		/// Gets or sets local declaration tokens.
+		/// </summary>
+		public IEnumerable<CsToken> Tokens { get; set; }
 
 		/// <summary>
 		/// Gets or sets a value indicating whether local declaration is a constant.

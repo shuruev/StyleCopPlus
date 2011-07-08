@@ -4,8 +4,11 @@
 
 //# [ERROR]
 //# Namespace contains @ character.
-namespace @StyleCopPlus.Tests
+namespace StyleC\u006FpPlus.Tests
 {
+	public delegate bool @Delegate3<in @TInput>(@TInput @args)
+		where TInput : IEnumerable<byte>;
+
 	public class TestClass
 	{
 		public void TestMethod()
