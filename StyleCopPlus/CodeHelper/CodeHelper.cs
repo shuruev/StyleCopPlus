@@ -163,7 +163,7 @@ namespace StyleCopPlus
 			string clearName = fullName.Replace("@", String.Empty);
 			foreach (CsToken token in fullTokens)
 			{
-				// xxx decoding here
+				// TODO: decoding here
 				string clearText = token.Text.Replace("@", String.Empty);
 				if (clearText == clearName)
 					return token.Text;

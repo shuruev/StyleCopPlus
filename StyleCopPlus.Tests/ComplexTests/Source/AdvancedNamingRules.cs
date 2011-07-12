@@ -1,30 +1,44 @@
-﻿#region AdvancedNamingRules // Blocking @ (All)
+﻿#region AdvancedNamingRules // Blocking @ (Types)
 
-//# (AdvancedNaming_BlockAt = All)
+//# (AdvancedNaming_BlockAt = 1)
 
-//# [OK]
-//# All names are correct.
-namespace StyleCopPlus.Tests
+//# [ERROR:8]
+//# All types use @ characters.
+namespace @StyleCopPlus.@Tests
 {
-	public class TestClass
-	{
-		public void TestMethod()
-		{
-		}
-	}
+	using More.Tests;
+
+	public class @TestClass : BaseClass { }
+
+	public class @TestStruct : BaseStruct { }
+
+	public interface @ITestInterface : IBaseInterface { }
+
+	public enum @TestEnum { }
+
+	public delegate TOutput TestDelegate<in @TInput, out @TOutput>(TInput args)
+		where TInput : IEnumerable<byte>
+		where TOutput : IEnumerable<byte>;
 }
 //# [END]
 
-//# [ERROR]
-//# Namespace contains @ character.
-namespace @StyleCopPlus.Tests
+//# [OK]
+//# Only definitions are blocked, not the usage.
+namespace StyleCopPlus.Tests
 {
-	public class TestClass
-	{
-		public void TestMethod()
-		{
-		}
-	}
+	using @More.@Tests;
+
+	public class TestClass : @BaseClass { }
+
+	public class TestStruct : @BaseStruct { }
+
+	public interface ITestInterface : @IBaseInterface { }
+
+	public enum TestEnum { }
+
+	public delegate @TOutput TestDelegate<in TInput, out TOutput>(@TInput args)
+		where @TInput : IEnumerable<byte>
+		where @TOutput : IEnumerable<byte>;
 }
 //# [END]
 
