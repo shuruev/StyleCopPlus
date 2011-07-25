@@ -263,7 +263,7 @@ namespace StyleCopPlus.Tests.ComplexTests
 				File.Delete(m_tempFileName);
 			}
 
-			File.WriteAllText(m_tempFileName, sourceCode);
+			File.WriteAllText(m_tempFileName, sourceCode, Encoding.UTF8);
 
 			StyleCopPlusRunner runner = new StyleCopPlusRunner();
 			runner.Run(
@@ -285,7 +285,7 @@ namespace StyleCopPlus.Tests.ComplexTests
 			else
 			{
 				message = String.Format(
-					"{0} / {1}: {2}",
+					"{0} // {1}: {2}",
 					targetRule,
 					comment,
 					description);

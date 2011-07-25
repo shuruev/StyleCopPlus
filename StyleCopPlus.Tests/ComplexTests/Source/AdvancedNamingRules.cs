@@ -1,6 +1,6 @@
-﻿#region AdvancedNamingRules // Blocking @ (Types)
+﻿#region AdvancedNamingRules // Blocking @ (All)
 
-//# (AdvancedNaming_BlockAt = 1)
+//# (AdvancedNaming_BlockAt = 31)
 
 //# [ERROR:8]
 //# All types use @ characters.
@@ -23,7 +23,7 @@ namespace @StyleCopPlus.@Tests
 //# [END]
 
 //# [OK]
-//# Only definitions are blocked, not the usage.
+//# Only type definitions are blocked, not the usage.
 namespace StyleCopPlus.Tests
 {
 	using @More.@Tests;
@@ -39,6 +39,471 @@ namespace StyleCopPlus.Tests
 	public delegate @TOutput TestDelegate<in TInput, out TOutput>(@TInput args)
 		where @TInput : IEnumerable<byte>
 		where @TOutput : IEnumerable<byte>;
+}
+//# [END]
+
+//# [ERROR:4]
+//# All fields use @ characters.
+namespace StyleCopPlus.Tests
+{
+	public class TestClass
+	{
+		public int @TestField;
+		public int @TestProperty { get; set; }
+	}
+
+	public enum TestEnum
+	{
+		@Item1,
+		@Item2
+	}
+}
+//# [END]
+
+//# [OK]
+//# Only field definitions are blocked, not the usage.
+namespace StyleCopPlus.Tests
+{
+	public class TestClass
+	{
+		public int TestField;
+		public int TestProperty { get; set; }
+
+		public TestClass()
+		{
+			if (TestEnum.@Item1 == TestEnum.Item2)
+			{
+				@TestField = @TestProperty;
+			}
+		}
+	}
+
+	public enum TestEnum
+	{
+		Item1,
+		Item2
+	}
+}
+//# [END]
+
+//# [ERROR:3]
+//# All methods use @ characters.
+namespace StyleCopPlus.Tests
+{
+	public delegate void @TestDelegate();
+
+	public class TestClass
+	{
+		public event TestDelegate @TestEvent;
+
+		public void @TestMethod()
+		{
+		}
+	}
+}
+//# [END]
+
+//# [OK]
+//# Only method definitions are blocked, not the usage.
+namespace StyleCopPlus.Tests
+{
+	public delegate void TestDelegate();
+
+	public class TestClass
+	{
+		public event @TestDelegate TestEvent;
+
+		public void TestMethod()
+		{
+			@TestMethod();
+			@TestEvent();
+		}
+	}
+}
+//# [END]
+
+//# [ERROR:6]
+//# All parameters use @ characters.
+namespace StyleCopPlus.Tests
+{
+	public delegate bool TestDelegate(int @x, int @y);
+
+	public class TestClass
+	{
+		public TestClass(int @x, params string[] @y)
+		{
+			TestDelegate lambda = (@a, @b) => a == b;
+		}
+	}
+}
+//# [END]
+
+//# [OK]
+//# Only parameter definitions are blocked, not the usage.
+namespace StyleCopPlus.Tests
+{
+	public delegate bool TestDelegate(int x, int y);
+
+	public class TestClass
+	{
+		public TestClass(int x, params string[] y)
+		{
+			string a = @y[@x];
+			TestDelegate lambda = (a, b) => @a == @b;
+		}
+	}
+}
+//# [END]
+
+//# [ERROR:7]
+//# All variables use @ characters.
+namespace StyleCopPlus.Tests
+{
+	public class TestClass
+	{
+		public void TestMethod()
+		{
+			int @a = 10;
+			const int @b = 20;
+
+			@lab1:
+			Thread @t = new Thread(() =>
+			{
+				@lab2:
+				int @c = 30;
+				const int @d = 40;
+			});
+		}
+	}
+}
+//# [END]
+
+//# [OK]
+//# Only variable definitions are blocked, not the usage.
+namespace StyleCopPlus.Tests
+{
+	public class TestClass
+	{
+		public void TestMethod()
+		{
+			int a = 10;
+			const int b = 20;
+			int x = @a + @b;
+
+			lab1:
+			Thread t = new Thread(() =>
+			{
+				lab2:
+				int c = 30;
+				const int d = 40;
+				int y = @c + @d;
+				goto @lab2;
+			});
+
+			t.Start();
+			goto @lab1;
+		}
+	}
+}
+//# [END]
+
+#endregion
+
+#region AdvancedNamingRules // Blocking @ (None)
+
+//# (AdvancedNaming_BlockAt = 0)
+
+//# [OK]
+//# All types use @ characters.
+namespace @StyleCopPlus.@Tests
+{
+	using More.Tests;
+
+	public class @TestClass : BaseClass { }
+
+	public class @TestStruct : BaseStruct { }
+
+	public interface @ITestInterface : IBaseInterface { }
+
+	public enum @TestEnum { }
+
+	public delegate TOutput TestDelegate<in @TInput, out @TOutput>(TInput args)
+		where TInput : IEnumerable<byte>
+		where TOutput : IEnumerable<byte>;
+}
+//# [END]
+
+//# [OK]
+//# All fields use @ characters.
+namespace StyleCopPlus.Tests
+{
+	public class TestClass
+	{
+		public int @TestField;
+		public int @TestProperty { get; set; }
+	}
+
+	public enum TestEnum
+	{
+		@Item1,
+		@Item2
+	}
+}
+//# [END]
+
+//# [OK]
+//# All methods use @ characters.
+namespace StyleCopPlus.Tests
+{
+	public delegate void @TestDelegate();
+
+	public class TestClass
+	{
+		public event TestDelegate @TestEvent;
+
+		public void @TestMethod()
+		{
+		}
+	}
+}
+//# [END]
+
+//# [OK]
+//# All parameters use @ characters.
+namespace StyleCopPlus.Tests
+{
+	public delegate bool TestDelegate(int @x, int @y);
+
+	public class TestClass
+	{
+		public TestClass(int @x, params string[] @y)
+		{
+			TestDelegate lambda = (@a, @b) => a == b;
+		}
+	}
+}
+//# [END]
+
+//# [OK]
+//# All variables use @ characters.
+namespace StyleCopPlus.Tests
+{
+	public class TestClass
+	{
+		public void TestMethod()
+		{
+			int @a = 10;
+			const int @b = 20;
+
+			@lab1:
+			Thread @t = new Thread(() =>
+			{
+				@lab2:
+				int @c = 30;
+				const int @d = 40;
+			});
+		}
+	}
+}
+//# [END]
+
+#endregion
+
+#region AdvancedNamingRules // English only (All)
+
+//# (AdvancedNaming_EnglishOnly = 31)
+
+//# [ERROR:8]
+//# All types use non-English characters.
+namespace StyleCopPlusЁж.TestsЁж
+{
+	using More.Tests;
+
+	public class TestClassЁж : BaseClass { }
+
+	public class TestStructЁж : BaseStruct { }
+
+	public interface ITestInterfaceЁж : IBaseInterface { }
+
+	public enum TestEnumЁж { }
+
+	public delegate TOutput TestDelegate<in TInputЁж, out TOutputЁж>(TInput args)
+		where TInput : IEnumerable<byte>
+		where TOutput : IEnumerable<byte>;
+}
+//# [END]
+
+//# [ERROR:4]
+//# All fields use non-English characters.
+namespace StyleCopPlus.Tests
+{
+	public class TestClass
+	{
+		public int TestFieldЁж;
+		public int TestPropertyЁж { get; set; }
+	}
+
+	public enum TestEnum
+	{
+		Item1Ёж,
+		Item2Ёж
+	}
+}
+//# [END]
+
+//# [ERROR:3]
+//# All methods use non-English characters.
+namespace StyleCopPlus.Tests
+{
+	public delegate void TestDelegateЁж();
+
+	public class TestClass
+	{
+		public event TestDelegate TestEventЁж;
+
+		public void TestMethodЁж()
+		{
+		}
+	}
+}
+//# [END]
+
+//# [ERROR:6]
+//# All parameters use non-English characters.
+namespace StyleCopPlus.Tests
+{
+	public delegate bool TestDelegate(int xЁж, int yЁж);
+
+	public class TestClass
+	{
+		public TestClass(int xЁж, params string[] yЁж)
+		{
+			TestDelegate lambda = (aЁж, bЁж) => a == b;
+		}
+	}
+}
+//# [END]
+
+//# [ERROR:7]
+//# All variables use non-English characters.
+namespace StyleCopPlus.Tests
+{
+	public class TestClass
+	{
+		public void TestMethod()
+		{
+			int aЁж = 10;
+			const int bЁж = 20;
+
+			lab1Ёж:
+			Thread tЁж = new Thread(() =>
+			{
+				lab2Ёж:
+				int cЁж = 30;
+				const int dЁж = 40;
+			});
+		}
+	}
+}
+//# [END]
+
+#endregion
+
+#region AdvancedNamingRules // English only (None)
+
+//# (AdvancedNaming_EnglishOnly = 0)
+
+//# [OK]
+//# All types use non-English characters.
+namespace StyleCopPlusЁж.TestsЁж
+{
+	using More.Tests;
+
+	public class TestClassЁж : BaseClass { }
+
+	public class TestStructЁж : BaseStruct { }
+
+	public interface ITestInterfaceЁж : IBaseInterface { }
+
+	public enum TestEnumЁж { }
+
+	public delegate TOutput TestDelegate<in TInputЁж, out TOutputЁж>(TInput args)
+		where TInput : IEnumerable<byte>
+		where TOutput : IEnumerable<byte>;
+}
+//# [END]
+
+//# [OK]
+//# All fields use non-English characters.
+namespace StyleCopPlus.Tests
+{
+	public class TestClass
+	{
+		public int TestFieldЁж;
+		public int TestPropertyЁж { get; set; }
+	}
+
+	public enum TestEnum
+	{
+		Item1Ёж,
+		Item2Ёж
+	}
+}
+//# [END]
+
+//# [OK]
+//# All methods use non-English characters.
+namespace StyleCopPlus.Tests
+{
+	public delegate void TestDelegateЁж();
+
+	public class TestClass
+	{
+		public event TestDelegate TestEventЁж;
+
+		public void TestMethodЁж()
+		{
+		}
+	}
+}
+//# [END]
+
+//# [OK]
+//# All parameters use non-English characters.
+namespace StyleCopPlus.Tests
+{
+	public delegate bool TestDelegate(int xЁж, int yЁж);
+
+	public class TestClass
+	{
+		public TestClass(int xЁж, params string[] yЁж)
+		{
+			TestDelegate lambda = (aЁж, bЁж) => a == b;
+		}
+	}
+}
+//# [END]
+
+//# [OK]
+//# All variables use non-English characters.
+namespace StyleCopPlus.Tests
+{
+	public class TestClass
+	{
+		public void TestMethod()
+		{
+			int aЁж = 10;
+			const int bЁж = 20;
+
+			lab1Ёж:
+			Thread tЁж = new Thread(() =>
+			{
+				lab2Ёж:
+				int cЁж = 30;
+				const int dЁж = 40;
+			});
+		}
+	}
 }
 //# [END]
 

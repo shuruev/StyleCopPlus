@@ -110,6 +110,15 @@ namespace StyleCopPlus.Properties {
             }
         }
         
+        /// <summary>
+        ///   Looks up a localized string similar to short names (less than 4 characters) are prohibited.
+        /// </summary>
+        internal static string CheckLengthExample {
+            get {
+                return ResourceManager.GetString("CheckLengthExample", resourceCulture);
+            }
+        }
+        
         internal static System.Drawing.Bitmap CurlBottom {
             get {
                 object obj = ResourceManager.GetObject("CurlBottom", resourceCulture);
@@ -210,6 +219,15 @@ namespace StyleCopPlus.Properties {
             get {
                 object obj = ResourceManager.GetObject("English", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to usage of non-English characters is prohibited.
+        /// </summary>
+        internal static string EnglishOnlyExample {
+            get {
+                return ResourceManager.GetString("EnglishOnlyExample", resourceCulture);
             }
         }
         

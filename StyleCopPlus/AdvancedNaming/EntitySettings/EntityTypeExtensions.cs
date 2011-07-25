@@ -10,7 +10,7 @@ namespace StyleCopPlus
 		/// </summary>
 		public static bool Contains(this EntityType entities, EntityType entity)
 		{
-			return (entities & entity) != 0;
+			return (entities & entity) == entity;
 		}
 	}
 }

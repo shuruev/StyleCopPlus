@@ -10,12 +10,15 @@ namespace StyleCopPlus
 	/// </summary>
 	public class CurrentNamingSettings
 	{
+		private static readonly Regex s_englishOnlyRegex = new Regex("^[0-9A-Za-z_]+$");
+
 		private Dictionary<string, string> m_names;
 		private Dictionary<string, string> m_examples;
 		private Dictionary<string, Regex> m_regulars;
 
 		private List<string> m_derivings;
 		private EntityType m_blockAt;
+		private EntityType m_englishOnly;
 
 		/// <summary>
 		/// Initializes settings from specified document.
@@ -25,6 +28,60 @@ namespace StyleCopPlus
 			InitializeCommon(analyzer, document);
 			InitializeDerivings(analyzer, document);
 			InitializeBlockAt(analyzer, document);
+			InitializeEnglishOnly(analyzer, document);
+		}
+
+		/// <summary>
+		/// Resolves entity type for specified setting name.
+		/// </summary>
+		private static EntityType ResolveEntity(string settingName)
+		{
+			switch (settingName)
+			{
+				case NamingSettings.Namespace:
+				case NamingSettings.ClassNotInternal:
+				case NamingSettings.ClassInternal:
+				case NamingSettings.StructNotInternal:
+				case NamingSettings.StructInternal:
+				case NamingSettings.Interface:
+				case NamingSettings.Enum:
+				case NamingSettings.TypeParameter:
+					return EntityType.Types;
+
+				case NamingSettings.PublicInstanceField:
+				case NamingSettings.ProtectedInstanceField:
+				case NamingSettings.PrivateInstanceField:
+				case NamingSettings.InternalInstanceField:
+				case NamingSettings.PublicStaticField:
+				case NamingSettings.ProtectedStaticField:
+				case NamingSettings.PrivateStaticField:
+				case NamingSettings.InternalStaticField:
+				case NamingSettings.PublicConst:
+				case NamingSettings.ProtectedConst:
+				case NamingSettings.PrivateConst:
+				case NamingSettings.InternalConst:
+				case NamingSettings.Property:
+				case NamingSettings.EnumItem:
+					return EntityType.Fields;
+
+				case NamingSettings.MethodGeneral:
+				case NamingSettings.MethodPrivateEventHandler:
+				case NamingSettings.MethodTest:
+				case NamingSettings.Event:
+				case NamingSettings.Delegate:
+					return EntityType.Methods;
+
+				case NamingSettings.Parameter:
+					return EntityType.Parameters;
+
+				case NamingSettings.LocalVariable:
+				case NamingSettings.LocalConstant:
+				case NamingSettings.Label:
+					return EntityType.Variables;
+
+				default:
+					return EntityType.None;
+			}
 		}
 
 		#region Common settings
@@ -87,11 +144,15 @@ namespace StyleCopPlus
 		}
 
 		/// <summary>
-		/// Gets regular expression for specified setting.
+		/// Checks naming rule for specified setting.
 		/// </summary>
-		public Regex GetRegex(string settingName)
+		public bool CheckNamingRule(string settingName, string nameToCheck)
 		{
-			return m_regulars[settingName];
+			Regex regex = m_regulars[settingName];
+			if (regex == null)
+				return true;
+
+			return regex.IsMatch(nameToCheck);
 		}
 
 		#endregion
@@ -156,29 +217,60 @@ namespace StyleCopPlus
 		}
 
 		/// <summary>
-		/// Resolves entity type for specified setting name.
+		/// Checks whether specified entity should be checked for @ character usage.
 		/// </summary>
-		private static EntityType ResolveEntity(string settingName)
+		public bool IsEnabledBlockAt(string settingName)
 		{
-			switch (settingName)
-			{
-				case NamingSettings.Namespace:
-					return EntityType.Types;
-				default:
-					return EntityType.None;
-			}
+			EntityType entityToCheck = ResolveEntity(settingName);
+			return m_blockAt.Contains(entityToCheck);
 		}
 
 		/// <summary>
-		/// Checks whether specified entity should be checked for @ character usage.
+		/// Checks whether specified name with @ character is correct.
 		/// </summary>
-		public bool CheckBlockAt(string settingName)
+		public bool CheckBlockAt(string settingName, string nameToCheck)
 		{
-			EntityType entityToCheck = ResolveEntity(settingName);
-			if ((m_blockAt & entityToCheck) == entityToCheck)
+			if (!IsEnabledBlockAt(settingName))
 				return true;
 
-			return false;
+			return !nameToCheck.StartsWith("@");
+		}
+
+		#endregion
+
+		#region Using English characters only.
+
+		/// <summary>
+		/// Initializes setting for using English characters only.
+		/// </summary>
+		private void InitializeEnglishOnly(SourceAnalyzer analyzer, CodeDocument document)
+		{
+			string definition = SettingsManager.GetValue<string>(
+				analyzer,
+				document.Settings,
+				NamingSettings.EnglishOnly);
+
+			m_englishOnly = new EnglishOnlyEntitySetting().ConvertTo(definition);
+		}
+
+		/// <summary>
+		/// Checks whether specified entity should be checked for using English characters only.
+		/// </summary>
+		public bool IsEnabledEnglishOnly(string settingName)
+		{
+			EntityType entityToCheck = ResolveEntity(settingName);
+			return m_englishOnly.Contains(entityToCheck);
+		}
+
+		/// <summary>
+		/// Checks whether specified name with non-English characters is correct.
+		/// </summary>
+		public bool CheckEnglishOnly(string settingName, string nameToCheck)
+		{
+			if (!IsEnabledEnglishOnly(settingName))
+				return true;
+
+			return s_englishOnlyRegex.IsMatch(nameToCheck);
 		}
 
 		#endregion

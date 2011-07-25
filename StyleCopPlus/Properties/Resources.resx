@@ -321,4 +321,10 @@ using non-English characters in names.</value>
   <data name="BlockAtExample" xml:space="preserve">
     <value>usage of @ character is prohibited</value>
   </data>
+  <data name="CheckLengthExample" xml:space="preserve">
+    <value>short names (less than 4 characters) are prohibited</value>
+  </data>
+  <data name="EnglishOnlyExample" xml:space="preserve">
+    <value>usage of non-English characters is prohibited</value>
+  </data>
 </root>

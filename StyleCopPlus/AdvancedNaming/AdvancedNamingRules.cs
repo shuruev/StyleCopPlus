@@ -432,18 +432,23 @@ namespace StyleCopPlus
 			string fullName,
 			IEnumerable<CsToken> fullTokens)
 		{
-			if (settings.CheckBlockAt(settingName))
+			if (settings.IsEnabledBlockAt(settingName))
 			{
 				string fullNameWithAt = CodeHelper.GetNameWithAt(fullTokens, fullName);
 				foreach (string nameToCheck in CodeHelper.ExtractNamesToCheck(fullNameWithAt, settingName))
 				{
-					CheckBlockAt(element, lineNumber, settings, settingName, nameToCheck);
+					string pureName = CodeHelper.ExtractPureName(nameToCheck, false);
+
+					CheckBlockAt(element, lineNumber, settings, settingName, pureName);
 				}
 			}
 
 			foreach (string nameToCheck in CodeHelper.ExtractNamesToCheck(fullName, settingName))
 			{
-				CheckNamingRules(element, lineNumber, settings, settingName, nameToCheck);
+				string pureName = CodeHelper.ExtractPureName(nameToCheck, true);
+
+				CheckNamingRules(element, lineNumber, settings, settingName, pureName);
+				CheckEnglishOnly(element, lineNumber, settings, settingName, pureName);
 			}
 		}
 
@@ -457,15 +462,15 @@ namespace StyleCopPlus
 			string settingName,
 			string nameToCheck)
 		{
-			Regex regex = settings.GetRegex(settingName);
-			if (regex == null)
+			if (settings.CheckNamingRule(settingName, nameToCheck))
 				return;
 
-			nameToCheck = CodeHelper.ExtractPureName(nameToCheck, true);
-			if (regex.IsMatch(nameToCheck))
-				return;
-
-			AddViolation(element, lineNumber, settings, settingName, nameToCheck);
+			AddViolation(
+				element,
+				lineNumber,
+				settings,
+				settingName,
+				nameToCheck);
 		}
 
 		/// <summary>
@@ -478,13 +483,35 @@ namespace StyleCopPlus
 			string settingName,
 			string nameToCheck)
 		{
-			if (!nameToCheck.StartsWith("@"))
+			if (settings.CheckBlockAt(settingName, nameToCheck))
 				return;
-
-			nameToCheck = CodeHelper.ExtractPureName(nameToCheck, false);
 
 			string friendlyName = settings.GetFriendlyName(settingName);
 			string example = Resources.BlockAtExample;
+
+			AddViolation(
+				element,
+				lineNumber,
+				friendlyName,
+				nameToCheck,
+				example);
+		}
+
+		/// <summary>
+		/// Checks whether name with non-English characters is correct.
+		/// </summary>
+		private void CheckEnglishOnly(
+			CsElement element,
+			int? lineNumber,
+			CurrentNamingSettings settings,
+			string settingName,
+			string nameToCheck)
+		{
+			if (settings.CheckEnglishOnly(settingName, nameToCheck))
+				return;
+
+			string friendlyName = settings.GetFriendlyName(settingName);
+			string example = Resources.EnglishOnlyExample;
 
 			AddViolation(
 				element,

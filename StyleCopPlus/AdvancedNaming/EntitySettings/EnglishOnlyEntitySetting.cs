@@ -3,7 +3,7 @@ using StyleCopPlus.Properties;
 namespace StyleCopPlus
 {
 	/// <summary>
-	/// Special setting for using English letters only.
+	/// Special setting for using English characters only.
 	/// </summary>
 	public class EnglishOnlyEntitySetting : EntitySetting
 	{
