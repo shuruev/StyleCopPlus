@@ -1,4 +1,7 @@
-﻿namespace StyleCopPlus
+﻿using System.Collections.Generic;
+using StyleCop.CSharp;
+
+namespace StyleCopPlus
 {
 	/// <summary>
 	/// Parameter item.
@@ -9,6 +12,11 @@
 		/// Gets or sets parameter name.
 		/// </summary>
 		public string Name { get; set; }
+
+		/// <summary>
+		/// Gets or sets parameter tokens.
+		/// </summary>
+		public IEnumerable<CsToken> Tokens { get; set; }
 
 		/// <summary>
 		/// Gets or sets line number.

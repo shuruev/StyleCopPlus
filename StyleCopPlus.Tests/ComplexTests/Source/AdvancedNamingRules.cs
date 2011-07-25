@@ -1,30 +1,79 @@
-﻿#region AdvancedNamingRules // Blocking @ (All)
+﻿#region AdvancedNamingRules // Blocking @ (Types)
 
-//# (AdvancedNaming_BlockAt = All)
+//# (AdvancedNaming_BlockAt = 1)
+
+//# [ERROR:8]
+//# All types use @ characters.
+namespace @StyleCopPlus.@Tests
+{
+	using More.Tests;
+
+	public class @TestClass : BaseClass { }
+
+	public class @TestStruct : BaseStruct { }
+
+	public interface @ITestInterface : IBaseInterface { }
+
+	public enum @TestEnum { }
+
+	public delegate TOutput TestDelegate<in @TInput, out @TOutput>(TInput args)
+		where TInput : IEnumerable<byte>
+		where TOutput : IEnumerable<byte>;
+}
+//# [END]
 
 //# [OK]
-//# All names are correct.
+//# Only definitions are blocked, not the usage.
 namespace StyleCopPlus.Tests
 {
-	public class TestClass
-	{
-		public void TestMethod()
-		{
-		}
-	}
+	using @More.@Tests;
+
+	public class TestClass : @BaseClass { }
+
+	public class TestStruct : @BaseStruct { }
+
+	public interface ITestInterface : @IBaseInterface { }
+
+	public enum TestEnum { }
+
+	public delegate @TOutput TestDelegate<in TInput, out TOutput>(@TInput args)
+		where @TInput : IEnumerable<byte>
+		where @TOutput : IEnumerable<byte>;
+}
+//# [END]
+
+#endregion
+
+#region AdvancedNamingRules // Namespaces
+
+//# (AdvancedNaming_Namespace = NAM$(*))
+//# (AdvancedNaming_BlockAt = )
+
+//# [OK]
+//# Namespace name is correct.
+namespace NAM1
+{
+}
+//# [END]
+
+//# [OK]
+//# Namespace name is correct.
+namespace NAM1.NAM2.@NAM3
+{
 }
 //# [END]
 
 //# [ERROR]
-//# Namespace contains @ character.
-namespace @StyleCopPlus.Tests
+//# One part of namespace name is incorrect.
+namespace NAM1.NeM2.@NAM3
 {
-	public class TestClass
-	{
-		public void TestMethod()
-		{
-		}
-	}
+}
+//# [END]
+
+//# [ERROR:2]
+//# Two parts of namespace name are incorrect.
+namespace NeM1.NAM2.@NeM3
+{
 }
 //# [END]
 

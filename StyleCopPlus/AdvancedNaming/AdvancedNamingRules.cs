@@ -264,12 +264,7 @@ namespace StyleCopPlus
 		/// </summary>
 		private void AnalyzeNamespace(CsElement element, CurrentNamingSettings settings)
 		{
-			string[] parts = element.Declaration.Name.Split('.');
-			foreach (string part in parts)
-			{
-				CheckBlockAt(element, null, settings, NamingSettings.Namespace, part);
-				CheckName(element, null, settings, NamingSettings.Namespace, part);
-			}
+			CheckDeclaration(element, settings, NamingSettings.Namespace);
 		}
 
 		/// <summary>
@@ -336,7 +331,13 @@ namespace StyleCopPlus
 		/// </summary>
 		private void CheckDeclaration(CsElement element, CurrentNamingSettings settings, string settingName)
 		{
-			CheckName(element, null, settings, settingName, element.Declaration.Name);
+			CheckName(
+				element,
+				null,
+				settings,
+				settingName,
+				element.Declaration.Name,
+				element.Declaration.Tokens);
 		}
 
 		/// <summary>
@@ -351,7 +352,8 @@ namespace StyleCopPlus
 					parameter.LineNumber,
 					settings,
 					NamingSettings.Parameter,
-					parameter.Name);
+					parameter.Name,
+					parameter.Tokens);
 			}
 		}
 
@@ -367,7 +369,8 @@ namespace StyleCopPlus
 					parameter.LineNumber,
 					settings,
 					NamingSettings.TypeParameter,
-					parameter.Name);
+					parameter.Name,
+					parameter.Tokens);
 			}
 		}
 
@@ -385,7 +388,8 @@ namespace StyleCopPlus
 						declaration.LineNumber,
 						settings,
 						NamingSettings.LocalConstant,
-						declaration.Name);
+						declaration.Name,
+						declaration.Tokens);
 				}
 				else
 				{
@@ -394,7 +398,8 @@ namespace StyleCopPlus
 						declaration.LineNumber,
 						settings,
 						NamingSettings.LocalVariable,
-						declaration.Name);
+						declaration.Name,
+						declaration.Tokens);
 				}
 			}
 		}
@@ -411,7 +416,8 @@ namespace StyleCopPlus
 					label.LineNumber,
 					settings,
 					NamingSettings.Label,
-					label.Name);
+					label.Name,
+					label.Tokens);
 			}
 		}
 
@@ -423,17 +429,69 @@ namespace StyleCopPlus
 			int? lineNumber,
 			CurrentNamingSettings settings,
 			string settingName,
+			string fullName,
+			IEnumerable<CsToken> fullTokens)
+		{
+			if (settings.CheckBlockAt(settingName))
+			{
+				string fullNameWithAt = CodeHelper.GetNameWithAt(fullTokens, fullName);
+				foreach (string nameToCheck in CodeHelper.ExtractNamesToCheck(fullNameWithAt, settingName))
+				{
+					CheckBlockAt(element, lineNumber, settings, settingName, nameToCheck);
+				}
+			}
+
+			foreach (string nameToCheck in CodeHelper.ExtractNamesToCheck(fullName, settingName))
+			{
+				CheckNamingRules(element, lineNumber, settings, settingName, nameToCheck);
+			}
+		}
+
+		/// <summary>
+		/// Checks whether specified name is correct.
+		/// </summary>
+		private void CheckNamingRules(
+			CsElement element,
+			int? lineNumber,
+			CurrentNamingSettings settings,
+			string settingName,
 			string nameToCheck)
 		{
 			Regex regex = settings.GetRegex(settingName);
 			if (regex == null)
 				return;
 
-			nameToCheck = CodeHelper.ExtractPureName(nameToCheck);
+			nameToCheck = CodeHelper.ExtractPureName(nameToCheck, true);
 			if (regex.IsMatch(nameToCheck))
 				return;
 
 			AddViolation(element, lineNumber, settings, settingName, nameToCheck);
+		}
+
+		/// <summary>
+		/// Checks whether name with @ character is correct.
+		/// </summary>
+		private void CheckBlockAt(
+			CsElement element,
+			int? lineNumber,
+			CurrentNamingSettings settings,
+			string settingName,
+			string nameToCheck)
+		{
+			if (!nameToCheck.StartsWith("@"))
+				return;
+
+			nameToCheck = CodeHelper.ExtractPureName(nameToCheck, false);
+
+			string friendlyName = settings.GetFriendlyName(settingName);
+			string example = Resources.BlockAtExample;
+
+			AddViolation(
+				element,
+				lineNumber,
+				friendlyName,
+				nameToCheck,
+				example);
 		}
 
 		/// <summary>
@@ -445,8 +503,8 @@ namespace StyleCopPlus
 			if (String.IsNullOrEmpty(@class.BaseClass))
 				return;
 
-			string name = CodeHelper.ExtractPureName(@class.Declaration.Name);
-			string baseName = CodeHelper.ExtractPureName(@class.BaseClass);
+			string name = CodeHelper.ExtractPureName(@class.Declaration.Name, true);
+			string baseName = CodeHelper.ExtractPureName(@class.BaseClass, true);
 
 			string deriving;
 			if (settings.CheckDerivedName(baseName, name, out deriving))
@@ -460,30 +518,6 @@ namespace StyleCopPlus
 				null,
 				friendlyName,
 				name,
-				example);
-		}
-
-		/// <summary>
-		/// Checks whether name with @ character is correct.
-		/// </summary>
-		private void CheckBlockAt(
-			CsElement element,
-			int? lineNumber,
-			CurrentNamingSettings settings,
-			string settingName,
-			string nameToCheck)
-		{
-			if (settings.CheckBlockAt(settingName, nameToCheck))
-				return;
-
-			string friendlyName = settings.GetFriendlyName(settingName);
-			string example = Resources.BlockAtExample;
-
-			AddViolation(
-				element,
-				lineNumber,
-				friendlyName,
-				nameToCheck,
 				example);
 		}
 

@@ -170,13 +170,10 @@ namespace StyleCopPlus
 		}
 
 		/// <summary>
-		/// Checks whether name with @ character is correct.
+		/// Checks whether specified entity should be checked for @ character usage.
 		/// </summary>
-		public bool CheckBlockAt(string settingName, string nameToCheck)
+		public bool CheckBlockAt(string settingName)
 		{
-			if (!nameToCheck.StartsWith("@"))
-				return true;
-
 			EntityType entityToCheck = ResolveEntity(settingName);
 			if ((m_blockAt & entityToCheck) == entityToCheck)
 				return true;
