@@ -1,6 +1,6 @@
 ﻿#region AdvancedNamingRules // Blocking @ (All)
 
-//# (AdvancedNaming_BlockAt = All)
+//# (AdvancedNaming_BlockAt = All1)
 
 //# [ERROR]
 //# Namespace contains @ character.
