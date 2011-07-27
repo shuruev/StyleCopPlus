@@ -31,6 +31,7 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NamingRulesPage));
 			this.warningArea = new StyleCopPlus.WarningArea();
 			this.panelMain = new System.Windows.Forms.Panel();
+			this.learnMore = new StyleCopPlus.LearnMore();
 			this.panelHelpBorder = new System.Windows.Forms.Panel();
 			this.labelHelp = new System.Windows.Forms.Label();
 			this.btnReset = new System.Windows.Forms.Button();
@@ -54,6 +55,7 @@
 			// 
 			// panelMain
 			// 
+			this.panelMain.Controls.Add(this.learnMore);
 			this.panelMain.Controls.Add(this.panelHelpBorder);
 			this.panelMain.Controls.Add(this.btnReset);
 			this.panelMain.Controls.Add(this.btnEdit);
@@ -64,39 +66,48 @@
 			this.panelMain.Size = new System.Drawing.Size(640, 456);
 			this.panelMain.TabIndex = 0;
 			// 
+			// learnMore
+			// 
+			this.learnMore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.learnMore.LinkText = "How does it work?";
+			this.learnMore.Location = new System.Drawing.Point(526, 3);
+			this.learnMore.Name = "learnMore";
+			this.learnMore.TabIndex = 1;
+			this.learnMore.TargetUrl = "http://stylecopplus.codeplex.com/wikipage?title=Advanced%20Naming%20Rules";
+			// 
 			// panelHelpBorder
 			// 
-			this.panelHelpBorder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.panelHelpBorder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.panelHelpBorder.BackColor = System.Drawing.SystemColors.ControlDark;
 			this.panelHelpBorder.Controls.Add(this.labelHelp);
-			this.panelHelpBorder.Location = new System.Drawing.Point(481, 32);
+			this.panelHelpBorder.Location = new System.Drawing.Point(478, 54);
 			this.panelHelpBorder.Name = "panelHelpBorder";
-			this.panelHelpBorder.Size = new System.Drawing.Size(156, 421);
-			this.panelHelpBorder.TabIndex = 3;
+			this.panelHelpBorder.Size = new System.Drawing.Size(159, 399);
+			this.panelHelpBorder.TabIndex = 4;
 			// 
 			// labelHelp
 			// 
-			this.labelHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.labelHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelHelp.BackColor = System.Drawing.SystemColors.Info;
 			this.labelHelp.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
 			this.labelHelp.Location = new System.Drawing.Point(1, 1);
 			this.labelHelp.Margin = new System.Windows.Forms.Padding(1);
 			this.labelHelp.Name = "labelHelp";
 			this.labelHelp.Padding = new System.Windows.Forms.Padding(2);
-			this.labelHelp.Size = new System.Drawing.Size(154, 419);
+			this.labelHelp.Size = new System.Drawing.Size(157, 397);
 			this.labelHelp.TabIndex = 0;
 			this.labelHelp.Text = resources.GetString("labelHelp.Text");
 			// 
 			// btnReset
 			// 
 			this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnReset.Location = new System.Drawing.Point(562, 3);
+			this.btnReset.Location = new System.Drawing.Point(559, 25);
 			this.btnReset.Name = "btnReset";
 			this.btnReset.Size = new System.Drawing.Size(75, 23);
-			this.btnReset.TabIndex = 2;
+			this.btnReset.TabIndex = 3;
 			this.btnReset.Text = "Reset";
 			this.btnReset.UseVisualStyleBackColor = true;
 			this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -104,19 +115,19 @@
 			// btnEdit
 			// 
 			this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnEdit.Location = new System.Drawing.Point(481, 3);
+			this.btnEdit.Location = new System.Drawing.Point(478, 25);
 			this.btnEdit.Name = "btnEdit";
 			this.btnEdit.Size = new System.Drawing.Size(75, 23);
-			this.btnEdit.TabIndex = 1;
+			this.btnEdit.TabIndex = 2;
 			this.btnEdit.Text = "Edit...";
 			this.btnEdit.UseVisualStyleBackColor = true;
 			this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
 			// 
 			// listRules
 			// 
-			this.listRules.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.listRules.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.listRules.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnEntity,
             this.columnPreview});
@@ -124,7 +135,7 @@
 			this.listRules.HideSelection = false;
 			this.listRules.Location = new System.Drawing.Point(3, 3);
 			this.listRules.Name = "listRules";
-			this.listRules.Size = new System.Drawing.Size(472, 450);
+			this.listRules.Size = new System.Drawing.Size(469, 450);
 			this.listRules.TabIndex = 0;
 			this.listRules.UseCompatibleStateImageBehavior = false;
 			this.listRules.View = System.Windows.Forms.View.Details;
@@ -169,6 +180,7 @@
 		private System.Windows.Forms.ListView listRules;
 		private System.Windows.Forms.ColumnHeader columnEntity;
 		private System.Windows.Forms.ColumnHeader columnPreview;
+		private LearnMore learnMore;
 
 	}
 }

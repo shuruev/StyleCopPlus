@@ -1,4 +1,4 @@
-﻿namespace StyleCopPlus.Controls
+﻿namespace StyleCopPlus
 {
 	partial class LearnMore
 	{
@@ -35,7 +35,6 @@
 			// 
 			// pictureIcon
 			// 
-			this.pictureIcon.BackColor = System.Drawing.Color.White;
 			this.pictureIcon.Image = global::StyleCopPlus.Properties.Resources.Help;
 			this.pictureIcon.Location = new System.Drawing.Point(0, 0);
 			this.pictureIcon.Name = "pictureIcon";
@@ -66,7 +65,7 @@
 			this.Controls.Add(this.pictureIcon);
 			this.Controls.Add(this.linkDetails);
 			this.Name = "LearnMore";
-			this.Size = new System.Drawing.Size(90, 16);
+			this.Size = new System.Drawing.Size(100, 16);
 			((System.ComponentModel.ISupportInitialize)(this.pictureIcon)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();

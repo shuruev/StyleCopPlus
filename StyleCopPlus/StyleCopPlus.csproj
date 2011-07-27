@@ -60,6 +60,7 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -71,6 +72,7 @@
     <Compile Include="Controls\LearnMore.Designer.cs">
       <DependentUpon>LearnMore.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\LearnMoreDesigner.cs" />
     <Compile Include="Plugin\AdvancedNaming\AdvancedNamingRules.cs" />
     <Compile Include="Plugin\AdvancedNaming\EntitySettings\BlockAtEntitySetting.cs" />
     <Compile Include="Plugin\AdvancedNaming\EntitySettings\CheckLengthEntitySetting.cs" />

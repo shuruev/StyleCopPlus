@@ -122,6 +122,8 @@
 
 Use "Edit" button for editing naming rules. Note that you can specify several rules for each entity.
 
-Use "Reset" button to reset naming rules to its default state (or inherited from parent settings).</value>
+Use "Reset" button to reset naming rules to its default state (or inherited from parent settings).
+
+Under "Special" group there are some other settings that can affect naming rules behaviour or act as a separate kind of checking.</value>
   </data>
 </root>

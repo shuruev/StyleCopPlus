@@ -37,7 +37,7 @@
 			this.backgroundUpper = new System.Windows.Forms.PictureBox();
 			this.backgroundLower = new System.Windows.Forms.PictureBox();
 			this.pictureLower = new System.Windows.Forms.PictureBox();
-			this.learnMore = new StyleCopPlus.Controls.LearnMore();
+			this.learnMore = new StyleCopPlus.LearnMore();
 			((System.ComponentModel.ISupportInitialize)(this.borderBottomRight)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.borderRight)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.borderTopRight)).BeginInit();
@@ -157,11 +157,9 @@
 			// 
 			this.learnMore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.learnMore.BackColor = System.Drawing.Color.White;
-			this.learnMore.Location = new System.Drawing.Point(292, 6);
+			this.learnMore.Location = new System.Drawing.Point(293, 9);
 			this.learnMore.Name = "learnMore";
-			this.learnMore.Size = new System.Drawing.Size(90, 16);
-			this.learnMore.TabIndex = 10;
-			this.learnMore.TargetUrl = null;
+			this.learnMore.TabIndex = 0;
 			// 
 			// DisplayExample
 			// 
@@ -204,6 +202,6 @@
 		private System.Windows.Forms.PictureBox backgroundUpper;
 		private System.Windows.Forms.PictureBox backgroundLower;
 		private System.Windows.Forms.PictureBox pictureLower;
-		private Controls.LearnMore learnMore;
+		private LearnMore learnMore;
 	}
 }
