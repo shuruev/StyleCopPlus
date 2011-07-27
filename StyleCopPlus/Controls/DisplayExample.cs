@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
@@ -13,9 +12,6 @@ namespace StyleCopPlus
 	public partial class DisplayExample : UserControl
 	{
 		private static readonly Color s_borderColor = Color.FromArgb(118, 118, 118);
-
-		private string m_exampleDescription;
-		private string m_exampleUrl;
 
 		/// <summary>
 		/// Initializes a new instance.
@@ -97,7 +93,7 @@ namespace StyleCopPlus
 				e.Graphics.FillRectangle(brush, 8, 25, Math.Min(380, box.Width - 60), 1);
 			}
 
-			string text = m_exampleDescription;
+			string text = (string)Tag;
 			Color color = SystemColors.ControlText;
 			if (String.IsNullOrEmpty(text))
 			{
@@ -144,12 +140,6 @@ namespace StyleCopPlus
 			}
 		}
 
-		private void linkDetails_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-		{
-			if (!String.IsNullOrEmpty(m_exampleUrl))
-				Process.Start(m_exampleUrl);
-		}
-
 		#endregion
 
 		#region Service methods
@@ -178,12 +168,10 @@ namespace StyleCopPlus
 		/// </summary>
 		public void Clear()
 		{
-			m_exampleDescription = null;
-			m_exampleUrl = null;
-
+			Tag = null;
 			pictureUpper.Image = null;
-			pictureDetails.Visible = false;
-			linkDetails.Visible = false;
+			learnMore.TargetUrl = null;
+			learnMore.Visible = false;
 
 			InvalidateAll();
 		}
@@ -193,12 +181,10 @@ namespace StyleCopPlus
 		/// </summary>
 		public void Display(Image exampleImage, string exampleDescription, string exampleUrl)
 		{
-			m_exampleDescription = exampleDescription;
-			m_exampleUrl = exampleUrl;
-
+			Tag = exampleDescription;
 			pictureUpper.Image = exampleImage;
-			pictureDetails.Visible = true;
-			linkDetails.Visible = true;
+			learnMore.TargetUrl = exampleUrl;
+			learnMore.Visible = true;
 
 			InvalidateAll();
 		}

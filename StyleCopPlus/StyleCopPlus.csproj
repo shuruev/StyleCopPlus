@@ -59,11 +59,18 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\LearnMore.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LearnMore.Designer.cs">
+      <DependentUpon>LearnMore.cs</DependentUpon>
+    </Compile>
     <Compile Include="Plugin\AdvancedNaming\AdvancedNamingRules.cs" />
     <Compile Include="Plugin\AdvancedNaming\EntitySettings\BlockAtEntitySetting.cs" />
     <Compile Include="Plugin\AdvancedNaming\EntitySettings\CheckLengthEntitySetting.cs" />
@@ -248,6 +255,9 @@
     <Compile Include="Rules.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controls\LearnMore.resx">
+      <DependentUpon>LearnMore.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Plugin\AdvancedNaming\EntitySettings\EntitySettingEditor.resx">
       <DependentUpon>EntitySettingEditor.cs</DependentUpon>
     </EmbeddedResource>
