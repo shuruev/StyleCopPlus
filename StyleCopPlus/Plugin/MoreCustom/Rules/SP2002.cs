@@ -23,7 +23,7 @@
 		/// </summary>
 		public override CustomRuleOptions CreateOptionsControl()
 		{
-			return new CustomRuleLastLineOptions();
+			return new LastLineOptions();
 		}
 
 		/// <summary>

@@ -1,6 +1,6 @@
 ﻿namespace StyleCopPlus.Plugin.MoreCustom
 {
-	partial class CustomRuleCharLimitOptions
+	partial class CharLimitOptions
 	{
 		/// <summary> 
 		/// Required designer variable.

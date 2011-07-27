@@ -3,22 +3,30 @@
 namespace StyleCopPlus.Plugin.MoreCustom
 {
 	/// <summary>
-	/// Control displaying char limit options.
+	/// Control displaying limit options.
 	/// </summary>
-	public partial class CustomRuleCharLimitOptions : CustomRuleLimitOptions
+	public partial class LimitOptions : CustomRuleOptions
 	{
 		/// <summary>
 		/// Initializes a new instance.
 		/// </summary>
-		public CustomRuleCharLimitOptions()
-			: base(CustomRulesResources.LimitOptionsCharDescription)
+		public LimitOptions()
 		{
 			InitializeComponent();
 		}
 
+		/// <summary>
+		/// Initializes a new instance.
+		/// </summary>
+		public LimitOptions(string description)
+			: this()
+		{
+			labelDescription.Text = description;
+		}
+
 		#region Event handlers
 
-		private void textTabSize_TextChanged(object sender, EventArgs e)
+		private void textLimit_TextChanged(object sender, EventArgs e)
 		{
 			OnOptionsDataChanged(e);
 		}
@@ -32,10 +40,8 @@ namespace StyleCopPlus.Plugin.MoreCustom
 		/// </summary>
 		protected override void DisplayOptionsData(ICustomRuleOptionsData data)
 		{
-			CharLimitOptionsData options = (CharLimitOptionsData)data;
-
+			LimitOptionsData options = (LimitOptionsData)data;
 			textLimit.Text = options.Limit.Value.ToString();
-			textTabSize.Text = options.TabSize.Value.ToString();
 		}
 
 		/// <summary>
@@ -43,10 +49,8 @@ namespace StyleCopPlus.Plugin.MoreCustom
 		/// </summary>
 		protected override void ParseOptionsData(ICustomRuleOptionsData data)
 		{
-			CharLimitOptionsData options = (CharLimitOptionsData)data;
-
+			LimitOptionsData options = (LimitOptionsData)data;
 			options.Limit.Parse(textLimit.Text);
-			options.TabSize.Parse(textTabSize.Text);
 		}
 
 		#endregion

@@ -1,6 +1,6 @@
 ﻿namespace StyleCopPlus.Plugin.MoreCustom
 {
-	partial class CustomRuleLastLineOptions
+	partial class LastLineOptions
 	{
 		/// <summary> 
 		/// Required designer variable.

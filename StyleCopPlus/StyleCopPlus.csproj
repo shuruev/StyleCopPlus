@@ -129,6 +129,11 @@
     <Compile Include="Plugin\MoreCustom\CustomRuleTag.cs" />
     <Compile Include="Plugin\MoreCustom\ICustomRuleOptionsData.cs" />
     <Compile Include="Plugin\MoreCustom\MoreCustomRules.cs" />
+    <Compile Include="Plugin\MoreCustom\Options\OptionsDataResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OptionsDataResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Plugin\MoreCustom\Rules\CustomRulesResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -170,40 +175,40 @@
       <DependentUpon>Macro.resx</DependentUpon>
     </Compile>
     <Compile Include="Plugin\MoreCustom\Options\CharLimitOptionsData.cs" />
-    <Compile Include="Plugin\MoreCustom\Options\CustomRuleCharLimitOptions.cs">
+    <Compile Include="Plugin\MoreCustom\Options\CharLimitOptions.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Plugin\MoreCustom\Options\CustomRuleCharLimitOptions.Designer.cs">
-      <DependentUpon>CustomRuleCharLimitOptions.cs</DependentUpon>
+    <Compile Include="Plugin\MoreCustom\Options\CharLimitOptions.Designer.cs">
+      <DependentUpon>CharLimitOptions.cs</DependentUpon>
     </Compile>
-    <Compile Include="Plugin\MoreCustom\Options\CustomRuleLastLineOptions.cs">
+    <Compile Include="Plugin\MoreCustom\Options\LastLineOptions.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Plugin\MoreCustom\Options\CustomRuleLastLineOptions.Designer.cs">
-      <DependentUpon>CustomRuleLastLineOptions.cs</DependentUpon>
+    <Compile Include="Plugin\MoreCustom\Options\LastLineOptions.Designer.cs">
+      <DependentUpon>LastLineOptions.cs</DependentUpon>
     </Compile>
     <Compile Include="Plugin\MoreCustom\Options\LastLineOptionsData.cs" />
     <Compile Include="Plugin\MoreCustom\Options\LastLineMode.cs" />
     <Compile Include="Plugin\MoreCustom\Options\LimitOptionsData.cs" />
     <Compile Include="Plugin\MoreCustom\Options\IndentOptionsData.cs" />
     <Compile Include="Plugin\MoreCustom\Options\IndentMode.cs" />
-    <Compile Include="Plugin\MoreCustom\Options\CustomRuleLimitOptions.cs">
+    <Compile Include="Plugin\MoreCustom\Options\LimitOptions.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Plugin\MoreCustom\Options\CustomRuleLimitOptions.Designer.cs">
-      <DependentUpon>CustomRuleLimitOptions.cs</DependentUpon>
+    <Compile Include="Plugin\MoreCustom\Options\LimitOptions.Designer.cs">
+      <DependentUpon>LimitOptions.cs</DependentUpon>
     </Compile>
-    <Compile Include="Plugin\MoreCustom\Options\CustomRuleOptions.cs">
+    <Compile Include="Plugin\MoreCustom\CustomRuleOptions.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Plugin\MoreCustom\Options\CustomRuleOptions.Designer.cs">
+    <Compile Include="Plugin\MoreCustom\CustomRuleOptions.Designer.cs">
       <DependentUpon>CustomRuleOptions.cs</DependentUpon>
     </Compile>
-    <Compile Include="Plugin\MoreCustom\Options\CustomRuleIndentOptions.cs">
+    <Compile Include="Plugin\MoreCustom\Options\IndentOptions.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Plugin\MoreCustom\Options\CustomRuleIndentOptions.Designer.cs">
-      <DependentUpon>CustomRuleIndentOptions.cs</DependentUpon>
+    <Compile Include="Plugin\MoreCustom\Options\IndentOptions.Designer.cs">
+      <DependentUpon>IndentOptions.cs</DependentUpon>
     </Compile>
     <Compile Include="Plugin\MoreCustom\Options\NumericValue.cs" />
     <Compile Include="Settings\SettingsGrabber.cs" />
@@ -277,6 +282,11 @@
     <EmbeddedResource Include="Plugin\MoreCustom\CustomRulesPage.resx">
       <DependentUpon>CustomRulesPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Plugin\MoreCustom\Options\OptionsDataResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OptionsDataResources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>StyleCopPlus.Plugin.MoreCustom</CustomToolNamespace>
+    </EmbeddedResource>
     <EmbeddedResource Include="Plugin\MoreCustom\Rules\CustomRulesResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>CustomRulesResources.Designer.cs</LastGenOutput>
@@ -286,20 +296,20 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Macro.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Plugin\MoreCustom\Options\CustomRuleCharLimitOptions.resx">
-      <DependentUpon>CustomRuleCharLimitOptions.cs</DependentUpon>
+    <EmbeddedResource Include="Plugin\MoreCustom\Options\CharLimitOptions.resx">
+      <DependentUpon>CharLimitOptions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Plugin\MoreCustom\Options\CustomRuleLastLineOptions.resx">
-      <DependentUpon>CustomRuleLastLineOptions.cs</DependentUpon>
+    <EmbeddedResource Include="Plugin\MoreCustom\Options\LastLineOptions.resx">
+      <DependentUpon>LastLineOptions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Plugin\MoreCustom\Options\CustomRuleLimitOptions.resx">
-      <DependentUpon>CustomRuleLimitOptions.cs</DependentUpon>
+    <EmbeddedResource Include="Plugin\MoreCustom\Options\LimitOptions.resx">
+      <DependentUpon>LimitOptions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Plugin\MoreCustom\Options\CustomRuleOptions.resx">
+    <EmbeddedResource Include="Plugin\MoreCustom\CustomRuleOptions.resx">
       <DependentUpon>CustomRuleOptions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Plugin\MoreCustom\Options\CustomRuleIndentOptions.resx">
-      <DependentUpon>CustomRuleIndentOptions.cs</DependentUpon>
+    <EmbeddedResource Include="Plugin\MoreCustom\Options\IndentOptions.resx">
+      <DependentUpon>IndentOptions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

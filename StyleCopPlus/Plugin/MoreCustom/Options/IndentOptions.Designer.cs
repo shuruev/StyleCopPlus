@@ -1,6 +1,6 @@
 ﻿namespace StyleCopPlus.Plugin.MoreCustom
 {
-	partial class CustomRuleIndentOptions
+	partial class IndentOptions
 	{
 		/// <summary> 
 		/// Required designer variable.

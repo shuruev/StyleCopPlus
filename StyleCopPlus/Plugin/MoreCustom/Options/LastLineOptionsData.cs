@@ -58,9 +58,9 @@ namespace StyleCopPlus.Plugin.MoreCustom
 			switch (Mode)
 			{
 				case LastLineMode.Empty:
-					return CustomRulesResources.LastLineOptionsEmpty;
+					return OptionsDataResources.LastLineOptionsEmpty;
 				case LastLineMode.NotEmpty:
-					return CustomRulesResources.LastLineOptionsNotEmpty;
+					return OptionsDataResources.LastLineOptionsNotEmpty;
 				default:
 					throw new InvalidOperationException();
 			}
@@ -78,9 +78,9 @@ namespace StyleCopPlus.Plugin.MoreCustom
 			switch (Mode)
 			{
 				case LastLineMode.Empty:
-					return new object[] { CustomRulesResources.LastLineContextEmpty };
+					return new object[] { OptionsDataResources.LastLineContextEmpty };
 				case LastLineMode.NotEmpty:
-					return new object[] { CustomRulesResources.LastLineContextNotEmpty };
+					return new object[] { OptionsDataResources.LastLineContextNotEmpty };
 				default:
 					throw new InvalidOperationException();
 			}

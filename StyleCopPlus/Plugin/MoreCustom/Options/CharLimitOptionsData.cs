@@ -15,7 +15,7 @@ namespace StyleCopPlus.Plugin.MoreCustom
 		public CharLimitOptionsData()
 			: base(
 				NumericValue.CreateCharLimit(),
-				CustomRulesResources.LimitOptionsCharFormat)
+				OptionsDataResources.LimitOptionsCharFormat)
 		{
 			m_tabSize = NumericValue.CreateTabSize();
 		}
@@ -65,7 +65,7 @@ namespace StyleCopPlus.Plugin.MoreCustom
 		public override string GetDescription()
 		{
 			return String.Format(
-				CustomRulesResources.CharLimitOptionsFormat,
+				OptionsDataResources.CharLimitOptionsFormat,
 				base.GetDescription(),
 				TabSize.Value);
 		}

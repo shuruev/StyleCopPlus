@@ -5,12 +5,12 @@ namespace StyleCopPlus.Plugin.MoreCustom
 	/// <summary>
 	/// Control displaying indent options.
 	/// </summary>
-	public partial class CustomRuleIndentOptions : CustomRuleOptions
+	public partial class IndentOptions : CustomRuleOptions
 	{
 		/// <summary>
 		/// Initializes a new instance.
 		/// </summary>
-		public CustomRuleIndentOptions()
+		public IndentOptions()
 		{
 			InitializeComponent();
 		}

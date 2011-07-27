@@ -3,30 +3,21 @@
 namespace StyleCopPlus.Plugin.MoreCustom
 {
 	/// <summary>
-	/// Control displaying limit options.
+	/// Control displaying last line options.
 	/// </summary>
-	public partial class CustomRuleLimitOptions : CustomRuleOptions
+	public partial class LastLineOptions : CustomRuleOptions
 	{
 		/// <summary>
 		/// Initializes a new instance.
 		/// </summary>
-		public CustomRuleLimitOptions()
+		public LastLineOptions()
 		{
 			InitializeComponent();
 		}
 
-		/// <summary>
-		/// Initializes a new instance.
-		/// </summary>
-		public CustomRuleLimitOptions(string description)
-			: this()
-		{
-			labelDescription.Text = description;
-		}
-
 		#region Event handlers
 
-		private void textLimit_TextChanged(object sender, EventArgs e)
+		private void radioMode_CheckedChanged(object sender, EventArgs e)
 		{
 			OnOptionsDataChanged(e);
 		}
@@ -40,8 +31,10 @@ namespace StyleCopPlus.Plugin.MoreCustom
 		/// </summary>
 		protected override void DisplayOptionsData(ICustomRuleOptionsData data)
 		{
-			LimitOptionsData options = (LimitOptionsData)data;
-			textLimit.Text = options.Limit.Value.ToString();
+			LastLineOptionsData options = (LastLineOptionsData)data;
+
+			radioEmpty.Checked = options.Mode == LastLineMode.Empty;
+			radioNotEmpty.Checked = options.Mode == LastLineMode.NotEmpty;
 		}
 
 		/// <summary>
@@ -49,8 +42,19 @@ namespace StyleCopPlus.Plugin.MoreCustom
 		/// </summary>
 		protected override void ParseOptionsData(ICustomRuleOptionsData data)
 		{
-			LimitOptionsData options = (LimitOptionsData)data;
-			options.Limit.Parse(textLimit.Text);
+			LastLineOptionsData options = (LastLineOptionsData)data;
+
+			if (radioEmpty.Checked)
+			{
+				options.Mode = LastLineMode.Empty;
+				return;
+			}
+
+			if (radioNotEmpty.Checked)
+			{
+				options.Mode = LastLineMode.NotEmpty;
+				return;
+			}
 		}
 
 		#endregion

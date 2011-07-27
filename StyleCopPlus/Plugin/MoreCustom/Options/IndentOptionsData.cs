@@ -67,20 +67,20 @@ namespace StyleCopPlus.Plugin.MoreCustom
 			switch (Mode)
 			{
 				case IndentMode.Tabs:
-					description = CustomRulesResources.IndentOptionsTabs;
+					description = OptionsDataResources.IndentOptionsTabs;
 					break;
 				case IndentMode.Spaces:
-					description = CustomRulesResources.IndentOptionsSpaces;
+					description = OptionsDataResources.IndentOptionsSpaces;
 					break;
 				case IndentMode.Both:
-					description = CustomRulesResources.IndentOptionsBoth;
+					description = OptionsDataResources.IndentOptionsBoth;
 					break;
 				default:
 					throw new InvalidOperationException();
 			}
 
 			return AllowPadding ?
-				String.Format(CustomRulesResources.IndentOptionsPaddingFormat, description) :
+				String.Format(OptionsDataResources.IndentOptionsPaddingFormat, description) :
 				description;
 		}
 
@@ -96,11 +96,11 @@ namespace StyleCopPlus.Plugin.MoreCustom
 			switch (Mode)
 			{
 				case IndentMode.Tabs:
-					return new object[] { CustomRulesResources.IndentContextTabs };
+					return new object[] { OptionsDataResources.IndentContextTabs };
 				case IndentMode.Spaces:
-					return new object[] { CustomRulesResources.IndentContextSpaces };
+					return new object[] { OptionsDataResources.IndentContextSpaces };
 				case IndentMode.Both:
-					return new object[] { CustomRulesResources.IndentContextBoth };
+					return new object[] { OptionsDataResources.IndentContextBoth };
 				default:
 					throw new InvalidOperationException();
 			}

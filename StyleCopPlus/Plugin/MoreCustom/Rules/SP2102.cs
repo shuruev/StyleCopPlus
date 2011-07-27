@@ -23,7 +23,7 @@
 		/// </summary>
 		public override CustomRuleOptions CreateOptionsControl()
 		{
-			return new CustomRuleLimitOptions(CustomRulesResources.LimitOptionsLineDescription);
+			return new LimitOptions(OptionsDataResources.LimitOptionsLineDescription);
 		}
 
 		/// <summary>
@@ -33,7 +33,7 @@
 		{
 			return new LimitOptionsData(
 				NumericValue.CreatePropertySize(),
-				CustomRulesResources.LimitOptionsLineFormat);
+				OptionsDataResources.LimitOptionsLineFormat);
 		}
 	}
 }

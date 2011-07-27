@@ -3,21 +3,22 @@
 namespace StyleCopPlus.Plugin.MoreCustom
 {
 	/// <summary>
-	/// Control displaying last line options.
+	/// Control displaying char limit options.
 	/// </summary>
-	public partial class CustomRuleLastLineOptions : CustomRuleOptions
+	public partial class CharLimitOptions : LimitOptions
 	{
 		/// <summary>
 		/// Initializes a new instance.
 		/// </summary>
-		public CustomRuleLastLineOptions()
+		public CharLimitOptions()
+			: base(OptionsDataResources.LimitOptionsCharDescription)
 		{
 			InitializeComponent();
 		}
 
 		#region Event handlers
 
-		private void radioMode_CheckedChanged(object sender, EventArgs e)
+		private void textTabSize_TextChanged(object sender, EventArgs e)
 		{
 			OnOptionsDataChanged(e);
 		}
@@ -31,10 +32,10 @@ namespace StyleCopPlus.Plugin.MoreCustom
 		/// </summary>
 		protected override void DisplayOptionsData(ICustomRuleOptionsData data)
 		{
-			LastLineOptionsData options = (LastLineOptionsData)data;
+			CharLimitOptionsData options = (CharLimitOptionsData)data;
 
-			radioEmpty.Checked = options.Mode == LastLineMode.Empty;
-			radioNotEmpty.Checked = options.Mode == LastLineMode.NotEmpty;
+			textLimit.Text = options.Limit.Value.ToString();
+			textTabSize.Text = options.TabSize.Value.ToString();
 		}
 
 		/// <summary>
@@ -42,19 +43,10 @@ namespace StyleCopPlus.Plugin.MoreCustom
 		/// </summary>
 		protected override void ParseOptionsData(ICustomRuleOptionsData data)
 		{
-			LastLineOptionsData options = (LastLineOptionsData)data;
+			CharLimitOptionsData options = (CharLimitOptionsData)data;
 
-			if (radioEmpty.Checked)
-			{
-				options.Mode = LastLineMode.Empty;
-				return;
-			}
-
-			if (radioNotEmpty.Checked)
-			{
-				options.Mode = LastLineMode.NotEmpty;
-				return;
-			}
+			options.Limit.Parse(textLimit.Text);
+			options.TabSize.Parse(textTabSize.Text);
 		}
 
 		#endregion

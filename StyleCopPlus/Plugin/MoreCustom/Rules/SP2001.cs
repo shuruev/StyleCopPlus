@@ -23,7 +23,7 @@
 		/// </summary>
 		public override CustomRuleOptions CreateOptionsControl()
 		{
-			return new CustomRuleIndentOptions();
+			return new IndentOptions();
 		}
 
 		/// <summary>
