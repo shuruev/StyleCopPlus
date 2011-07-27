@@ -327,9 +327,9 @@ namespace StyleCopPlusЁж.TestsЁж
 
 	public enum TestEnumЁж { }
 
-	public delegate TOutput TestDelegate<in TInputЁж, out TOutputЁж>(TInput args)
-		where TInput : IEnumerable<byte>
-		where TOutput : IEnumerable<byte>;
+	public delegate TOutputЁж TestDelegate<in TInputЁж, out TOutputЁж>(TInputЁж args)
+		where TInputЁж : IEnumerable<byte>
+		where TOutputЁж : IEnumerable<byte>;
 }
 //# [END]
 
@@ -359,7 +359,7 @@ namespace StyleCopPlus.Tests
 
 	public class TestClass
 	{
-		public event TestDelegate TestEventЁж;
+		public event TestDelegateЁж TestEventЁж;
 
 		public void TestMethodЁж()
 		{
@@ -427,9 +427,9 @@ namespace StyleCopPlusЁж.TestsЁж
 
 	public enum TestEnumЁж { }
 
-	public delegate TOutput TestDelegate<in TInputЁж, out TOutputЁж>(TInput args)
-		where TInput : IEnumerable<byte>
-		where TOutput : IEnumerable<byte>;
+	public delegate TOutputЁж TestDelegate<in TInputЁж, out TOutputЁж>(TInputЁж args)
+		where TInputЁж : IEnumerable<byte>
+		where TOutputЁж : IEnumerable<byte>;
 }
 //# [END]
 
@@ -459,7 +459,7 @@ namespace StyleCopPlus.Tests
 
 	public class TestClass
 	{
-		public event TestDelegate TestEventЁж;
+		public event TestDelegateЁж TestEventЁж;
 
 		public void TestMethodЁж()
 		{

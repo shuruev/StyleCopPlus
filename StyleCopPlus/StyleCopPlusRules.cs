@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using StyleCop;
 using StyleCop.CSharp;
+using StyleCopPlus.Plugin.AdvancedNaming;
 
 namespace StyleCopPlus
 {

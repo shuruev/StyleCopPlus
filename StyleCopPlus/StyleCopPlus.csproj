@@ -64,68 +64,79 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdvancedNaming\AdvancedNamingRules.cs" />
-    <Compile Include="AdvancedNaming\EntitySettings\BlockAtEntitySetting.cs" />
-    <Compile Include="AdvancedNaming\EntitySettings\CheckLengthEntitySetting.cs" />
-    <Compile Include="AdvancedNaming\EntitySettings\EnglishOnlyEntitySetting.cs" />
-    <Compile Include="AdvancedNaming\EntitySettings\EntityTypeExtensions.cs" />
-    <Compile Include="AdvancedNaming\EntitySettings\EntityType.cs" />
-    <Compile Include="AdvancedNaming\EntitySettings\EntitySettingEditor.cs">
+    <Compile Include="Plugin\AdvancedNaming\AdvancedNamingRules.cs" />
+    <Compile Include="Plugin\AdvancedNaming\EntitySettings\BlockAtEntitySetting.cs" />
+    <Compile Include="Plugin\AdvancedNaming\EntitySettings\CheckLengthEntitySetting.cs" />
+    <Compile Include="Plugin\AdvancedNaming\EntitySettings\EnglishOnlyEntitySetting.cs" />
+    <Compile Include="Plugin\AdvancedNaming\EntitySettings\EntitySettingResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntitySettingResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Plugin\AdvancedNaming\EntitySettings\EntityTypeExtensions.cs" />
+    <Compile Include="Plugin\AdvancedNaming\EntitySettings\EntityType.cs" />
+    <Compile Include="Plugin\AdvancedNaming\EntitySettings\EntitySettingEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdvancedNaming\EntitySettings\EntitySettingEditor.Designer.cs">
+    <Compile Include="Plugin\AdvancedNaming\EntitySettings\EntitySettingEditor.Designer.cs">
       <DependentUpon>EntitySettingEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdvancedNaming\EntitySettings\IEntitySetting.cs" />
-    <Compile Include="AdvancedNaming\EntitySettings\EntitySetting.cs" />
-    <Compile Include="AdvancedNaming\SpecialSettings\AbbreviationsSpecialSetting.cs" />
-    <Compile Include="AdvancedNaming\SpecialSettings\WordsSpecialSetting.cs" />
-    <Compile Include="AdvancedNaming\SpecialSettings\DerivingsSpecialSetting.cs" />
-    <Compile Include="AdvancedNaming\SpecialSettings\SimpleSpecialSetting.cs" />
-    <Compile Include="AdvancedNaming\SpecialSettings\ITextValidator.cs" />
-    <Compile Include="AdvancedNaming\SpecialSettings\ICharValidator.cs" />
-    <Compile Include="AdvancedNaming\SpecialSettings\ISpecialSetting.cs" />
-    <Compile Include="AdvancedNaming\IAdvancedNamingEditor.cs" />
-    <Compile Include="AdvancedNaming\SpecialSettings\SpecialSettingEditor.cs">
+    <Compile Include="Plugin\AdvancedNaming\EntitySettings\IEntitySetting.cs" />
+    <Compile Include="Plugin\AdvancedNaming\EntitySettings\EntitySetting.cs" />
+    <Compile Include="Plugin\AdvancedNaming\SpecialSettings\AbbreviationsSpecialSetting.cs" />
+    <Compile Include="Plugin\AdvancedNaming\SpecialSettings\CheckLengthExceptions.cs" />
+    <Compile Include="Plugin\AdvancedNaming\SpecialSettings\SpecialSettingResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpecialSettingResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Plugin\AdvancedNaming\SpecialSettings\WordsSpecialSetting.cs" />
+    <Compile Include="Plugin\AdvancedNaming\SpecialSettings\DerivingsSpecialSetting.cs" />
+    <Compile Include="Plugin\AdvancedNaming\SpecialSettings\SimpleSpecialSetting.cs" />
+    <Compile Include="Plugin\AdvancedNaming\SpecialSettings\ITextValidator.cs" />
+    <Compile Include="Plugin\AdvancedNaming\SpecialSettings\ICharValidator.cs" />
+    <Compile Include="Plugin\AdvancedNaming\SpecialSettings\ISpecialSetting.cs" />
+    <Compile Include="Plugin\AdvancedNaming\IAdvancedNamingEditor.cs" />
+    <Compile Include="Plugin\AdvancedNaming\SpecialSettings\SpecialSettingEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdvancedNaming\SpecialSettings\SpecialSettingEditor.Designer.cs">
+    <Compile Include="Plugin\AdvancedNaming\SpecialSettings\SpecialSettingEditor.Designer.cs">
       <DependentUpon>SpecialSettingEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdvancedNaming\NamingMacro.cs" />
-    <Compile Include="AdvancedNaming\NamingRuleEditor.cs">
+    <Compile Include="Plugin\AdvancedNaming\NamingMacro.cs" />
+    <Compile Include="Plugin\AdvancedNaming\NamingRuleEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdvancedNaming\NamingRuleEditor.Designer.cs">
+    <Compile Include="Plugin\AdvancedNaming\NamingRuleEditor.Designer.cs">
       <DependentUpon>NamingRuleEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdvancedNaming\NamingRulesPage.cs">
+    <Compile Include="Plugin\AdvancedNaming\NamingRulesPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AdvancedNaming\NamingRulesPage.Designer.cs">
+    <Compile Include="Plugin\AdvancedNaming\NamingRulesPage.Designer.cs">
       <DependentUpon>NamingRulesPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdvancedNaming\CurrentNamingSettings.cs" />
+    <Compile Include="Plugin\AdvancedNaming\CurrentNamingSettings.cs" />
     <Compile Include="SpecialRunningParameters.cs" />
-    <Compile Include="CodeHelper\TypeParameterItem.cs" />
-    <Compile Include="CodeHelper\ParameterItem.cs" />
-    <Compile Include="CodeHelper\LabelItem.cs" />
-    <Compile Include="Common\DisplayExample.cs">
+    <Compile Include="Code\CodeHelper\TypeParameterItem.cs" />
+    <Compile Include="Code\CodeHelper\ParameterItem.cs" />
+    <Compile Include="Code\CodeHelper\LabelItem.cs" />
+    <Compile Include="Controls\DisplayExample.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Common\DisplayExample.Designer.cs">
+    <Compile Include="Controls\DisplayExample.Designer.cs">
       <DependentUpon>DisplayExample.cs</DependentUpon>
     </Compile>
-    <Compile Include="Common\WarningArea.cs">
+    <Compile Include="Controls\WarningArea.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Common\WarningArea.Designer.cs">
+    <Compile Include="Controls\WarningArea.Designer.cs">
       <DependentUpon>WarningArea.cs</DependentUpon>
     </Compile>
-    <Compile Include="Common\WarningItem.cs">
+    <Compile Include="Controls\WarningItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Common\WarningItem.Designer.cs">
+    <Compile Include="Controls\WarningItem.Designer.cs">
       <DependentUpon>WarningItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Constants.cs" />
@@ -194,24 +205,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CustomRulesResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="PropertyPage\SettingsGrabber.cs" />
+    <Compile Include="Settings\SettingsGrabber.cs" />
     <Compile Include="ExtendedOriginal\CustomDocumentationRules.cs" />
     <Compile Include="ExtendedOriginal\CustomLayoutRules.cs" />
     <Compile Include="ExtendedOriginal\CustomNamingRules.cs" />
     <Compile Include="StyleCopPlusRules.cs" />
     <Compile Include="ExtendedOriginal\CustomCsParser.cs" />
-    <Compile Include="CodeHelper\CodeHelper.cs" />
-    <Compile Include="CodeHelper\LocalDeclarationItem.cs" />
-    <Compile Include="Common\Native.cs" />
-    <Compile Include="Common\HighlightTextBox.cs">
+    <Compile Include="Code\CodeHelper\CodeHelper.cs" />
+    <Compile Include="Code\CodeHelper\LocalDeclarationItem.cs" />
+    <Compile Include="Code\Native.cs" />
+    <Compile Include="Controls\HighlightTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Common\HighlightTextBox.designer.cs">
+    <Compile Include="Controls\HighlightTextBox.designer.cs">
       <DependentUpon>HighlightTextBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Common\Messages.cs" />
-    <Compile Include="Common\Colors.cs" />
-    <Compile Include="Common\Pictures.cs" />
+    <Compile Include="Code\Messages.cs" />
+    <Compile Include="Code\Colors.cs" />
+    <Compile Include="Code\Pictures.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MoreCustom\MoreCustomRules.cs" />
     <Compile Include="ExtendedOriginal\ExtendedOriginalRules.cs" />
@@ -220,37 +231,47 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="PropertyPage\SettingTag.cs" />
-    <Compile Include="AdvancedNaming\NamingSettings.cs" />
-    <Compile Include="PropertyPage\SettingsManager.cs" />
-    <Compile Include="PropertyPage\PropertyPage.cs">
+    <Compile Include="Settings\SettingTag.cs" />
+    <Compile Include="Plugin\AdvancedNaming\NamingSettings.cs" />
+    <Compile Include="Settings\SettingsManager.cs" />
+    <Compile Include="Settings\PropertyPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PropertyPage\PropertyPage.Designer.cs">
+    <Compile Include="Settings\PropertyPage.Designer.cs">
       <DependentUpon>PropertyPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Rules.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AdvancedNaming\EntitySettings\EntitySettingEditor.resx">
+    <EmbeddedResource Include="Plugin\AdvancedNaming\EntitySettings\EntitySettingEditor.resx">
       <DependentUpon>EntitySettingEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdvancedNaming\NamingRuleEditor.resx">
+    <EmbeddedResource Include="Plugin\AdvancedNaming\EntitySettings\EntitySettingResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>EntitySettingResources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>StyleCopPlus.Plugin.AdvancedNaming</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plugin\AdvancedNaming\NamingRuleEditor.resx">
       <DependentUpon>NamingRuleEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdvancedNaming\NamingRulesPage.resx">
+    <EmbeddedResource Include="Plugin\AdvancedNaming\NamingRulesPage.resx">
       <DependentUpon>NamingRulesPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Common\DisplayExample.resx">
+    <EmbeddedResource Include="Plugin\AdvancedNaming\SpecialSettings\SpecialSettingResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SpecialSettingResources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>StyleCopPlus.Plugin.AdvancedNaming</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DisplayExample.resx">
       <DependentUpon>DisplayExample.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Common\HighlightTextBox.resx">
+    <EmbeddedResource Include="Controls\HighlightTextBox.resx">
       <DependentUpon>HighlightTextBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Common\WarningArea.resx">
+    <EmbeddedResource Include="Controls\WarningArea.resx">
       <DependentUpon>WarningArea.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Common\WarningItem.resx">
+    <EmbeddedResource Include="Controls\WarningItem.resx">
       <DependentUpon>WarningItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Macro.resx">
@@ -286,12 +307,12 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="PropertyPage\PropertyPage.resx">
+    <EmbeddedResource Include="Settings\PropertyPage.resx">
       <DependentUpon>PropertyPage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AdvancedNaming\SpecialSettings\SpecialSettingEditor.resx">
+    <EmbeddedResource Include="Plugin\AdvancedNaming\SpecialSettings\SpecialSettingEditor.resx">
       <DependentUpon>SpecialSettingEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StyleCopPlusRules.xml">

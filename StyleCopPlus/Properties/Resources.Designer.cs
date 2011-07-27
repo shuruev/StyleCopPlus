@@ -67,15 +67,6 @@ namespace StyleCopPlus.Properties {
             }
         }
         
-        /// <summary>
-        ///   Looks up a localized string similar to usage of @ character is prohibited.
-        /// </summary>
-        internal static string BlockAtExample {
-            get {
-                return ResourceManager.GetString("BlockAtExample", resourceCulture);
-            }
-        }
-        
         internal static System.Drawing.Bitmap CapitalLetter {
             get {
                 object obj = ResourceManager.GetObject("CapitalLetter", resourceCulture);
@@ -107,15 +98,6 @@ namespace StyleCopPlus.Properties {
         internal static string CaptionWarning {
             get {
                 return ResourceManager.GetString("CaptionWarning", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to short names (less than 4 characters) are prohibited.
-        /// </summary>
-        internal static string CheckLengthExample {
-            get {
-                return ResourceManager.GetString("CheckLengthExample", resourceCulture);
             }
         }
         
@@ -219,45 +201,6 @@ namespace StyleCopPlus.Properties {
             get {
                 object obj = ResourceManager.GetObject("English", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to usage of non-English characters is prohibited.
-        /// </summary>
-        internal static string EnglishOnlyExample {
-            get {
-                return ResourceManager.GetString("EnglishOnlyExample", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Please specify where you would like to prohibit
-        ///using @ character in name..
-        /// </summary>
-        internal static string EntitySettingEditorHelpBlockAt {
-            get {
-                return ResourceManager.GetString("EntitySettingEditorHelpBlockAt", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Please specify where you would like to prohibit
-        ///using short names (less than 4 characters)..
-        /// </summary>
-        internal static string EntitySettingEditorHelpCheckLength {
-            get {
-                return ResourceManager.GetString("EntitySettingEditorHelpCheckLength", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Please specify where you would like to prohibit
-        ///using non-English characters in names..
-        /// </summary>
-        internal static string EntitySettingEditorHelpEnglishOnly {
-            get {
-                return ResourceManager.GetString("EntitySettingEditorHelpEnglishOnly", resourceCulture);
             }
         }
         
@@ -436,6 +379,17 @@ namespace StyleCopPlus.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please specify a list of classes, whose names should always
+        ///be added to the end of the name for derived class.
+        ///Use letters, digits and underscore, separating them by whitespaces..
+        /// </summary>
+        internal static string SpecialSettingEditorHelpDerivings1 {
+            get {
+                return ResourceManager.GetString("SpecialSettingEditorHelpDerivings1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please specify a list of complex words, that should be considered
         ///as one word in $(Aa_Bb) macro.
         ///Use letters and digits, separating them by whitespaces..
@@ -469,6 +423,19 @@ namespace StyleCopPlus.Properties {
         internal static string SpecialSettingEditorWarningDerivings {
             get {
                 return ResourceManager.GetString("SpecialSettingEditorWarningDerivings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to It seems that your derivings string has wrong syntax.
+        ///
+        ///Please check that:
+        ///- string literals don&apos;t contain any characters except letters, digits and underscore
+        ///- string literals are separated by whitespaces.
+        /// </summary>
+        internal static string SpecialSettingEditorWarningDerivings1 {
+            get {
+                return ResourceManager.GetString("SpecialSettingEditorWarningDerivings1", resourceCulture);
             }
         }
         

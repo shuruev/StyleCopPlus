@@ -303,28 +303,19 @@ There is no need to use them together with advanced naming rules.</value>
   <data name="English" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\English.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="EntitySettingEditorHelpBlockAt" xml:space="preserve">
-    <value>Please specify where you would like to prohibit
-using @ character in name.</value>
-  </data>
-  <data name="EntitySettingEditorHelpCheckLength" xml:space="preserve">
-    <value>Please specify where you would like to prohibit
-using short names (less than 4 characters).</value>
-  </data>
-  <data name="EntitySettingEditorHelpEnglishOnly" xml:space="preserve">
-    <value>Please specify where you would like to prohibit
-using non-English characters in names.</value>
-  </data>
   <data name="Version" xml:space="preserve">
     <value>version {0}.{1}</value>
   </data>
-  <data name="BlockAtExample" xml:space="preserve">
-    <value>usage of @ character is prohibited</value>
+  <data name="SpecialSettingEditorHelpDerivings1" xml:space="preserve">
+    <value>Please specify a list of classes, whose names should always
+be added to the end of the name for derived class.
+Use letters, digits and underscore, separating them by whitespaces.</value>
   </data>
-  <data name="CheckLengthExample" xml:space="preserve">
-    <value>short names (less than 4 characters) are prohibited</value>
-  </data>
-  <data name="EnglishOnlyExample" xml:space="preserve">
-    <value>usage of non-English characters is prohibited</value>
+  <data name="SpecialSettingEditorWarningDerivings1" xml:space="preserve">
+    <value>It seems that your derivings string has wrong syntax.
+
+Please check that:
+- string literals don't contain any characters except letters, digits and underscore
+- string literals are separated by whitespaces</value>
   </data>
 </root>

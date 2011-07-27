@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using StyleCopPlus.Plugin.AdvancedNaming;
 
 namespace StyleCopPlus.Tests.SimpleTests
 {
