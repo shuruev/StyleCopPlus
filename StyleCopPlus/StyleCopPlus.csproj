@@ -117,6 +117,30 @@
       <DependentUpon>NamingRulesPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Plugin\AdvancedNaming\CurrentNamingSettings.cs" />
+    <Compile Include="Plugin\MoreCustom\CustomRule.cs" />
+    <Compile Include="Plugin\MoreCustom\CustomRules.cs" />
+    <Compile Include="Plugin\MoreCustom\CustomRulesPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Plugin\MoreCustom\CustomRulesPage.designer.cs">
+      <DependentUpon>CustomRulesPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Plugin\MoreCustom\CustomRulesSettings.cs" />
+    <Compile Include="Plugin\MoreCustom\CustomRuleTag.cs" />
+    <Compile Include="Plugin\MoreCustom\ICustomRuleOptionsData.cs" />
+    <Compile Include="Plugin\MoreCustom\MoreCustomRules.cs" />
+    <Compile Include="Plugin\MoreCustom\Rules\CustomRulesResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomRulesResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Plugin\MoreCustom\Rules\SP2000.cs" />
+    <Compile Include="Plugin\MoreCustom\Rules\SP2001.cs" />
+    <Compile Include="Plugin\MoreCustom\Rules\SP2002.cs" />
+    <Compile Include="Plugin\MoreCustom\Rules\SP2100.cs" />
+    <Compile Include="Plugin\MoreCustom\Rules\SP2101.cs" />
+    <Compile Include="Plugin\MoreCustom\Rules\SP2102.cs" />
+    <Compile Include="Plugin\MoreCustom\Rules\SP2103.cs" />
     <Compile Include="SpecialRunningParameters.cs" />
     <Compile Include="Code\CodeHelper\TypeParameterItem.cs" />
     <Compile Include="Code\CodeHelper\ParameterItem.cs" />
@@ -145,72 +169,49 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Macro.resx</DependentUpon>
     </Compile>
-    <Compile Include="MoreCustom\CustomRulesSettings.cs" />
-    <Compile Include="MoreCustom\ICustomRuleOptionsData.cs" />
-    <Compile Include="MoreCustom\CustomRuleTag.cs" />
-    <Compile Include="MoreCustom\CustomRules.cs" />
-    <Compile Include="MoreCustom\Options\CharLimitOptionsData.cs" />
-    <Compile Include="MoreCustom\Options\CustomRuleCharLimitOptions.cs">
+    <Compile Include="Plugin\MoreCustom\Options\CharLimitOptionsData.cs" />
+    <Compile Include="Plugin\MoreCustom\Options\CustomRuleCharLimitOptions.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MoreCustom\Options\CustomRuleCharLimitOptions.Designer.cs">
+    <Compile Include="Plugin\MoreCustom\Options\CustomRuleCharLimitOptions.Designer.cs">
       <DependentUpon>CustomRuleCharLimitOptions.cs</DependentUpon>
     </Compile>
-    <Compile Include="MoreCustom\Options\CustomRuleLastLineOptions.cs">
+    <Compile Include="Plugin\MoreCustom\Options\CustomRuleLastLineOptions.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MoreCustom\Options\CustomRuleLastLineOptions.Designer.cs">
+    <Compile Include="Plugin\MoreCustom\Options\CustomRuleLastLineOptions.Designer.cs">
       <DependentUpon>CustomRuleLastLineOptions.cs</DependentUpon>
     </Compile>
-    <Compile Include="MoreCustom\Options\LastLineOptionsData.cs" />
-    <Compile Include="MoreCustom\Options\LastLineMode.cs" />
-    <Compile Include="MoreCustom\Options\LimitOptionsData.cs" />
-    <Compile Include="MoreCustom\Options\IndentOptionsData.cs" />
-    <Compile Include="MoreCustom\Options\IndentMode.cs" />
-    <Compile Include="MoreCustom\Options\CustomRuleLimitOptions.cs">
+    <Compile Include="Plugin\MoreCustom\Options\LastLineOptionsData.cs" />
+    <Compile Include="Plugin\MoreCustom\Options\LastLineMode.cs" />
+    <Compile Include="Plugin\MoreCustom\Options\LimitOptionsData.cs" />
+    <Compile Include="Plugin\MoreCustom\Options\IndentOptionsData.cs" />
+    <Compile Include="Plugin\MoreCustom\Options\IndentMode.cs" />
+    <Compile Include="Plugin\MoreCustom\Options\CustomRuleLimitOptions.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MoreCustom\Options\CustomRuleLimitOptions.Designer.cs">
+    <Compile Include="Plugin\MoreCustom\Options\CustomRuleLimitOptions.Designer.cs">
       <DependentUpon>CustomRuleLimitOptions.cs</DependentUpon>
     </Compile>
-    <Compile Include="MoreCustom\Options\CustomRuleOptions.cs">
+    <Compile Include="Plugin\MoreCustom\Options\CustomRuleOptions.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MoreCustom\Options\CustomRuleOptions.Designer.cs">
+    <Compile Include="Plugin\MoreCustom\Options\CustomRuleOptions.Designer.cs">
       <DependentUpon>CustomRuleOptions.cs</DependentUpon>
     </Compile>
-    <Compile Include="MoreCustom\Options\CustomRuleIndentOptions.cs">
+    <Compile Include="Plugin\MoreCustom\Options\CustomRuleIndentOptions.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MoreCustom\Options\CustomRuleIndentOptions.Designer.cs">
+    <Compile Include="Plugin\MoreCustom\Options\CustomRuleIndentOptions.Designer.cs">
       <DependentUpon>CustomRuleIndentOptions.cs</DependentUpon>
     </Compile>
-    <Compile Include="MoreCustom\Options\NumericValue.cs" />
-    <Compile Include="MoreCustom\Rules\CustomRuleSP2103.cs" />
-    <Compile Include="MoreCustom\Rules\CustomRuleSP2102.cs" />
-    <Compile Include="MoreCustom\Rules\CustomRuleSP2100.cs" />
-    <Compile Include="MoreCustom\Rules\CustomRuleSP2101.cs" />
-    <Compile Include="MoreCustom\Rules\CustomRuleSP2002.cs" />
-    <Compile Include="MoreCustom\Rules\CustomRuleSP2001.cs" />
-    <Compile Include="MoreCustom\CustomRule.cs" />
-    <Compile Include="MoreCustom\CustomRulesPage.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MoreCustom\CustomRulesPage.Designer.cs">
-      <DependentUpon>CustomRulesPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MoreCustom\Rules\CustomRuleSP2000.cs" />
-    <Compile Include="MoreCustom\Rules\CustomRulesResources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CustomRulesResources.resx</DependentUpon>
-    </Compile>
+    <Compile Include="Plugin\MoreCustom\Options\NumericValue.cs" />
     <Compile Include="Settings\SettingsGrabber.cs" />
-    <Compile Include="ExtendedOriginal\CustomDocumentationRules.cs" />
-    <Compile Include="ExtendedOriginal\CustomLayoutRules.cs" />
-    <Compile Include="ExtendedOriginal\CustomNamingRules.cs" />
+    <Compile Include="Plugin\ExtendedOriginal\CustomDocumentationRules.cs" />
+    <Compile Include="Plugin\ExtendedOriginal\CustomLayoutRules.cs" />
+    <Compile Include="Plugin\ExtendedOriginal\CustomNamingRules.cs" />
     <Compile Include="StyleCopPlusRules.cs" />
-    <Compile Include="ExtendedOriginal\CustomCsParser.cs" />
+    <Compile Include="Plugin\ExtendedOriginal\CustomCsParser.cs" />
     <Compile Include="Code\CodeHelper\CodeHelper.cs" />
     <Compile Include="Code\CodeHelper\LocalDeclarationItem.cs" />
     <Compile Include="Code\Native.cs" />
@@ -224,8 +225,7 @@
     <Compile Include="Code\Colors.cs" />
     <Compile Include="Code\Pictures.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MoreCustom\MoreCustomRules.cs" />
-    <Compile Include="ExtendedOriginal\ExtendedOriginalRules.cs" />
+    <Compile Include="Plugin\ExtendedOriginal\ExtendedOriginalRules.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -274,33 +274,32 @@
     <EmbeddedResource Include="Controls\WarningItem.resx">
       <DependentUpon>WarningItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Plugin\MoreCustom\CustomRulesPage.resx">
+      <DependentUpon>CustomRulesPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plugin\MoreCustom\Rules\CustomRulesResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CustomRulesResources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>StyleCopPlus.Plugin.MoreCustom</CustomToolNamespace>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Macro.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Macro.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="MoreCustom\CustomRulesPage.resx">
-      <DependentUpon>CustomRulesPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MoreCustom\Options\CustomRuleCharLimitOptions.resx">
+    <EmbeddedResource Include="Plugin\MoreCustom\Options\CustomRuleCharLimitOptions.resx">
       <DependentUpon>CustomRuleCharLimitOptions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MoreCustom\Options\CustomRuleLastLineOptions.resx">
+    <EmbeddedResource Include="Plugin\MoreCustom\Options\CustomRuleLastLineOptions.resx">
       <DependentUpon>CustomRuleLastLineOptions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MoreCustom\Options\CustomRuleLimitOptions.resx">
+    <EmbeddedResource Include="Plugin\MoreCustom\Options\CustomRuleLimitOptions.resx">
       <DependentUpon>CustomRuleLimitOptions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MoreCustom\Options\CustomRuleOptions.resx">
+    <EmbeddedResource Include="Plugin\MoreCustom\Options\CustomRuleOptions.resx">
       <DependentUpon>CustomRuleOptions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MoreCustom\Options\CustomRuleIndentOptions.resx">
+    <EmbeddedResource Include="Plugin\MoreCustom\Options\CustomRuleIndentOptions.resx">
       <DependentUpon>CustomRuleIndentOptions.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MoreCustom\Rules\CustomRulesResources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>CustomRulesResources.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>StyleCopPlus.CSharp.Rules</CustomToolNamespace>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -379,26 +378,7 @@
     <None Include="Resources\CurlBottomRightTransparent.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="MoreCustom\Rules\ExampleImages\ExampleSP2000.png" />
-    <None Include="MoreCustom\Rules\ExampleImages\ExampleSP2001.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="MoreCustom\Rules\ExampleImages\ExampleSP2002.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="MoreCustom\Rules\ExampleImages\ExampleSP2100.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="MoreCustom\Rules\ExampleImages\ExampleSP2101.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Help.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="MoreCustom\Rules\ExampleImages\ExampleSP2102.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="MoreCustom\Rules\ExampleImages\ExampleSP2103.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\English.png" />
@@ -410,6 +390,15 @@
     <None Include="Resources\NameLength.png" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="Plugin\MoreCustom\Rules\ExampleImages\ExampleSP2000.png" />
+    <Content Include="Plugin\MoreCustom\Rules\ExampleImages\ExampleSP2001.png" />
+    <Content Include="Plugin\MoreCustom\Rules\ExampleImages\ExampleSP2002.png" />
+    <Content Include="Plugin\MoreCustom\Rules\ExampleImages\ExampleSP2100.png" />
+    <Content Include="Plugin\MoreCustom\Rules\ExampleImages\ExampleSP2101.png" />
+    <Content Include="Plugin\MoreCustom\Rules\ExampleImages\ExampleSP2102.png" />
+    <Content Include="Plugin\MoreCustom\Rules\ExampleImages\ExampleSP2103.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

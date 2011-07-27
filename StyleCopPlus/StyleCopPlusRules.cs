@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using StyleCop;
 using StyleCop.CSharp;
 using StyleCopPlus.Plugin.AdvancedNaming;
+using StyleCopPlus.Plugin.ExtendedOriginal;
+using StyleCopPlus.Plugin.MoreCustom;
 
 namespace StyleCopPlus
 {

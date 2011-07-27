@@ -32,7 +32,7 @@
 			this.pageNaming = new System.Windows.Forms.TabPage();
 			this.namingRulesPage = new StyleCopPlus.Plugin.AdvancedNaming.NamingRulesPage();
 			this.pageCustom = new System.Windows.Forms.TabPage();
-			this.customRulesPage = new StyleCopPlus.CustomRulesPage();
+			this.customRulesPage = new StyleCopPlus.Plugin.MoreCustom.CustomRulesPage();
 			this.pictureLogo = new System.Windows.Forms.PictureBox();
 			this.panelLogoBorder = new System.Windows.Forms.Panel();
 			this.panelTitleBorder = new System.Windows.Forms.Panel();
@@ -201,7 +201,7 @@
 		private System.Windows.Forms.Panel panelTitle;
 		private System.Windows.Forms.PictureBox pictureTitle;
 		private System.Windows.Forms.TabPage pageCustom;
-		private CustomRulesPage customRulesPage;
+		private StyleCopPlus.Plugin.MoreCustom.CustomRulesPage customRulesPage;
 		private System.Windows.Forms.Label labelVersion;
 	}
 }
