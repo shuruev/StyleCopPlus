@@ -117,27 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="EditorCaption" xml:space="preserve">
-    <value>Edit "{0}" Setting</value>
-  </data>
-  <data name="ExampleBlockAt" xml:space="preserve">
+  <data name="BlockAtExample" xml:space="preserve">
     <value>usage of @ character is prohibited</value>
   </data>
-  <data name="ExampleCheckLength" xml:space="preserve">
-    <value>short names (less than 4 characters) are prohibited</value>
-  </data>
-  <data name="ExampleEnglishOnly" xml:space="preserve">
-    <value>usage of non-English characters is prohibited</value>
-  </data>
-  <data name="HelpBlockAt" xml:space="preserve">
+  <data name="BlockAtHelp" xml:space="preserve">
     <value>Please specify where you would like to prohibit
 using @ character in name.</value>
   </data>
-  <data name="HelpCheckLength" xml:space="preserve">
+  <data name="CheckLengthExample" xml:space="preserve">
+    <value>short names (less than 4 characters) are prohibited</value>
+  </data>
+  <data name="CheckLengthHelp" xml:space="preserve">
     <value>Please specify where you would like to prohibit
 using short names (less than 4 characters).</value>
   </data>
-  <data name="HelpEnglishOnly" xml:space="preserve">
+  <data name="EditorCaption" xml:space="preserve">
+    <value>Edit "{0}" Setting</value>
+  </data>
+  <data name="EnglishOnlyExample" xml:space="preserve">
+    <value>usage of non-English characters is prohibited</value>
+  </data>
+  <data name="EnglishOnlyHelp" xml:space="preserve">
     <value>Please specify where you would like to prohibit
 using non-English characters in names.</value>
   </data>

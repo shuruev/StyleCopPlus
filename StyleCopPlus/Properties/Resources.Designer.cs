@@ -144,24 +144,6 @@ namespace StyleCopPlus.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Derived class.
-        /// </summary>
-        internal static string DerivedClassFriendlyName {
-            get {
-                return ResourceManager.GetString("DerivedClassFriendlyName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ...{0}.
-        /// </summary>
-        internal static string DerivingExample {
-            get {
-                return ResourceManager.GetString("DerivingExample", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Disabled.
         /// </summary>
         internal static string Disabled {
@@ -344,111 +326,6 @@ namespace StyleCopPlus.Properties {
             get {
                 object obj = ResourceManager.GetObject("RuleEnabled", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Edit &quot;{0}&quot; Setting.
-        /// </summary>
-        internal static string SpecialSettingEditorCaption {
-            get {
-                return ResourceManager.GetString("SpecialSettingEditorCaption", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Please specify a list of naming abbreviations, that should be considered
-        ///as separate words in $(AaBb), $(aaBb) and $(Aa_Bb) macros.
-        ///Use UPPERCASE letters and digits, separating them by whitespaces..
-        /// </summary>
-        internal static string SpecialSettingEditorHelpAbbreviations {
-            get {
-                return ResourceManager.GetString("SpecialSettingEditorHelpAbbreviations", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Please specify a list of classes, whose names should always
-        ///be added to the end of the name for derived class.
-        ///Use letters, digits and underscore, separating them by whitespaces..
-        /// </summary>
-        internal static string SpecialSettingEditorHelpDerivings {
-            get {
-                return ResourceManager.GetString("SpecialSettingEditorHelpDerivings", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Please specify a list of classes, whose names should always
-        ///be added to the end of the name for derived class.
-        ///Use letters, digits and underscore, separating them by whitespaces..
-        /// </summary>
-        internal static string SpecialSettingEditorHelpDerivings1 {
-            get {
-                return ResourceManager.GetString("SpecialSettingEditorHelpDerivings1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Please specify a list of complex words, that should be considered
-        ///as one word in $(Aa_Bb) macro.
-        ///Use letters and digits, separating them by whitespaces..
-        /// </summary>
-        internal static string SpecialSettingEditorHelpWords {
-            get {
-                return ResourceManager.GetString("SpecialSettingEditorHelpWords", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to It seems that your abbreviations string has wrong syntax.
-        ///
-        ///Please check that:
-        ///- string literals don&apos;t contain any characters except UPPERCASE letters and digits
-        ///- string literals are separated by whitespaces.
-        /// </summary>
-        internal static string SpecialSettingEditorWarningAbbreviations {
-            get {
-                return ResourceManager.GetString("SpecialSettingEditorWarningAbbreviations", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to It seems that your derivings string has wrong syntax.
-        ///
-        ///Please check that:
-        ///- string literals don&apos;t contain any characters except letters, digits and underscore
-        ///- string literals are separated by whitespaces.
-        /// </summary>
-        internal static string SpecialSettingEditorWarningDerivings {
-            get {
-                return ResourceManager.GetString("SpecialSettingEditorWarningDerivings", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to It seems that your derivings string has wrong syntax.
-        ///
-        ///Please check that:
-        ///- string literals don&apos;t contain any characters except letters, digits and underscore
-        ///- string literals are separated by whitespaces.
-        /// </summary>
-        internal static string SpecialSettingEditorWarningDerivings1 {
-            get {
-                return ResourceManager.GetString("SpecialSettingEditorWarningDerivings1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to It seems that your words string has wrong syntax.
-        ///
-        ///Please check that:
-        ///- string literals don&apos;t contain any characters except letters and digits
-        ///- string literals are separated by whitespaces.
-        /// </summary>
-        internal static string SpecialSettingEditorWarningWords {
-            get {
-                return ResourceManager.GetString("SpecialSettingEditorWarningWords", resourceCulture);
             }
         }
         

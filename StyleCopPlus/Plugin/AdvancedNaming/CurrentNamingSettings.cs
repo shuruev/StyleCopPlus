@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using StyleCop;
 
@@ -20,6 +21,7 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 		private EntityType m_blockAt;
 		private EntityType m_englishOnly;
 		private EntityType m_checkLength;
+		private HashSet<string> m_checkLengthExceptions;
 
 		/// <summary>
 		/// Initializes settings from specified document.
@@ -215,7 +217,7 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 				document.Settings,
 				NamingSettings.BlockAt);
 
-			m_blockAt = new BlockAtEntitySetting().ConvertTo(definition);
+			m_blockAt = new BlockAt().ConvertTo(definition);
 		}
 
 		/// <summary>
@@ -252,7 +254,7 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 				document.Settings,
 				NamingSettings.EnglishOnly);
 
-			m_englishOnly = new EnglishOnlyEntitySetting().ConvertTo(definition);
+			m_englishOnly = new EnglishOnly().ConvertTo(definition);
 		}
 
 		/// <summary>
@@ -289,7 +291,17 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 				document.Settings,
 				NamingSettings.CheckLength);
 
-			m_checkLength = new CheckLengthEntitySetting().ConvertTo(definition);
+			m_checkLength = new CheckLength().ConvertTo(definition);
+
+			string exceptions = SettingsManager.GetValue<string>(
+				analyzer,
+				document.Settings,
+				NamingSettings.CheckLengthExceptions);
+
+			m_checkLengthExceptions = new HashSet<string>(
+				exceptions
+					.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+					.Select(word => word.ToLowerInvariant()));
 		}
 
 		/// <summary>
@@ -307,6 +319,9 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 		public bool CheckNameLength(string settingName, string nameToCheck)
 		{
 			if (!IsEnabledCheckLength(settingName))
+				return true;
+
+			if (m_checkLengthExceptions.Contains(nameToCheck.ToLowerInvariant()))
 				return true;
 
 			return nameToCheck.Length >= 4;

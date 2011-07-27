@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using StyleCopPlus.Properties;
 
 namespace StyleCopPlus.Plugin.AdvancedNaming
 {
@@ -46,7 +45,7 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 			if (String.IsNullOrEmpty(ObjectName))
 				throw new InvalidOperationException("ObjectName is not set.");
 
-			Text = String.Format(Resources.SpecialSettingEditorCaption, ObjectName);
+			Text = String.Format(SpecialSettingResources.EditorCaption, ObjectName);
 
 			labelHelp.Text = SpecialSetting.HelpText;
 

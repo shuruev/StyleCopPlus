@@ -61,6 +61,44 @@ namespace StyleCopPlus.Plugin.AdvancedNaming {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to usage of @ character is prohibited.
+        /// </summary>
+        internal static string BlockAtExample {
+            get {
+                return ResourceManager.GetString("BlockAtExample", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please specify where you would like to prohibit
+        ///using @ character in name..
+        /// </summary>
+        internal static string BlockAtHelp {
+            get {
+                return ResourceManager.GetString("BlockAtHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to short names (less than 4 characters) are prohibited.
+        /// </summary>
+        internal static string CheckLengthExample {
+            get {
+                return ResourceManager.GetString("CheckLengthExample", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please specify where you would like to prohibit
+        ///using short names (less than 4 characters)..
+        /// </summary>
+        internal static string CheckLengthHelp {
+            get {
+                return ResourceManager.GetString("CheckLengthHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit &quot;{0}&quot; Setting.
         /// </summary>
         internal static string EditorCaption {
@@ -70,49 +108,11 @@ namespace StyleCopPlus.Plugin.AdvancedNaming {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to usage of @ character is prohibited.
-        /// </summary>
-        internal static string ExampleBlockAt {
-            get {
-                return ResourceManager.GetString("ExampleBlockAt", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to short names (less than 4 characters) are prohibited.
-        /// </summary>
-        internal static string ExampleCheckLength {
-            get {
-                return ResourceManager.GetString("ExampleCheckLength", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to usage of non-English characters is prohibited.
         /// </summary>
-        internal static string ExampleEnglishOnly {
+        internal static string EnglishOnlyExample {
             get {
-                return ResourceManager.GetString("ExampleEnglishOnly", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Please specify where you would like to prohibit
-        ///using @ character in name..
-        /// </summary>
-        internal static string HelpBlockAt {
-            get {
-                return ResourceManager.GetString("HelpBlockAt", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Please specify where you would like to prohibit
-        ///using short names (less than 4 characters)..
-        /// </summary>
-        internal static string HelpCheckLength {
-            get {
-                return ResourceManager.GetString("HelpCheckLength", resourceCulture);
+                return ResourceManager.GetString("EnglishOnlyExample", resourceCulture);
             }
         }
         
@@ -120,9 +120,9 @@ namespace StyleCopPlus.Plugin.AdvancedNaming {
         ///   Looks up a localized string similar to Please specify where you would like to prohibit
         ///using non-English characters in names..
         /// </summary>
-        internal static string HelpEnglishOnly {
+        internal static string EnglishOnlyHelp {
             get {
-                return ResourceManager.GetString("HelpEnglishOnly", resourceCulture);
+                return ResourceManager.GetString("EnglishOnlyHelp", resourceCulture);
             }
         }
     }

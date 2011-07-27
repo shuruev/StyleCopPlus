@@ -64,6 +64,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\LearnMore.cs">
@@ -74,9 +75,9 @@
     </Compile>
     <Compile Include="Controls\LearnMoreDesigner.cs" />
     <Compile Include="Plugin\AdvancedNaming\AdvancedNamingRules.cs" />
-    <Compile Include="Plugin\AdvancedNaming\EntitySettings\BlockAtEntitySetting.cs" />
-    <Compile Include="Plugin\AdvancedNaming\EntitySettings\CheckLengthEntitySetting.cs" />
-    <Compile Include="Plugin\AdvancedNaming\EntitySettings\EnglishOnlyEntitySetting.cs" />
+    <Compile Include="Plugin\AdvancedNaming\EntitySettings\BlockAt.cs" />
+    <Compile Include="Plugin\AdvancedNaming\EntitySettings\CheckLength.cs" />
+    <Compile Include="Plugin\AdvancedNaming\EntitySettings\EnglishOnly.cs" />
     <Compile Include="Plugin\AdvancedNaming\EntitySettings\EntitySettingResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -92,15 +93,15 @@
     </Compile>
     <Compile Include="Plugin\AdvancedNaming\EntitySettings\IEntitySetting.cs" />
     <Compile Include="Plugin\AdvancedNaming\EntitySettings\EntitySetting.cs" />
-    <Compile Include="Plugin\AdvancedNaming\SpecialSettings\AbbreviationsSpecialSetting.cs" />
+    <Compile Include="Plugin\AdvancedNaming\SpecialSettings\Abbreviations.cs" />
     <Compile Include="Plugin\AdvancedNaming\SpecialSettings\CheckLengthExceptions.cs" />
     <Compile Include="Plugin\AdvancedNaming\SpecialSettings\SpecialSettingResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SpecialSettingResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Plugin\AdvancedNaming\SpecialSettings\WordsSpecialSetting.cs" />
-    <Compile Include="Plugin\AdvancedNaming\SpecialSettings\DerivingsSpecialSetting.cs" />
+    <Compile Include="Plugin\AdvancedNaming\SpecialSettings\Words.cs" />
+    <Compile Include="Plugin\AdvancedNaming\SpecialSettings\Derivings.cs" />
     <Compile Include="Plugin\AdvancedNaming\SpecialSettings\SimpleSpecialSetting.cs" />
     <Compile Include="Plugin\AdvancedNaming\SpecialSettings\ITextValidator.cs" />
     <Compile Include="Plugin\AdvancedNaming\SpecialSettings\ICharValidator.cs" />

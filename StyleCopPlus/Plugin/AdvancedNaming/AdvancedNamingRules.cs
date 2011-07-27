@@ -487,7 +487,7 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 				return;
 
 			string friendlyName = settings.GetFriendlyName(settingName);
-			string example = EntitySettingResources.ExampleBlockAt;
+			string example = EntitySettingResources.BlockAtExample;
 
 			AddViolation(
 				element,
@@ -511,7 +511,7 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 				return;
 
 			string friendlyName = settings.GetFriendlyName(settingName);
-			string example = EntitySettingResources.ExampleEnglishOnly;
+			string example = EntitySettingResources.EnglishOnlyExample;
 
 			AddViolation(
 				element,
@@ -535,7 +535,7 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 				return;
 
 			string friendlyName = settings.GetFriendlyName(settingName);
-			string example = EntitySettingResources.ExampleCheckLength;
+			string example = EntitySettingResources.CheckLengthExample;
 
 			AddViolation(
 				element,
@@ -561,8 +561,8 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 			if (settings.CheckDerivedName(baseName, name, out deriving))
 				return;
 
-			string friendlyName = Resources.DerivedClassFriendlyName;
-			string example = String.Format(Resources.DerivingExample, deriving);
+			string friendlyName = SpecialSettingResources.DerivingsFriendlyName;
+			string example = String.Format(SpecialSettingResources.DerivingsExample, deriving);
 
 			AddViolation(
 				element,

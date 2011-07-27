@@ -1,5 +1,4 @@
 using System;
-using StyleCopPlus.Properties;
 
 namespace StyleCopPlus.Plugin.AdvancedNaming
 {
@@ -13,7 +12,7 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 		/// </summary>
 		public override string HelpText
 		{
-			get { return Resources.SpecialSettingEditorHelpDerivings; }
+			get { return SpecialSettingResources.CheckLengthExceptionsHelp; }
 		}
 
 		/// <summary>
@@ -21,7 +20,7 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 		/// </summary>
 		public override string WarningText
 		{
-			get { return Resources.SpecialSettingEditorWarningDerivings; }
+			get { return SpecialSettingResources.CheckLengthExceptionsWarning; }
 		}
 
 		/// <summary>

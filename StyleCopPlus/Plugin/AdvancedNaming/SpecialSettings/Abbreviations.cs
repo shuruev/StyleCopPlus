@@ -1,19 +1,18 @@
 using System;
-using StyleCopPlus.Properties;
 
 namespace StyleCopPlus.Plugin.AdvancedNaming
 {
 	/// <summary>
 	/// Special setting for abbreviations.
 	/// </summary>
-	public class AbbreviationsSpecialSetting : SimpleSpecialSetting
+	public class Abbreviations : SimpleSpecialSetting
 	{
 		/// <summary>
 		/// Gets help text for current setting.
 		/// </summary>
 		public override string HelpText
 		{
-			get { return Resources.SpecialSettingEditorHelpAbbreviations; }
+			get { return SpecialSettingResources.AbbreviationsHelp; }
 		}
 
 		/// <summary>
@@ -21,7 +20,7 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 		/// </summary>
 		public override string WarningText
 		{
-			get { return Resources.SpecialSettingEditorWarningAbbreviations; }
+			get { return SpecialSettingResources.AbbreviationsWarning; }
 		}
 
 		/// <summary>

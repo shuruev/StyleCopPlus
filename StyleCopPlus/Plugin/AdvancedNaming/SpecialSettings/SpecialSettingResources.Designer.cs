@@ -59,5 +59,128 @@ namespace StyleCopPlus.Plugin.AdvancedNaming {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please specify a list of naming abbreviations, that should be considered
+        ///as separate words in $(AaBb), $(aaBb) and $(Aa_Bb) macros.
+        ///Use UPPERCASE letters and digits, separating them by whitespaces..
+        /// </summary>
+        internal static string AbbreviationsHelp {
+            get {
+                return ResourceManager.GetString("AbbreviationsHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to It seems that your abbreviations string has wrong syntax.
+        ///
+        ///Please check that:
+        ///- string literals don&apos;t contain any characters except UPPERCASE letters and digits
+        ///- string literals are separated by whitespaces.
+        /// </summary>
+        internal static string AbbreviationsWarning {
+            get {
+                return ResourceManager.GetString("AbbreviationsWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please specify a list of names which should be ignored
+        ///when prohibiting too short names (less than 4 characters).
+        ///Use letters, digits and underscore, separating them by whitespaces..
+        /// </summary>
+        internal static string CheckLengthExceptionsHelp {
+            get {
+                return ResourceManager.GetString("CheckLengthExceptionsHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to It seems that your exceptions string has wrong syntax.
+        ///
+        ///Please check that:
+        ///- string literals don&apos;t contain any characters except letters, digits and underscore
+        ///- string literals are separated by whitespaces.
+        /// </summary>
+        internal static string CheckLengthExceptionsWarning {
+            get {
+                return ResourceManager.GetString("CheckLengthExceptionsWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ...{0}.
+        /// </summary>
+        internal static string DerivingsExample {
+            get {
+                return ResourceManager.GetString("DerivingsExample", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Derived class.
+        /// </summary>
+        internal static string DerivingsFriendlyName {
+            get {
+                return ResourceManager.GetString("DerivingsFriendlyName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please specify a list of classes, whose names should always
+        ///be added to the end of the name for derived class.
+        ///Use letters, digits and underscore, separating them by whitespaces..
+        /// </summary>
+        internal static string DerivingsHelp {
+            get {
+                return ResourceManager.GetString("DerivingsHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to It seems that your derivings string has wrong syntax.
+        ///
+        ///Please check that:
+        ///- string literals don&apos;t contain any characters except letters, digits and underscore
+        ///- string literals are separated by whitespaces.
+        /// </summary>
+        internal static string DerivingsWarning {
+            get {
+                return ResourceManager.GetString("DerivingsWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit &quot;{0}&quot; Setting.
+        /// </summary>
+        internal static string EditorCaption {
+            get {
+                return ResourceManager.GetString("EditorCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please specify a list of complex words, that should be considered
+        ///as one word in $(AaBb), $(aaBb) and $(Aa_Bb) macros.
+        ///Use letters and digits, separating them by whitespaces..
+        /// </summary>
+        internal static string WordsHelp {
+            get {
+                return ResourceManager.GetString("WordsHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to It seems that your words string has wrong syntax.
+        ///
+        ///Please check that:
+        ///- string literals don&apos;t contain any characters except letters and digits
+        ///- string literals are separated by whitespaces.
+        /// </summary>
+        internal static string WordsWarning {
+            get {
+                return ResourceManager.GetString("WordsWarning", resourceCulture);
+            }
+        }
     }
 }

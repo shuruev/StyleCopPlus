@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 
 namespace StyleCopPlus
@@ -6,6 +7,7 @@ namespace StyleCopPlus
 	/// <summary>
 	/// Native method calls.
 	/// </summary>
+	[SuppressMessage("StyleCopPlus.StyleCopPlusRules", "SP0100:AdvancedNamingRules", Justification = "WinAPI external functions inside.")]
 	internal static class Native
 	{
 		internal const uint WM_HSCROLL = 0x0114;

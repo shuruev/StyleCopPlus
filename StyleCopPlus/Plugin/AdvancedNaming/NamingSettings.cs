@@ -15,6 +15,7 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 		internal const string BlockAt = "AdvancedNaming_BlockAt";
 		internal const string EnglishOnly = "AdvancedNaming_EnglishOnly";
 		internal const string CheckLength = "AdvancedNaming_CheckLength";
+		internal const string CheckLengthExceptions = "AdvancedNaming_CheckLengthExceptions";
 
 		internal const string Namespace = "AdvancedNaming_Namespace";
 		internal const string ClassNotInternal = "AdvancedNaming_ClassNotInternal";
@@ -67,6 +68,7 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 			Add(BlockAt, false, Resources.GroupSpecial);
 			Add(EnglishOnly, false, Resources.GroupSpecial);
 			Add(CheckLength, false, Resources.GroupSpecial);
+			Add(CheckLengthExceptions, false, Resources.GroupSpecial);
 
 			Add(Namespace, true, Resources.GroupEntities);
 			Add(ClassNotInternal, true, Resources.GroupEntities);
@@ -165,37 +167,43 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 				case Abbreviations:
 					return new SpecialSettingEditor
 					{
-						SpecialSetting = new AbbreviationsSpecialSetting()
+						SpecialSetting = new Abbreviations()
 					};
 
 				case Words:
 					return new SpecialSettingEditor
 					{
-						SpecialSetting = new WordsSpecialSetting()
+						SpecialSetting = new Words()
 					};
 
 				case Derivings:
 					return new SpecialSettingEditor
 					{
-						SpecialSetting = new DerivingsSpecialSetting()
+						SpecialSetting = new Derivings()
 					};
 
 				case BlockAt:
 					return new EntitySettingEditor
 					{
-						EntitySetting = new BlockAtEntitySetting()
+						EntitySetting = new BlockAt()
 					};
 
 				case EnglishOnly:
 					return new EntitySettingEditor
 					{
-						EntitySetting = new EnglishOnlyEntitySetting()
+						EntitySetting = new EnglishOnly()
 					};
 
 				case CheckLength:
 					return new EntitySettingEditor
 					{
-						EntitySetting = new CheckLengthEntitySetting()
+						EntitySetting = new CheckLength()
+					};
+
+				case CheckLengthExceptions:
+					return new SpecialSettingEditor
+					{
+						SpecialSetting = new CheckLengthExceptions()
 					};
 
 				default:
@@ -226,6 +234,7 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 					return Pictures.English;
 
 				case CheckLength:
+				case CheckLengthExceptions:
 					return Pictures.NameLength;
 
 				default:
@@ -247,13 +256,13 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 			switch (settingName)
 			{
 				case BlockAt:
-					return new BlockAtEntitySetting().GetPreviewText(settingValue);
+					return new BlockAt().GetPreviewText(settingValue);
 
 				case EnglishOnly:
-					return new EnglishOnlyEntitySetting().GetPreviewText(settingValue);
+					return new EnglishOnly().GetPreviewText(settingValue);
 
 				case CheckLength:
-					return new CheckLengthEntitySetting().GetPreviewText(settingValue);
+					return new CheckLength().GetPreviewText(settingValue);
 
 				default:
 					return settingValue;

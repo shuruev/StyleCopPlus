@@ -1,19 +1,18 @@
 using System;
-using StyleCopPlus.Properties;
 
 namespace StyleCopPlus.Plugin.AdvancedNaming
 {
 	/// <summary>
-	/// Special setting for derived classes.
+	/// Special setting for complex words.
 	/// </summary>
-	public class DerivingsSpecialSetting : SimpleSpecialSetting
+	public class Words : SimpleSpecialSetting
 	{
 		/// <summary>
 		/// Gets help text for current setting.
 		/// </summary>
 		public override string HelpText
 		{
-			get { return Resources.SpecialSettingEditorHelpDerivings; }
+			get { return SpecialSettingResources.WordsHelp; }
 		}
 
 		/// <summary>
@@ -21,7 +20,7 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 		/// </summary>
 		public override string WarningText
 		{
-			get { return Resources.SpecialSettingEditorWarningDerivings; }
+			get { return SpecialSettingResources.WordsWarning; }
 		}
 
 		/// <summary>
@@ -33,9 +32,6 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 				return true;
 
 			if (Char.IsLetterOrDigit(c))
-				return true;
-
-			if (c == '_')
 				return true;
 
 			return false;

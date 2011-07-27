@@ -1,16 +1,16 @@
 namespace StyleCopPlus.Plugin.AdvancedNaming
 {
 	/// <summary>
-	/// Special setting for blocking @ character.
+	/// Special setting for using English characters only.
 	/// </summary>
-	public class BlockAtEntitySetting : EntitySetting
+	public class EnglishOnly : EntitySetting
 	{
 		/// <summary>
 		/// Gets help text for current setting.
 		/// </summary>
 		public override string HelpText
 		{
-			get { return EntitySettingResources.HelpBlockAt; }
+			get { return EntitySettingResources.EnglishOnlyHelp; }
 		}
 	}
 }
