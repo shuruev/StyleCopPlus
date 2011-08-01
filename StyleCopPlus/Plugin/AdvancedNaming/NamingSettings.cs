@@ -42,6 +42,7 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 
 		internal const string MethodGeneral = "AdvancedNaming_MethodGeneral";
 		internal const string MethodPrivateEventHandler = "AdvancedNaming_MethodPrivateEventHandler";
+		internal const string MethodProtectedEventHandler = "AdvancedNaming_MethodProtectedEventHandler";
 		internal const string MethodTest = "AdvancedNaming_MethodTest";
 		internal const string Event = "AdvancedNaming_Event";
 		internal const string Delegate = "AdvancedNaming_Delegate";
@@ -95,6 +96,7 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 
 			Add(MethodGeneral, true, Resources.GroupMethods);
 			Add(MethodPrivateEventHandler, true, Resources.GroupMethods);
+			Add(MethodProtectedEventHandler, true, Resources.GroupMethods);
 			Add(MethodTest, true, Resources.GroupMethods);
 			Add(Event, true, Resources.GroupMethods);
 			Add(Delegate, true, Resources.GroupMethods);

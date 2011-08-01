@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="CodeHelperTests\Source\ProtectedEventHandlers.cs" />
     <Compile Include="TestHelper.cs" />
     <None Include="ComplexTests\Source\AdvancedNamingRules.cs" />
     <None Include="CodeHelperTests\Source\Labels.cs" />
@@ -98,13 +99,13 @@
     <EmbeddedResource Include="CodeHelperTests\Source\Source.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Source.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Shuruev.StyleCop.Test.CodeHelperTests</CustomToolNamespace>
+      <CustomToolNamespace>StyleCopPlus.Tests.CodeHelperTests</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ComplexTests\Source\Source.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Source.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Shuruev.StyleCop.Test.ComplexTests</CustomToolNamespace>
+      <CustomToolNamespace>StyleCopPlus.Tests.ComplexTests</CustomToolNamespace>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

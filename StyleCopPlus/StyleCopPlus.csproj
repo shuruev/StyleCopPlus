@@ -67,6 +67,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code\Extensions.cs" />
     <Compile Include="Controls\LearnMore.cs">
       <SubType>UserControl</SubType>
     </Compile>

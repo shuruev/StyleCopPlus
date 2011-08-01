@@ -28,21 +28,61 @@ namespace StyleCopPlus
 			if (!IsPrivate(element))
 				return false;
 
-			Method method = (Method)element;
-			if (method.Parameters.Count == 2)
-			{
-				Parameter sender = method.Parameters[0];
-				Parameter args = method.Parameters[1];
-				if (sender.Name == "sender"
-					&& sender.Type.Text == "object"
-					&& args.Name == "e"
-					&& args.Type.Text.EndsWith("EventArgs"))
-				{
-					return true;
-				}
-			}
+			return CheckEventHandlerMethod(element);
+		}
 
-			return false;
+		/// <summary>
+		/// Checks whether specified element describes protected event handler.
+		/// </summary>
+		public static bool IsProtectedEventHandler(CsElement element)
+		{
+			if (element.ElementType != ElementType.Method)
+				return false;
+
+			if (!IsProtected(element))
+				return false;
+
+			return CheckEventHandlerMethod(element);
+		}
+
+		/// <summary>
+		/// Checks whether specified method could act as event handler.
+		/// </summary>
+		private static bool CheckEventHandlerMethod(CsElement element)
+		{
+			Method method = (Method)element;
+			if (method.ReturnType.Text != "void")
+				return false;
+
+			if (!CheckEventHandlerParameters(method))
+				return false;
+
+			return true;
+		}
+
+		/// <summary>
+		/// Checks whether specified method has parameters suitable for being event handler.
+		/// </summary>
+		private static bool CheckEventHandlerParameters(Method method)
+		{
+			if (method.Parameters.Count != 2)
+				return false;
+
+			Parameter sender = method.Parameters[0];
+			if (sender.Name != "sender")
+				return false;
+
+			if (sender.Type.Text != "object")
+				return false;
+
+			Parameter args = method.Parameters[1];
+			if (args.Name != "e")
+				return false;
+
+			if (!ExtractPureName(args.Type.Text, true).EndsWith("EventArgs"))
+				return false;
+
+			return true;
 		}
 
 		/// <summary>
@@ -137,6 +177,20 @@ namespace StyleCopPlus
 		public static bool IsOperator(CsElement element)
 		{
 			return element.Declaration.Name.StartsWith("operator ");
+		}
+
+		/// <summary>
+		/// Checks whether specified element is partial.
+		/// </summary>
+		public static bool IsPartial(CsElement element)
+		{
+			foreach (CsToken token in element.Declaration.Tokens)
+			{
+				if (token.CsTokenType == CsTokenType.Partial)
+					return true;
+			}
+
+			return false;
 		}
 
 		#endregion

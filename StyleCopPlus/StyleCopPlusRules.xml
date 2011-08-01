@@ -9,8 +9,8 @@
 		<StringProperty Name="AdvancedNaming_Derivings" DefaultValue="Attribute Exception EventArgs Stream" FriendlyName="Important base classes" Description="Special setting for derived classes." />
 		<StringProperty Name="AdvancedNaming_BlockAt" DefaultValue="15" FriendlyName="Block @ character" Description="Special setting for blocking @ character." />
 		<StringProperty Name="AdvancedNaming_EnglishOnly" DefaultValue="All" FriendlyName="English letters only" Description="Special setting for using English letters only." />
-		<StringProperty Name="AdvancedNaming_CheckLength" DefaultValue="7" FriendlyName="At least 4 characters" Description="Special setting for checking name length." />
-		<StringProperty Name="AdvancedNaming_CheckLengthExceptions" DefaultValue="T Do ID OK Add All End Get Key Log Run Set Tag Top" FriendlyName="Allowed short names" Description="Special setting for exceptions in checking name length." />
+		<StringProperty Name="AdvancedNaming_CheckLength" DefaultValue="None" FriendlyName="At least 4 characters" Description="Special setting for checking name length." />
+		<StringProperty Name="AdvancedNaming_CheckLengthExceptions" DefaultValue="Do ID OK Add All End Get Key Log Run Set Tag Top" FriendlyName="Allowed short names" Description="Special setting for exceptions in checking name length." />
 		<StringProperty Name="AdvancedNaming_Namespace" DefaultValue="$(AaBb)" FriendlyName="Namespace" Description="Naming rules for namespace." />
 		<StringProperty Name="AdvancedNaming_ClassNotInternal" DefaultValue="$(AaBb)" FriendlyName="Class (not internal)" Description="Naming rules for non-internal class." />
 		<StringProperty Name="AdvancedNaming_ClassInternal" DefaultValue="$(AaBb):$(AA_BB)" FriendlyName="Class (internal)" Description="Naming rules for internal class." />
@@ -32,8 +32,9 @@
 		<StringProperty Name="AdvancedNaming_PrivateConst" DefaultValue="c_$(aaBb):$(AA_BB)" FriendlyName="Constant (private)" Description="Naming rules for private constant." />
 		<StringProperty Name="AdvancedNaming_InternalConst" DefaultValue="$(AaBb):$(AA_BB)" FriendlyName="Constant (internal)" Description="Naming rules for internal constant." />
 		<StringProperty Name="AdvancedNaming_Property" DefaultValue="$(AaBb)" FriendlyName="Property" Description="Naming rules for property." />
-		<StringProperty Name="AdvancedNaming_MethodGeneral" DefaultValue="$(AaBb):Application_$(AaBb):Page_$(AaBb):Session_$(AaBb)" FriendlyName="Method (general)" Description="Naming rules for general method." />
-		<StringProperty Name="AdvancedNaming_MethodPrivateEventHandler" DefaultValue="$(AaBb):$(aaBb)_$(AaBb):$(AaBb)_$(AaBb)" FriendlyName="Method (private event handler)" Description="Naming rules for private event handler." />
+		<StringProperty Name="AdvancedNaming_MethodGeneral" DefaultValue="$(AaBb)" FriendlyName="Method (general)" Description="Naming rules for general method." />
+		<StringProperty Name="AdvancedNaming_MethodPrivateEventHandler" DefaultValue="$(AaBb):$(aaBb)_$(AaBb):$(AaBb)_$(AaBb)" FriendlyName="Method (WinForms/WPF event handler)" Description="Naming rules for private event handler." />
+		<StringProperty Name="AdvancedNaming_MethodProtectedEventHandler" DefaultValue="$(AaBb):$(aaBb)_$(AaBb):$(AaBb)_$(AaBb)" FriendlyName="Method (ASP.NET event handler)" Description="Naming rules for protected event handler." />
 		<StringProperty Name="AdvancedNaming_MethodTest" DefaultValue="$(AaBb):$(Aa_Bb)" FriendlyName="Method (unit test)" Description="Naming rules for test method." />
 		<StringProperty Name="AdvancedNaming_Event" DefaultValue="$(AaBb)" FriendlyName="Event" Description="Naming rules for event." />
 		<StringProperty Name="AdvancedNaming_Delegate" DefaultValue="$(AaBb)" FriendlyName="Delegate" Description="Naming rules for delegate." />

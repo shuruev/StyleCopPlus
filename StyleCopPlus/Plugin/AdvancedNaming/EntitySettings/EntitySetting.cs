@@ -1,5 +1,3 @@
-using System;
-
 namespace StyleCopPlus.Plugin.AdvancedNaming
 {
 	/// <summary>
@@ -8,6 +6,7 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 	public abstract class EntitySetting : IEntitySetting
 	{
 		private const string c_all = "All";
+		private const string c_none = "None";
 
 		/// <summary>
 		/// Gets help text for current setting.
@@ -20,7 +19,7 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 		public string ParseFrom(EntityType entities)
 		{
 			if (entities == EntityType.None)
-				return String.Empty;
+				return c_none;
 
 			if (entities == EntityType.All)
 				return c_all;
@@ -33,7 +32,7 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 		/// </summary>
 		public EntityType ConvertTo(string ruleDefinition)
 		{
-			if (String.IsNullOrEmpty(ruleDefinition))
+			if (ruleDefinition == c_none)
 				return EntityType.None;
 
 			if (ruleDefinition == c_all)

@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using StyleCop;
 using StyleCop.CSharp;
-using StyleCopPlus.Properties;
 
 namespace StyleCopPlus.Plugin.AdvancedNaming
 {
@@ -241,6 +240,10 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 				if (CodeHelper.IsPrivateEventHandler(element))
 				{
 					CheckDeclaration(element, settings, NamingSettings.MethodPrivateEventHandler);
+				}
+				else if (CodeHelper.IsProtectedEventHandler(element))
+				{
+					CheckDeclaration(element, settings, NamingSettings.MethodProtectedEventHandler);
 				}
 				else if (CodeHelper.IsTestMethod(element))
 				{
@@ -604,6 +607,8 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 			string currentName,
 			string example)
 		{
+			example = example.TrimExample();
+
 			if (lineNumber.HasValue)
 			{
 				m_parent.AddViolation(

@@ -136,6 +136,9 @@
   <data name="PrivateEventHandlers" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>PrivateEventHandlers.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="ProtectedEventHandlers" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>ProtectedEventHandlers.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="TypeParameters" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>TypeParameters.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>

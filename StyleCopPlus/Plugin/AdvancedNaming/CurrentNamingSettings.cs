@@ -70,6 +70,7 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 
 				case NamingSettings.MethodGeneral:
 				case NamingSettings.MethodPrivateEventHandler:
+				case NamingSettings.MethodProtectedEventHandler:
 				case NamingSettings.MethodTest:
 				case NamingSettings.Event:
 				case NamingSettings.Delegate:

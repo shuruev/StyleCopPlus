@@ -25,6 +25,7 @@ namespace StyleCopPlus.Tests.CodeHelperTests
 
 			CodeProject project = new CodeProject(0, string.Empty, new Configuration(null));
 			CsParser parser = new CsParser();
+			parser.PreParse();
 			CodeFile file = new CodeFile(tempFile, project, parser);
 
 			CodeDocument doc = null;
@@ -157,8 +158,27 @@ namespace StyleCopPlus.Tests.CodeHelperTests
 			Assert.IsFalse(CodeHelper.IsPrivateEventHandler(GetElementByName(document, "method FalseSecondArgumentHasWrongName")));
 			Assert.IsFalse(CodeHelper.IsPrivateEventHandler(GetElementByName(document, "method FalseUseAliasForObject1")));
 			Assert.IsFalse(CodeHelper.IsPrivateEventHandler(GetElementByName(document, "method FalseUseAliasForObject2")));
+			Assert.IsFalse(CodeHelper.IsPrivateEventHandler(GetElementByName(document, "method FalseReturnTypeIsNotVoid")));
 			Assert.IsTrue(CodeHelper.IsPrivateEventHandler(GetElementByName(document, "method TrueSimple")));
 			Assert.IsTrue(CodeHelper.IsPrivateEventHandler(GetElementByName(document, "method TrueComplexEventArgs")));
+			Assert.IsTrue(CodeHelper.IsPrivateEventHandler(GetElementByName(document, "method TrueGenericEventArgs")));
+		}
+
+		[TestMethod]
+		public void Is_Protected_Event_Handler()
+		{
+			CsDocument document = BuildCodeDocument(Source.ProtectedEventHandlers);
+			Assert.IsFalse(CodeHelper.IsProtectedEventHandler(GetElementByName(document, "method FalseMethodIsNotProtected")));
+			Assert.IsFalse(CodeHelper.IsProtectedEventHandler(GetElementByName(document, "method FalseFirstArgumentIsNotObject")));
+			Assert.IsFalse(CodeHelper.IsProtectedEventHandler(GetElementByName(document, "method FalseFirstArgumentHasWrongName")));
+			Assert.IsFalse(CodeHelper.IsProtectedEventHandler(GetElementByName(document, "method FalseSecondArgumentIsNotEventArgs")));
+			Assert.IsFalse(CodeHelper.IsProtectedEventHandler(GetElementByName(document, "method FalseSecondArgumentHasWrongName")));
+			Assert.IsFalse(CodeHelper.IsProtectedEventHandler(GetElementByName(document, "method FalseUseAliasForObject1")));
+			Assert.IsFalse(CodeHelper.IsProtectedEventHandler(GetElementByName(document, "method FalseUseAliasForObject2")));
+			Assert.IsFalse(CodeHelper.IsProtectedEventHandler(GetElementByName(document, "method FalseReturnTypeIsNotVoid")));
+			Assert.IsTrue(CodeHelper.IsProtectedEventHandler(GetElementByName(document, "method TrueSimple")));
+			Assert.IsTrue(CodeHelper.IsProtectedEventHandler(GetElementByName(document, "method TrueComplexEventArgs")));
+			Assert.IsTrue(CodeHelper.IsProtectedEventHandler(GetElementByName(document, "method TrueGenericEventArgs")));
 		}
 
 		#endregion

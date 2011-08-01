@@ -32,11 +32,19 @@ namespace StyleCopPlus.Tests
 		{
 		}
 
+		private int FalseReturnTypeIsNotVoid(object sender, EventArgs e)
+		{
+		}
+
 		private void TrueSimple(object sender, EventArgs e)
 		{
 		}
 
 		private void TrueComplexEventArgs(object sender, MouseEventArgs e)
+		{
+		}
+
+		private void TrueGenericEventArgs(object sender, RoutedPropertyChangedEventArgs<object> e)
 		{
 		}
 	}
