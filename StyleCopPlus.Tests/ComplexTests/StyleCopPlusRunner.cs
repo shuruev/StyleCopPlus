@@ -67,7 +67,6 @@ namespace StyleCopPlus.Tests.ComplexTests
 
 			console.OutputGenerated -= OnOutputGenerated;
 			console.ViolationEncountered -= OnViolationEncountered;
-			console.Dispose();
 		}
 
 		/// <summary>
