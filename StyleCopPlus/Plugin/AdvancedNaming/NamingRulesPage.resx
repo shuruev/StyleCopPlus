@@ -118,12 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelHelp.Text" xml:space="preserve">
-    <value>You can apply a separate naming rules for each entity from the list.
+    <value>You can define different naming rules for classes, methods, fields, etc.
 
-Use "Edit" button for editing naming rules. Note that you can specify several rules for each entity.
+Use "Edit" button for editing naming rules. Note that you can specify more than one naming template for each rule.
 
 Use "Reset" button to reset naming rules to its default state (or inherited from parent settings).
 
-Under "Special" group there are some other settings that can affect naming rules behaviour or act as a separate kind of checking.</value>
+Under "Service / Options" group there are some special settings that can affect naming rules behaviour or act as a separate naming restrictions.</value>
   </data>
 </root>

@@ -37,7 +37,7 @@
 			this.btnReset = new System.Windows.Forms.Button();
 			this.btnEdit = new System.Windows.Forms.Button();
 			this.listRules = new System.Windows.Forms.ListView();
-			this.columnEntity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnRule = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnPreview = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.panelMain.SuspendLayout();
 			this.panelHelpBorder.SuspendLayout();
@@ -129,7 +129,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.listRules.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnEntity,
+            this.columnRule,
             this.columnPreview});
 			this.listRules.FullRowSelect = true;
 			this.listRules.HideSelection = false;
@@ -142,15 +142,15 @@
 			this.listRules.SelectedIndexChanged += new System.EventHandler(this.listRules_SelectedIndexChanged);
 			this.listRules.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listRules_MouseDoubleClick);
 			// 
-			// columnEntity
+			// columnRule
 			// 
-			this.columnEntity.Text = "Entity";
-			this.columnEntity.Width = 180;
+			this.columnRule.Text = "Naming Rule";
+			this.columnRule.Width = 200;
 			// 
 			// columnPreview
 			// 
 			this.columnPreview.Text = "Preview";
-			this.columnPreview.Width = 270;
+			this.columnPreview.Width = 300;
 			// 
 			// NamingRulesPage
 			// 
@@ -178,7 +178,7 @@
 		private System.Windows.Forms.Button btnReset;
 		private System.Windows.Forms.Button btnEdit;
 		private System.Windows.Forms.ListView listRules;
-		private System.Windows.Forms.ColumnHeader columnEntity;
+		private System.Windows.Forms.ColumnHeader columnRule;
 		private System.Windows.Forms.ColumnHeader columnPreview;
 		private LearnMore learnMore;
 

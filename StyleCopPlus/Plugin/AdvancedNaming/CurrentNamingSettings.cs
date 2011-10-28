@@ -100,11 +100,6 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 			m_examples = new Dictionary<string, string>();
 			m_regulars = new Dictionary<string, Regex>();
 
-			string abbreviations = SettingsManager.GetValue<string>(
-				analyzer,
-				document.Settings,
-				NamingSettings.Abbreviations);
-
 			string words = SettingsManager.GetValue<string>(
 				analyzer,
 				document.Settings,
@@ -126,7 +121,7 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 					string example = NamingMacro.BuildExample(value);
 					m_examples.Add(setting, example);
 
-					Regex regex = NamingMacro.BuildRegex(value, abbreviations, words);
+					Regex regex = NamingMacro.BuildRegex(value, words);
 					m_regulars.Add(setting, regex);
 				}
 			}

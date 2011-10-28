@@ -9,7 +9,6 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 	/// </summary>
 	internal static class NamingSettings
 	{
-		internal const string Abbreviations = "AdvancedNaming_Abbreviations";
 		internal const string Words = "AdvancedNaming_Words";
 		internal const string Derivings = "AdvancedNaming_Derivings";
 		internal const string BlockAt = "AdvancedNaming_BlockAt";
@@ -63,7 +62,6 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 			s_commons = new Dictionary<string, bool>();
 			s_all = new Dictionary<string, List<string>>();
 
-			Add(Abbreviations, false, Resources.GroupSpecial);
 			Add(Words, false, Resources.GroupSpecial);
 			Add(Derivings, false, Resources.GroupSpecial);
 			Add(BlockAt, false, Resources.GroupSpecial);
@@ -166,12 +164,6 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 		{
 			switch (settingName)
 			{
-				case Abbreviations:
-					return new SpecialSettingEditor
-					{
-						SpecialSetting = new Abbreviations()
-					};
-
 				case Words:
 					return new SpecialSettingEditor
 					{
@@ -220,9 +212,6 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 		{
 			switch (settingName)
 			{
-				case Abbreviations:
-					return Pictures.CapitalLetter;
-
 				case Words:
 					return Pictures.TwoLetters;
 

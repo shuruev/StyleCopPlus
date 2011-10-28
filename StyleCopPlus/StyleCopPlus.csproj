@@ -94,7 +94,6 @@
     </Compile>
     <Compile Include="Plugin\AdvancedNaming\EntitySettings\IEntitySetting.cs" />
     <Compile Include="Plugin\AdvancedNaming\EntitySettings\EntitySetting.cs" />
-    <Compile Include="Plugin\AdvancedNaming\SpecialSettings\Abbreviations.cs" />
     <Compile Include="Plugin\AdvancedNaming\SpecialSettings\CheckLengthExceptions.cs" />
     <Compile Include="Plugin\AdvancedNaming\SpecialSettings\SpecialSettingResources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -280,6 +279,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SpecialSettingResources.Designer.cs</LastGenOutput>
       <CustomToolNamespace>StyleCopPlus.Plugin.AdvancedNaming</CustomToolNamespace>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\DisplayExample.resx">
       <DependentUpon>DisplayExample.cs</DependentUpon>

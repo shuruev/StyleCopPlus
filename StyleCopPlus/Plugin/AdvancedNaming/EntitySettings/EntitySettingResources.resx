@@ -132,7 +132,7 @@ using @ character in name.</value>
 using short names (less than 4 characters).</value>
   </data>
   <data name="EditorCaption" xml:space="preserve">
-    <value>Edit "{0}" Setting</value>
+    <value>Edit "{0}"</value>
   </data>
   <data name="EnglishOnlyExample" xml:space="preserve">
     <value>usage of non-English characters is prohibited</value>

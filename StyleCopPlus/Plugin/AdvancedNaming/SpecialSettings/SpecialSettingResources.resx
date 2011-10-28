@@ -117,18 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AbbreviationsHelp" xml:space="preserve">
-    <value>Please specify a list of naming abbreviations, that should be considered
-as separate words in $(AaBb), $(aaBb) and $(Aa_Bb) macros.
-Use UPPERCASE letters and digits, separating them by whitespaces.</value>
-  </data>
-  <data name="AbbreviationsWarning" xml:space="preserve">
-    <value>It seems that your abbreviations string has wrong syntax.
-
-Please check that:
-- string literals don't contain any characters except UPPERCASE letters and digits
-- string literals are separated by whitespaces</value>
-  </data>
   <data name="CheckLengthExceptionsHelp" xml:space="preserve">
     <value>Please specify a list of names which should be ignored
 when prohibiting too short names (less than 4 characters).
@@ -160,15 +148,15 @@ Please check that:
 - string literals are separated by whitespaces</value>
   </data>
   <data name="EditorCaption" xml:space="preserve">
-    <value>Edit "{0}" Setting</value>
+    <value>Edit "{0}"</value>
   </data>
   <data name="WordsHelp" xml:space="preserve">
-    <value>Please specify a list of complex words, that should be considered
-as one word in $(AaBb), $(aaBb) and $(Aa_Bb) macros.
+    <value>Please specify a list of compound words or abbreviations, that should be
+considered as one word in $(AaBb), $(aaBb) and $(Aa_Bb) macros.
 Use letters and digits, separating them by whitespaces.</value>
   </data>
   <data name="WordsWarning" xml:space="preserve">
-    <value>It seems that your words string has wrong syntax.
+    <value>It seems that your compound words string has wrong syntax.
 
 Please check that:
 - string literals don't contain any characters except letters and digits

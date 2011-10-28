@@ -14,7 +14,6 @@ namespace StyleCopPlus
 
 		internal const string RuleDisabled = "RuleDisabled";
 		internal const string RuleEnabled = "RuleEnabled";
-		internal const string CapitalLetter = "CapitalLetter";
 		internal const string TwoLetters = "TwoLetters";
 		internal const string RightArrow = "RightArrow";
 		internal const string AtSign = "AtSign";
@@ -32,7 +31,6 @@ namespace StyleCopPlus
 
 			s_images.Add(RuleDisabled, Resources.RuleDisabled);
 			s_images.Add(RuleEnabled, Resources.RuleEnabled);
-			s_images.Add(CapitalLetter, Resources.CapitalLetter);
 			s_images.Add(TwoLetters, Resources.TwoLetters);
 			s_images.Add(RightArrow, Resources.RightArrow);
 			s_images.Add(AtSign, Resources.AtSign);

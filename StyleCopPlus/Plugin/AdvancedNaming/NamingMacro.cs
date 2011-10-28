@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -277,26 +278,26 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 		/// </summary>
 		public static string ParseWhitespacedSettingFromText(string text)
 		{
-			bool closed = true;
 			StringBuilder sb = new StringBuilder();
 			foreach (char c in text)
 			{
 				if (Char.IsWhiteSpace(c))
 				{
-					if (!closed)
-					{
-						sb.Append(' ');
-						closed = true;
-					}
+					sb.Append(' ');
 				}
 				else
 				{
 					sb.Append(c);
-					closed = false;
 				}
 			}
 
-			return sb.ToString().TrimEnd(' ');
+			return String.Join(
+				" ",
+				sb.ToString()
+					.Split(' ')
+					.Distinct()
+					.OrderBy(word => word)
+					.ToArray());
 		}
 
 		/// <summary>
@@ -381,30 +382,17 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 		/// </summary>
 		public static Regex BuildRegex(
 			string ruleDefinition,
-			string abbreviations,
 			string words)
 		{
-			string[] abbreviationsList = abbreviations.Split(
-				new[] { ' ' },
-				StringSplitOptions.RemoveEmptyEntries);
-
-			string abbreviationsExtension = String.Empty;
-			if (abbreviationsList.Length > 0)
-			{
-				abbreviationsExtension = String.Format("|{0}", String.Join("|", abbreviationsList));
-			}
-
 			string[] wordsList = words.Split(
 				new[] { ' ' },
 				StringSplitOptions.RemoveEmptyEntries);
 
-			string wordsExtension = String.Empty;
+			string extension = String.Empty;
 			if (wordsList.Length > 0)
 			{
-				wordsExtension = String.Format("|{0}", String.Join("|", wordsList));
+				extension = String.Format("|{0}", String.Join("|", wordsList));
 			}
-
-			string extension = String.Format("{0}{1}", abbreviationsExtension, wordsExtension);
 
 			string pattern = ruleDefinition;
 			foreach (string key in GetKeys())
