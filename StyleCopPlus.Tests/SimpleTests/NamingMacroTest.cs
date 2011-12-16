@@ -18,23 +18,15 @@ namespace StyleCopPlus.Tests.SimpleTests
 		/// </summary>
 		private static Regex BuildSimple(string ruleDefinition)
 		{
-			return NamingMacro.BuildRegex(ruleDefinition, String.Empty, String.Empty);
+			return NamingMacro.BuildRegex(ruleDefinition, String.Empty);
 		}
 
 		/// <summary>
-		/// Builds regex with abbreviations.
-		/// </summary>
-		private static Regex BuildWithAbbreviations(string ruleDefinition, string abbreviations)
-		{
-			return NamingMacro.BuildRegex(ruleDefinition, abbreviations, String.Empty);
-		}
-
-		/// <summary>
-		/// Builds regex with words.
+		/// Builds regex with compound words.
 		/// </summary>
 		private static Regex BuildWithWords(string ruleDefinition, string words)
 		{
-			return NamingMacro.BuildRegex(ruleDefinition, String.Empty, words);
+			return NamingMacro.BuildRegex(ruleDefinition, words);
 		}
 
 		#endregion
@@ -112,7 +104,7 @@ namespace StyleCopPlus.Tests.SimpleTests
 		{
 			Regex regex;
 
-			regex = BuildWithAbbreviations("$(AaBb)", "C");
+			regex = BuildWithWords("$(AaBb)", "C");
 			Assert.IsTrue(regex.IsMatch("Style"));
 			Assert.IsTrue(regex.IsMatch("StyleCop"));
 			Assert.IsFalse(regex.IsMatch("styleCop"));
@@ -121,16 +113,16 @@ namespace StyleCopPlus.Tests.SimpleTests
 			Assert.IsTrue(regex.IsMatch("StyleC"));
 			Assert.IsTrue(regex.IsMatch("CSharpStyle"));
 
-			regex = BuildWithAbbreviations("$(AaBb)", "C X");
+			regex = BuildWithWords("$(AaBb)", "C X");
 			Assert.IsTrue(regex.IsMatch("Style"));
 			Assert.IsTrue(regex.IsMatch("StyleCop"));
 			Assert.IsTrue(regex.IsMatch("StyleCX"));
 			Assert.IsTrue(regex.IsMatch("CXSharpStyle"));
 
-			regex = BuildWithAbbreviations("$(AaBb)", String.Empty);
+			regex = BuildWithWords("$(AaBb)", String.Empty);
 			Assert.IsFalse(regex.IsMatch("Point3D"));
 
-			regex = BuildWithAbbreviations("$(AaBb)", "3D");
+			regex = BuildWithWords("$(AaBb)", "3D");
 			Assert.IsTrue(regex.IsMatch("Point3D"));
 		}
 
@@ -139,19 +131,19 @@ namespace StyleCopPlus.Tests.SimpleTests
 		{
 			Regex regex;
 
-			regex = BuildWithAbbreviations("$(AaBb)", String.Empty);
+			regex = BuildWithWords("$(AaBb)", String.Empty);
 			Assert.IsFalse(regex.IsMatch("a"));
 			Assert.IsTrue(regex.IsMatch("A"));
 
-			regex = BuildWithAbbreviations("$(AaBb)", "A");
+			regex = BuildWithWords("$(AaBb)", "A");
 			Assert.IsFalse(regex.IsMatch("a"));
 			Assert.IsTrue(regex.IsMatch("A"));
 
-			regex = BuildWithAbbreviations("Pre$(AaBb)_POST", String.Empty);
+			regex = BuildWithWords("Pre$(AaBb)_POST", String.Empty);
 			Assert.IsFalse(regex.IsMatch("Prea_POST"));
 			Assert.IsTrue(regex.IsMatch("PreA_POST"));
 
-			regex = BuildWithAbbreviations("Pre$(AaBb)_POST", "A");
+			regex = BuildWithWords("Pre$(AaBb)_POST", "A");
 			Assert.IsFalse(regex.IsMatch("Prea_POST"));
 			Assert.IsTrue(regex.IsMatch("PreA_POST"));
 		}
@@ -208,7 +200,7 @@ namespace StyleCopPlus.Tests.SimpleTests
 		{
 			Regex regex;
 
-			regex = BuildWithAbbreviations("$(aaBb)", "C");
+			regex = BuildWithWords("$(aaBb)", "C");
 			Assert.IsTrue(regex.IsMatch("style"));
 			Assert.IsTrue(regex.IsMatch("styleCop"));
 			Assert.IsTrue(regex.IsMatch("styleCopPlus"));
@@ -218,16 +210,16 @@ namespace StyleCopPlus.Tests.SimpleTests
 			Assert.IsTrue(regex.IsMatch("styleC"));
 			Assert.IsTrue(regex.IsMatch("styleCSharp"));
 
-			regex = BuildWithAbbreviations("$(aaBb)", "C X");
+			regex = BuildWithWords("$(aaBb)", "C X");
 			Assert.IsTrue(regex.IsMatch("style"));
 			Assert.IsTrue(regex.IsMatch("styleCop"));
 			Assert.IsTrue(regex.IsMatch("styleCX"));
 			Assert.IsTrue(regex.IsMatch("styleCXSharp"));
 
-			regex = BuildWithAbbreviations("$(aaBb)", String.Empty);
+			regex = BuildWithWords("$(aaBb)", String.Empty);
 			Assert.IsFalse(regex.IsMatch("point3D"));
 
-			regex = BuildWithAbbreviations("$(aaBb)", "3D");
+			regex = BuildWithWords("$(aaBb)", "3D");
 			Assert.IsTrue(regex.IsMatch("point3D"));
 		}
 
@@ -236,19 +228,19 @@ namespace StyleCopPlus.Tests.SimpleTests
 		{
 			Regex regex;
 
-			regex = BuildWithAbbreviations("$(aaBb)", String.Empty);
+			regex = BuildWithWords("$(aaBb)", String.Empty);
 			Assert.IsTrue(regex.IsMatch("a"));
 			Assert.IsFalse(regex.IsMatch("A"));
 
-			regex = BuildWithAbbreviations("$(aaBb)", "A");
+			regex = BuildWithWords("$(aaBb)", "A");
 			Assert.IsTrue(regex.IsMatch("a"));
 			Assert.IsFalse(regex.IsMatch("A"));
 
-			regex = BuildWithAbbreviations("Pre$(aaBb)_POST", String.Empty);
+			regex = BuildWithWords("Pre$(aaBb)_POST", String.Empty);
 			Assert.IsTrue(regex.IsMatch("Prea_POST"));
 			Assert.IsFalse(regex.IsMatch("PreA_POST"));
 
-			regex = BuildWithAbbreviations("Pre$(aaBb)_POST", "A");
+			regex = BuildWithWords("Pre$(aaBb)_POST", "A");
 			Assert.IsTrue(regex.IsMatch("Prea_POST"));
 			Assert.IsFalse(regex.IsMatch("PreA_POST"));
 		}
@@ -306,7 +298,7 @@ namespace StyleCopPlus.Tests.SimpleTests
 		{
 			Regex regex;
 
-			regex = BuildWithAbbreviations("$(AA_BB)", "A B");
+			regex = BuildWithWords("$(AA_BB)", "A B");
 			Assert.IsTrue(regex.IsMatch("STYLE"));
 			Assert.IsTrue(regex.IsMatch("STYLE_COP"));
 		}
@@ -316,19 +308,19 @@ namespace StyleCopPlus.Tests.SimpleTests
 		{
 			Regex regex;
 
-			regex = BuildWithAbbreviations("$(AA_BB)", String.Empty);
+			regex = BuildWithWords("$(AA_BB)", String.Empty);
 			Assert.IsFalse(regex.IsMatch("a"));
 			Assert.IsTrue(regex.IsMatch("A"));
 
-			regex = BuildWithAbbreviations("$(AA_BB)", "A");
+			regex = BuildWithWords("$(AA_BB)", "A");
 			Assert.IsFalse(regex.IsMatch("a"));
 			Assert.IsTrue(regex.IsMatch("A"));
 
-			regex = BuildWithAbbreviations("Pre$(AA_BB)_POST", String.Empty);
+			regex = BuildWithWords("Pre$(AA_BB)_POST", String.Empty);
 			Assert.IsFalse(regex.IsMatch("Prea_POST"));
 			Assert.IsTrue(regex.IsMatch("PreA_POST"));
 
-			regex = BuildWithAbbreviations("Pre$(AA_BB)_POST", "A");
+			regex = BuildWithWords("Pre$(AA_BB)_POST", "A");
 			Assert.IsFalse(regex.IsMatch("Prea_POST"));
 			Assert.IsTrue(regex.IsMatch("PreA_POST"));
 		}
@@ -386,7 +378,7 @@ namespace StyleCopPlus.Tests.SimpleTests
 		{
 			Regex regex;
 
-			regex = BuildWithAbbreviations("$(aa_bb)", "A B");
+			regex = BuildWithWords("$(aa_bb)", "A B");
 			Assert.IsTrue(regex.IsMatch("style"));
 			Assert.IsTrue(regex.IsMatch("style_cop"));
 		}
@@ -396,19 +388,19 @@ namespace StyleCopPlus.Tests.SimpleTests
 		{
 			Regex regex;
 
-			regex = BuildWithAbbreviations("$(aa_bb)", String.Empty);
+			regex = BuildWithWords("$(aa_bb)", String.Empty);
 			Assert.IsTrue(regex.IsMatch("a"));
 			Assert.IsFalse(regex.IsMatch("A"));
 
-			regex = BuildWithAbbreviations("$(aa_bb)", "A");
+			regex = BuildWithWords("$(aa_bb)", "A");
 			Assert.IsTrue(regex.IsMatch("a"));
 			Assert.IsFalse(regex.IsMatch("A"));
 
-			regex = BuildWithAbbreviations("Pre$(aa_bb)_POST", String.Empty);
+			regex = BuildWithWords("Pre$(aa_bb)_POST", String.Empty);
 			Assert.IsTrue(regex.IsMatch("Prea_POST"));
 			Assert.IsFalse(regex.IsMatch("PreA_POST"));
 
-			regex = BuildWithAbbreviations("Pre$(aa_bb)_POST", "A");
+			regex = BuildWithWords("Pre$(aa_bb)_POST", "A");
 			Assert.IsTrue(regex.IsMatch("Prea_POST"));
 			Assert.IsFalse(regex.IsMatch("PreA_POST"));
 		}
@@ -471,7 +463,7 @@ namespace StyleCopPlus.Tests.SimpleTests
 		{
 			Regex regex;
 
-			regex = BuildWithAbbreviations("$(Aa_Bb)", "C");
+			regex = BuildWithWords("$(Aa_Bb)", "C");
 			Assert.IsTrue(regex.IsMatch("Style"));
 			Assert.IsTrue(regex.IsMatch("Style_Cop"));
 			Assert.IsFalse(regex.IsMatch("style_Cop"));
@@ -485,7 +477,7 @@ namespace StyleCopPlus.Tests.SimpleTests
 			Assert.IsFalse(regex.IsMatch("CSharp_Style"));
 			Assert.IsTrue(regex.IsMatch("C_Sharp_Style"));
 
-			regex = BuildWithAbbreviations("$(Aa_Bb)", "C X");
+			regex = BuildWithWords("$(Aa_Bb)", "C X");
 			Assert.IsTrue(regex.IsMatch("Style"));
 			Assert.IsTrue(regex.IsMatch("Style_Cop"));
 			Assert.IsFalse(regex.IsMatch("StyleCX"));
@@ -499,7 +491,7 @@ namespace StyleCopPlus.Tests.SimpleTests
 			Assert.IsFalse(regex.IsMatch("CX_Sharp_Style"));
 			Assert.IsFalse(regex.IsMatch("CXSharp_Style"));
 
-			regex = BuildWithAbbreviations("$(Aa_Bb)", "CX");
+			regex = BuildWithWords("$(Aa_Bb)", "CX");
 			Assert.IsTrue(regex.IsMatch("Style"));
 			Assert.IsTrue(regex.IsMatch("Style_Cop"));
 			Assert.IsFalse(regex.IsMatch("StyleCX"));
@@ -513,10 +505,10 @@ namespace StyleCopPlus.Tests.SimpleTests
 			Assert.IsTrue(regex.IsMatch("CX_Sharp_Style"));
 			Assert.IsFalse(regex.IsMatch("CXSharp_Style"));
 
-			regex = BuildWithAbbreviations("$(Aa_Bb)", String.Empty);
+			regex = BuildWithWords("$(Aa_Bb)", String.Empty);
 			Assert.IsFalse(regex.IsMatch("Point_3D"));
 
-			regex = BuildWithAbbreviations("$(Aa_Bb)", "3D");
+			regex = BuildWithWords("$(Aa_Bb)", "3D");
 			Assert.IsTrue(regex.IsMatch("Point_3D"));
 		}
 
@@ -525,19 +517,19 @@ namespace StyleCopPlus.Tests.SimpleTests
 		{
 			Regex regex;
 
-			regex = BuildWithAbbreviations("$(Aa_Bb)", String.Empty);
+			regex = BuildWithWords("$(Aa_Bb)", String.Empty);
 			Assert.IsFalse(regex.IsMatch("a"));
 			Assert.IsTrue(regex.IsMatch("A"));
 
-			regex = BuildWithAbbreviations("$(Aa_Bb)", "A");
+			regex = BuildWithWords("$(Aa_Bb)", "A");
 			Assert.IsFalse(regex.IsMatch("a"));
 			Assert.IsTrue(regex.IsMatch("A"));
 
-			regex = BuildWithAbbreviations("Pre$(Aa_Bb)_POST", String.Empty);
+			regex = BuildWithWords("Pre$(Aa_Bb)_POST", String.Empty);
 			Assert.IsFalse(regex.IsMatch("Prea_POST"));
 			Assert.IsTrue(regex.IsMatch("PreA_POST"));
 
-			regex = BuildWithAbbreviations("Pre$(Aa_Bb)_POST", "A");
+			regex = BuildWithWords("Pre$(Aa_Bb)_POST", "A");
 			Assert.IsFalse(regex.IsMatch("Prea_POST"));
 			Assert.IsTrue(regex.IsMatch("PreA_POST"));
 		}
@@ -622,7 +614,7 @@ namespace StyleCopPlus.Tests.SimpleTests
 		{
 			Regex regex;
 
-			regex = BuildWithAbbreviations("$(AABB)", "A B");
+			regex = BuildWithWords("$(AABB)", "A B");
 			Assert.IsTrue(regex.IsMatch("STYLE"));
 			Assert.IsTrue(regex.IsMatch("STYLECOP"));
 		}
@@ -632,19 +624,19 @@ namespace StyleCopPlus.Tests.SimpleTests
 		{
 			Regex regex;
 
-			regex = BuildWithAbbreviations("$(AABB)", String.Empty);
+			regex = BuildWithWords("$(AABB)", String.Empty);
 			Assert.IsFalse(regex.IsMatch("a"));
 			Assert.IsTrue(regex.IsMatch("A"));
 
-			regex = BuildWithAbbreviations("$(AABB)", "A");
+			regex = BuildWithWords("$(AABB)", "A");
 			Assert.IsFalse(regex.IsMatch("a"));
 			Assert.IsTrue(regex.IsMatch("A"));
 
-			regex = BuildWithAbbreviations("Pre$(AABB)_POST", String.Empty);
+			regex = BuildWithWords("Pre$(AABB)_POST", String.Empty);
 			Assert.IsFalse(regex.IsMatch("Prea_POST"));
 			Assert.IsTrue(regex.IsMatch("PreA_POST"));
 
-			regex = BuildWithAbbreviations("Pre$(AABB)_POST", "A");
+			regex = BuildWithWords("Pre$(AABB)_POST", "A");
 			Assert.IsFalse(regex.IsMatch("Prea_POST"));
 			Assert.IsTrue(regex.IsMatch("PreA_POST"));
 		}
@@ -699,7 +691,7 @@ namespace StyleCopPlus.Tests.SimpleTests
 		{
 			Regex regex;
 
-			regex = BuildWithAbbreviations("$(aabb)", "A B");
+			regex = BuildWithWords("$(aabb)", "A B");
 			Assert.IsTrue(regex.IsMatch("style"));
 			Assert.IsTrue(regex.IsMatch("stylecop"));
 		}
@@ -709,19 +701,19 @@ namespace StyleCopPlus.Tests.SimpleTests
 		{
 			Regex regex;
 
-			regex = BuildWithAbbreviations("$(aabb)", String.Empty);
+			regex = BuildWithWords("$(aabb)", String.Empty);
 			Assert.IsTrue(regex.IsMatch("a"));
 			Assert.IsFalse(regex.IsMatch("A"));
 
-			regex = BuildWithAbbreviations("$(aabb)", "A");
+			regex = BuildWithWords("$(aabb)", "A");
 			Assert.IsTrue(regex.IsMatch("a"));
 			Assert.IsFalse(regex.IsMatch("A"));
 
-			regex = BuildWithAbbreviations("Pre$(aabb)_POST", String.Empty);
+			regex = BuildWithWords("Pre$(aabb)_POST", String.Empty);
 			Assert.IsTrue(regex.IsMatch("Prea_POST"));
 			Assert.IsFalse(regex.IsMatch("PreA_POST"));
 
-			regex = BuildWithAbbreviations("Pre$(aabb)_POST", "A");
+			regex = BuildWithWords("Pre$(aabb)_POST", "A");
 			Assert.IsTrue(regex.IsMatch("Prea_POST"));
 			Assert.IsFalse(regex.IsMatch("PreA_POST"));
 		}
@@ -773,10 +765,10 @@ namespace StyleCopPlus.Tests.SimpleTests
 		{
 			Regex regex;
 
-			regex = BuildWithAbbreviations("$(*)", String.Empty);
+			regex = BuildWithWords("$(*)", String.Empty);
 			Assert.IsTrue(regex.IsMatch("Point3D_3D"));
 
-			regex = BuildWithAbbreviations("$(*)", "3D");
+			regex = BuildWithWords("$(*)", "3D");
 			Assert.IsTrue(regex.IsMatch("Point3D_3D"));
 		}
 
@@ -785,19 +777,19 @@ namespace StyleCopPlus.Tests.SimpleTests
 		{
 			Regex regex;
 
-			regex = BuildWithAbbreviations("$(*)", String.Empty);
+			regex = BuildWithWords("$(*)", String.Empty);
 			Assert.IsTrue(regex.IsMatch("a"));
 			Assert.IsTrue(regex.IsMatch("A"));
 
-			regex = BuildWithAbbreviations("$(*)", "A");
+			regex = BuildWithWords("$(*)", "A");
 			Assert.IsTrue(regex.IsMatch("a"));
 			Assert.IsTrue(regex.IsMatch("A"));
 
-			regex = BuildWithAbbreviations("Pre$(*)_POST", String.Empty);
+			regex = BuildWithWords("Pre$(*)_POST", String.Empty);
 			Assert.IsTrue(regex.IsMatch("Prea_POST"));
 			Assert.IsTrue(regex.IsMatch("PreA_POST"));
 
-			regex = BuildWithAbbreviations("Pre$(*)_POST", "A");
+			regex = BuildWithWords("Pre$(*)_POST", "A");
 			Assert.IsTrue(regex.IsMatch("Prea_POST"));
 			Assert.IsTrue(regex.IsMatch("PreA_POST"));
 		}
