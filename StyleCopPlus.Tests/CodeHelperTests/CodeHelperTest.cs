@@ -181,6 +181,32 @@ namespace StyleCopPlus.Tests.CodeHelperTests
 			Assert.IsTrue(CodeHelper.IsProtectedEventHandler(GetElementByName(document, "method TrueGenericEventArgs")));
 		}
 
+		[TestMethod]
+		public void Is_Test_Method()
+		{
+			CsDocument document = BuildCodeDocument(Source.TestMethods);
+			Assert.IsFalse(CodeHelper.IsTestMethod(GetElementByName(document, "method FalseUsualMethod")));
+			Assert.IsFalse(CodeHelper.IsTestMethod(GetElementByName(document, "method FalseUnkownAttribute")));
+
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueMSTestMethod")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueMSTestMethodParenthesis")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueMSTestMethodParameter")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueMSTestMethodParameters")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueMSTestMethodAttribute")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueMSTestMethodAttributeParenthesis")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueMSTestMethodAttributeParameter")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueMSTestMethodAttributeParameters")));
+
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueNUnitMethod")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueNUnitMethodParenthesis")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueNUnitMethodParameter")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueNUnitMethodParameters")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueNUnitMethodAttribute")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueNUnitMethodAttributeParenthesis")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueNUnitMethodAttributeParameter")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueNUnitMethodAttributeParameters")));
+		}
+
 		#endregion
 
 		#region Working with element names

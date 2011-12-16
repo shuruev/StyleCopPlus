@@ -99,7 +99,10 @@ namespace StyleCopPlus
 				{
 					for (Node<CsToken> node = attr.ChildTokens.First; node != null; node = node.Next)
 					{
-						if (node.Value.Text == "TestMethod")
+						if (node.Value.Text == "TestMethod"
+							|| node.Value.Text == "TestMethodAttribute"
+							|| node.Value.Text == "Test"
+							|| node.Value.Text == "TestAttribute")
 							return true;
 					}
 				}

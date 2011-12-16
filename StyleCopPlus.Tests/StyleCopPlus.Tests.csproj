@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="CodeHelperTests\Source\ProtectedEventHandlers.cs" />
+    <None Include="CodeHelperTests\Source\TestMethods.cs" />
     <Compile Include="TestHelper.cs" />
     <None Include="ComplexTests\Source\AdvancedNamingRules.cs" />
     <None Include="CodeHelperTests\Source\Labels.cs" />
