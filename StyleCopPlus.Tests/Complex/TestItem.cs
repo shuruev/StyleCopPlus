@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace StyleCopPlus.Tests.ComplexTests
+namespace StyleCopPlus.Tests.Complex
 {
 	/// <summary>
 	/// Test in test definition file.

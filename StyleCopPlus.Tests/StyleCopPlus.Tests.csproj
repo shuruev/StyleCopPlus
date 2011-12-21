@@ -63,50 +63,59 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="CodeHelperTests\Source\ProtectedEventHandlers.cs" />
-    <None Include="CodeHelperTests\Source\TestMethods.cs" />
+    <None Include="Code\Source\ProtectedEventHandlers.cs" />
+    <None Include="Code\Source\TestMethods.cs" />
+    <Compile Include="Macro\MacroTestCamel.cs" />
+    <Compile Include="Macro\MacroTestPascal.cs" />
+    <Compile Include="Macro\MacroTestUpperWords.cs" />
+    <Compile Include="Macro\MacroTestLowerWords.cs" />
+    <Compile Include="Macro\MacroTestCapitalized.cs" />
+    <Compile Include="Macro\MacroTestUpperOnly.cs" />
+    <Compile Include="Macro\MacroTestLowerOnly.cs" />
+    <Compile Include="Macro\MacroTestAny.cs" />
+    <Compile Include="Macro\MacroTestGeneral.cs" />
+    <Compile Include="Macro\MacroTestBase.cs" />
     <Compile Include="TestHelper.cs" />
-    <None Include="ComplexTests\Source\AdvancedNamingRules.cs" />
-    <None Include="CodeHelperTests\Source\Labels.cs" />
-    <None Include="CodeHelperTests\Source\Parameters.cs" />
-    <None Include="CodeHelperTests\Source\TypeParameters.cs" />
-    <None Include="CodeHelperTests\Source\ElementsSize.cs" />
-    <None Include="CodeHelperTests\Source\GetByLine.cs" />
-    <Compile Include="ComplexTests\BlockItem.cs" />
-    <None Include="ComplexTests\Source\MoreCustomRules.cs" />
-    <None Include="ComplexTests\Source\ExtendedOriginalRules.cs" />
-    <None Include="CodeHelperTests\Source\PrivateEventHandlers.cs" />
-    <None Include="CodeHelperTests\Source\LocalDeclarations.cs" />
-    <Compile Include="CodeHelperTests\Source\Source.Designer.cs">
+    <None Include="Complex\Source\AdvancedNamingRules.cs" />
+    <None Include="Code\Source\Labels.cs" />
+    <None Include="Code\Source\Parameters.cs" />
+    <None Include="Code\Source\TypeParameters.cs" />
+    <None Include="Code\Source\ElementsSize.cs" />
+    <None Include="Code\Source\GetByLine.cs" />
+    <Compile Include="Complex\BlockItem.cs" />
+    <None Include="Complex\Source\MoreCustomRules.cs" />
+    <None Include="Complex\Source\ExtendedOriginalRules.cs" />
+    <None Include="Code\Source\PrivateEventHandlers.cs" />
+    <None Include="Code\Source\LocalDeclarations.cs" />
+    <Compile Include="Code\Source\Source.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Source.resx</DependentUpon>
     </Compile>
-    <None Include="ComplexTests\Source\OneRun.cs" />
-    <None Include="ComplexTests\Source\Environmental.cs" />
-    <Compile Include="ComplexTests\Source\Source.Designer.cs">
+    <None Include="Complex\Source\OneRun.cs" />
+    <None Include="Complex\Source\Environmental.cs" />
+    <Compile Include="Complex\Source\Source.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Source.resx</DependentUpon>
     </Compile>
-    <Compile Include="ComplexTests\TestItem.cs" />
-    <Compile Include="CodeHelperTests\CodeHelperTest.cs" />
-    <Compile Include="SimpleTests\NamingMacroTest.cs" />
+    <Compile Include="Complex\TestItem.cs" />
+    <Compile Include="Code\CodeHelperTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ComplexTests\ComplexTest.cs" />
-    <Compile Include="ComplexTests\StyleCopPlusRunner.cs" />
+    <Compile Include="Complex\ComplexTest.cs" />
+    <Compile Include="Complex\StyleCopPlusRunner.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CodeHelperTests\Source\Source.resx">
+    <EmbeddedResource Include="Code\Source\Source.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Source.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>StyleCopPlus.Tests.CodeHelperTests</CustomToolNamespace>
+      <CustomToolNamespace>StyleCopPlus.Tests.Code</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ComplexTests\Source\Source.resx">
+    <EmbeddedResource Include="Complex\Source\Source.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Source.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>StyleCopPlus.Tests.ComplexTests</CustomToolNamespace>
+      <CustomToolNamespace>StyleCopPlus.Tests.Complex</CustomToolNamespace>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

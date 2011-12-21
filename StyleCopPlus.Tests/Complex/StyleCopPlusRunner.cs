@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using StyleCop;
 
-namespace StyleCopPlus.Tests.ComplexTests
+namespace StyleCopPlus.Tests.Complex
 {
 	/// <summary>
 	/// Runs StyleCop+ with specified settings.

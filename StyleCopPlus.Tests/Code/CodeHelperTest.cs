@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using StyleCop;
 using StyleCop.CSharp;
 
-namespace StyleCopPlus.Tests.CodeHelperTests
+namespace StyleCopPlus.Tests.Code
 {
 	/// <summary>
 	/// Testing code helper work.

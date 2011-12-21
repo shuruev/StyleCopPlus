@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace StyleCopPlus.Tests.ComplexTests
+namespace StyleCopPlus.Tests.Complex
 {
 	/// <summary>
 	/// Block in test definition file.

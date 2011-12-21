@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace StyleCopPlus.Tests.CodeHelperTests {
+namespace StyleCopPlus.Tests.Code {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace StyleCopPlus.Tests.CodeHelperTests {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("StyleCopPlus.Tests.CodeHelperTests.Source.Source", typeof(Source).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("StyleCopPlus.Tests.Code.Source.Source", typeof(Source).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -342,18 +342,27 @@ namespace StyleCopPlus.Tests.CodeHelperTests {
         ///		{
         ///		}
         ///
+        ///		#region MSTest methods
+        ///
         ///		[TestMethod]
         ///		public void TrueMSTestMethod()
         ///		{
         ///		}
         ///
-        ///		[Test]
-        ///		public void TrueNUnitMethod()
+        ///		[TestMethod()]
+        ///		public void TrueMSTestMethodParenthesis()
         ///		{
         ///		}
-        ///	}
-        ///}
-        ///.
+        ///
+        ///		[TestMethod(&quot;A&quot;)]
+        ///		public void TrueMSTestMethodParameter()
+        ///		{
+        ///		}
+        ///
+        ///		[TestMethod(&quot;A&quot;, &quot;B&quot; = 2)]
+        ///		public void TrueMSTestMethodParameters()
+        ///		{
+        ///	 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string TestMethods {
             get {

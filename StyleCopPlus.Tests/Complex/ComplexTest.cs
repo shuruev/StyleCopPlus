@@ -4,7 +4,7 @@ using System.IO;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace StyleCopPlus.Tests.ComplexTests
+namespace StyleCopPlus.Tests.Complex
 {
 	/// <summary>
 	/// Running complex batch tests for StyleCop+ plug-in.
