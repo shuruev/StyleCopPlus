@@ -67,6 +67,18 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 				Macro.LowerOnlySample);
 
 			AddMacro(
+				Macro.UpperSingleCode,
+				Macro.UpperSingleDescription,
+				Macro.UpperSingleRegular,
+				Macro.UpperSingleSample);
+
+			AddMacro(
+				Macro.LowerSingleCode,
+				Macro.LowerSingleDescription,
+				Macro.LowerSingleRegular,
+				Macro.LowerSingleSample);
+
+			AddMacro(
 				Macro.AnyCode,
 				Macro.AnyDescription,
 				Macro.AnyRegular,

@@ -65,6 +65,8 @@
   <ItemGroup>
     <None Include="Code\Source\ProtectedEventHandlers.cs" />
     <None Include="Code\Source\TestMethods.cs" />
+    <Compile Include="Macro\MacroTestUpperSingle.cs" />
+    <Compile Include="Macro\MacroTestLowerSingle.cs" />
     <Compile Include="Macro\MacroTestCamel.cs" />
     <Compile Include="Macro\MacroTestPascal.cs" />
     <Compile Include="Macro\MacroTestUpperWords.cs" />

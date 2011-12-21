@@ -34,6 +34,7 @@ namespace StyleCopPlus.Tests.Macro
 			regex = Build("$(AA_BB)", "A B");
 			Assert.IsTrue(regex.IsMatch("STYLE"));
 			Assert.IsTrue(regex.IsMatch("STYLE_COP"));
+			Assert.IsTrue(regex.IsMatch("A"));
 		}
 
 		[TestMethod]

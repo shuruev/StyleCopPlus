@@ -121,10 +121,10 @@
     <value>*</value>
   </data>
   <data name="AnyDescription" xml:space="preserve">
-    <value>AnyName_withoutRULES</value>
+    <value>(any character sequence)</value>
   </data>
   <data name="AnyRegular" xml:space="preserve">
-    <value>.*</value>
+    <value>.+</value>
   </data>
   <data name="AnySample" xml:space="preserve">
     <value>*</value>
@@ -160,10 +160,22 @@
     <value>lowercaseonly</value>
   </data>
   <data name="LowerOnlyRegular" xml:space="preserve">
-    <value>LOWER*</value>
+    <value>LOWER+</value>
   </data>
   <data name="LowerOnlySample" xml:space="preserve">
     <value>samplename</value>
+  </data>
+  <data name="LowerSingleCode" xml:space="preserve">
+    <value>a</value>
+  </data>
+  <data name="LowerSingleDescription" xml:space="preserve">
+    <value>(single lower character)</value>
+  </data>
+  <data name="LowerSingleRegular" xml:space="preserve">
+    <value>LOWER</value>
+  </data>
+  <data name="LowerSingleSample" xml:space="preserve">
+    <value>x</value>
   </data>
   <data name="LowerWordsCode" xml:space="preserve">
     <value>aa_bb</value>
@@ -196,10 +208,22 @@
     <value>UPPERCASEONLY</value>
   </data>
   <data name="UpperOnlyRegular" xml:space="preserve">
-    <value>UPPER*</value>
+    <value>UPPER+</value>
   </data>
   <data name="UpperOnlySample" xml:space="preserve">
     <value>SAMPLENAME</value>
+  </data>
+  <data name="UpperSingleCode" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="UpperSingleDescription" xml:space="preserve">
+    <value>(single upper character)</value>
+  </data>
+  <data name="UpperSingleRegular" xml:space="preserve">
+    <value>UPPER</value>
+  </data>
+  <data name="UpperSingleSample" xml:space="preserve">
+    <value>X</value>
   </data>
   <data name="UpperWordsCode" xml:space="preserve">
     <value>AA_BB</value>
