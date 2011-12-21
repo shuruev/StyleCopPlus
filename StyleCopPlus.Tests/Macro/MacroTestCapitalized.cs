@@ -165,8 +165,8 @@ namespace StyleCopPlus.Tests.Macro
 		{
 			Regex regex = Build("A$(Aa_Bb)Z");
 			Assert.IsFalse(regex.IsMatch("AZ"));
-			Assert.IsTrue(regex.IsMatch("AXxxZ"));
-			Assert.IsTrue(regex.IsMatch("AXxx_YyyZ"));
+			Assert.IsTrue(regex.IsMatch("AOooZ"));
+			Assert.IsTrue(regex.IsMatch("AOoo_PppZ"));
 		}
 	}
 }

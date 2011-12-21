@@ -127,7 +127,7 @@
     <value>.+</value>
   </data>
   <data name="AnySample" xml:space="preserve">
-    <value>*</value>
+    <value>...</value>
   </data>
   <data name="CamelCode" xml:space="preserve">
     <value>aaBb</value>
