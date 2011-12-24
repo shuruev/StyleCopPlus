@@ -504,8 +504,8 @@ namespace StyleCopPlus.Tests.Code
 			node = CodeHelper.FindNextValueableNode(node);
 			Assert.IsNull(node);
 
-			TestHelper.Throws(() => CodeHelper.FindPreviousValueableNode(null));
-			TestHelper.Throws(() => CodeHelper.FindNextValueableNode(null));
+			Ensure.Throws(() => CodeHelper.FindPreviousValueableNode(null));
+			Ensure.Throws(() => CodeHelper.FindNextValueableNode(null));
 		}
 
 		[TestMethod]

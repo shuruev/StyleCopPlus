@@ -65,6 +65,7 @@
   <ItemGroup>
     <None Include="Code\Source\ProtectedEventHandlers.cs" />
     <None Include="Code\Source\TestMethods.cs" />
+    <Compile Include="Ensure.cs" />
     <Compile Include="Macro\MacroTestUpperSingle.cs" />
     <Compile Include="Macro\MacroTestLowerSingle.cs" />
     <Compile Include="Macro\MacroTestCamel.cs" />
@@ -77,7 +78,6 @@
     <Compile Include="Macro\MacroTestAny.cs" />
     <Compile Include="Macro\MacroTestGeneral.cs" />
     <Compile Include="Macro\MacroTestBase.cs" />
-    <Compile Include="TestHelper.cs" />
     <None Include="Complex\Source\AdvancedNamingRules.cs" />
     <None Include="Code\Source\Labels.cs" />
     <None Include="Code\Source\Parameters.cs" />

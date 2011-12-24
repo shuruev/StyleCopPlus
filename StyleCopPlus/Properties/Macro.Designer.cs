@@ -88,7 +88,7 @@ namespace StyleCopPlus.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ....
+        ///   Looks up a localized string similar to *.
         /// </summary>
         internal static string AnySample {
             get {

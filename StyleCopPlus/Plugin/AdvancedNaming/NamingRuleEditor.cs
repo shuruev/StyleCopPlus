@@ -125,10 +125,6 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 				listMacro.Items.Add(lvi);
 			}
 
-			//xxx
-			listMacro.Items.Add("A*");
-			listMacro.Items.Add("a*");
-
 			listMacro.EndUpdate();
 		}
 
