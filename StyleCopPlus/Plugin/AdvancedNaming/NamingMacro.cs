@@ -17,6 +17,7 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 		private const string c_ruleSeparator = ":";
 
 		private static readonly List<string> s_keys = new List<string>();
+		private static readonly List<string> s_fakes = new List<string>();
 		private static readonly Dictionary<string, string> s_descriptions = new Dictionary<string, string>();
 		private static readonly Dictionary<string, string> s_markups = new Dictionary<string, string>();
 		private static readonly Dictionary<string, string> s_regulars = new Dictionary<string, string>();
@@ -83,6 +84,16 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 				Macro.AnyDescription,
 				Macro.AnyRegular,
 				Macro.AnySample);
+
+			AddFake(
+				Macro.FakeStartsWithUpperCode,
+				Macro.FakeStartsWithUpperDescription,
+				Macro.FakeStartsWithUpperMarkup);
+
+			AddFake(
+				Macro.FakeStartsWithLowerCode,
+				Macro.FakeStartsWithLowerDescription,
+				Macro.FakeStartsWithLowerMarkup);
 		}
 
 		#region Accessing macros
@@ -106,11 +117,29 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 		}
 
 		/// <summary>
+		/// Adds fake macro.
+		/// </summary>
+		private static void AddFake(
+			string key,
+			string description,
+			string markup)
+		{
+			s_fakes.Add(key);
+			s_descriptions.Add(key, description);
+			s_markups.Add(key, markup);
+		}
+
+		/// <summary>
 		/// Gets keys for all macros.
 		/// </summary>
-		public static List<string> GetKeys()
+		public static List<string> GetKeys(bool includeFakes)
 		{
-			return new List<string>(s_keys);
+			var keys = new List<string>(s_keys);
+
+			if (includeFakes)
+				keys.AddRange(s_fakes);
+
+			return keys;
 		}
 
 		/// <summary>
@@ -378,7 +407,7 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 		public static string BuildExample(string ruleDefinition)
 		{
 			string text = ruleDefinition;
-			foreach (string key in GetKeys())
+			foreach (string key in GetKeys(false))
 			{
 				string markup = GetMarkup(key);
 				string sample = GetSample(key);
@@ -407,7 +436,7 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 			}
 
 			string pattern = ruleDefinition;
-			foreach (string key in GetKeys())
+			foreach (string key in GetKeys(false))
 			{
 				string markup = GetMarkup(key);
 				string regular = "(" + GetRegular(key) + ")";

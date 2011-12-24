@@ -88,7 +88,7 @@ namespace StyleCopPlus.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to *.
+        ///   Looks up a localized string similar to ....
         /// </summary>
         internal static string AnySample {
             get {
@@ -165,6 +165,60 @@ namespace StyleCopPlus.Properties {
         internal static string CapitalizedSample {
             get {
                 return ResourceManager.GetString("CapitalizedSample", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to a*.
+        /// </summary>
+        internal static string FakeStartsWithLowerCode {
+            get {
+                return ResourceManager.GetString("FakeStartsWithLowerCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (anything starting with lower).
+        /// </summary>
+        internal static string FakeStartsWithLowerDescription {
+            get {
+                return ResourceManager.GetString("FakeStartsWithLowerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to $(a)$(*).
+        /// </summary>
+        internal static string FakeStartsWithLowerMarkup {
+            get {
+                return ResourceManager.GetString("FakeStartsWithLowerMarkup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A*.
+        /// </summary>
+        internal static string FakeStartsWithUpperCode {
+            get {
+                return ResourceManager.GetString("FakeStartsWithUpperCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (anything starting with upper).
+        /// </summary>
+        internal static string FakeStartsWithUpperDescription {
+            get {
+                return ResourceManager.GetString("FakeStartsWithUpperDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to $(A)$(*).
+        /// </summary>
+        internal static string FakeStartsWithUpperMarkup {
+            get {
+                return ResourceManager.GetString("FakeStartsWithUpperMarkup", resourceCulture);
             }
         }
         

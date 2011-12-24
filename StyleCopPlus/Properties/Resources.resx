@@ -258,4 +258,9 @@ There is no need to use them together with advanced naming rules.</value>
   <data name="Version" xml:space="preserve">
     <value>version {0}.{1}</value>
   </data>
+  <data name="NamingRuleEditorHelp" xml:space="preserve">
+    <value>Please specify one or several naming templates.
+You can use plain text as well as naming macros,
+e.g. I$(AaBb) or $(Aa_Bb)_Throws_Exception.</value>
+  </data>
 </root>

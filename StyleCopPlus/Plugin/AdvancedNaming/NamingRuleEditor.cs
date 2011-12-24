@@ -41,6 +41,8 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 
 			Text = String.Format(Resources.NamingRuleEditorCaption, ObjectName);
 
+			labelHelp.Text = Resources.NamingRuleEditorHelp;
+
 			if (String.IsNullOrEmpty(TargetRule))
 			{
 				checkDisable.Checked = true;
@@ -110,7 +112,7 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 			listMacro.BeginUpdate();
 			listMacro.Items.Clear();
 
-			foreach (string key in NamingMacro.GetKeys())
+			foreach (string key in NamingMacro.GetKeys(true))
 			{
 				string descripion = NamingMacro.GetDescription(key);
 

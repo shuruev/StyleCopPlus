@@ -127,7 +127,7 @@
     <value>.+</value>
   </data>
   <data name="AnySample" xml:space="preserve">
-    <value>*</value>
+    <value>...</value>
   </data>
   <data name="CamelCode" xml:space="preserve">
     <value>aaBb</value>
@@ -152,6 +152,24 @@
   </data>
   <data name="CapitalizedSample" xml:space="preserve">
     <value>Sample_Name</value>
+  </data>
+  <data name="FakeStartsWithLowerCode" xml:space="preserve">
+    <value>a*</value>
+  </data>
+  <data name="FakeStartsWithLowerDescription" xml:space="preserve">
+    <value>(anything starting with lower)</value>
+  </data>
+  <data name="FakeStartsWithLowerMarkup" xml:space="preserve">
+    <value>$(a)$(*)</value>
+  </data>
+  <data name="FakeStartsWithUpperCode" xml:space="preserve">
+    <value>A*</value>
+  </data>
+  <data name="FakeStartsWithUpperDescription" xml:space="preserve">
+    <value>(anything starting with upper)</value>
+  </data>
+  <data name="FakeStartsWithUpperMarkup" xml:space="preserve">
+    <value>$(A)$(*)</value>
   </data>
   <data name="LowerOnlyCode" xml:space="preserve">
     <value>aabb</value>

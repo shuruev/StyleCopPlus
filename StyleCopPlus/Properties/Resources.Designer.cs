@@ -275,6 +275,17 @@ namespace StyleCopPlus.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please specify one or several naming templates.
+        ///You can use plain text as well as naming macros,
+        ///e.g. I$(AaBb) or $(Aa_Bb)_Throws_Exception..
+        /// </summary>
+        internal static string NamingRuleEditorHelp {
+            get {
+                return ResourceManager.GetString("NamingRuleEditorHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to It seems that your rule definition string has wrong syntax.
         ///
         ///Please check that:
