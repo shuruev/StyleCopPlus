@@ -52,7 +52,7 @@
 			this.panelEditorBorder.Controls.Add(this.textEditor);
 			this.panelEditorBorder.Location = new System.Drawing.Point(12, 12);
 			this.panelEditorBorder.Name = "panelEditorBorder";
-			this.panelEditorBorder.Size = new System.Drawing.Size(324, 339);
+			this.panelEditorBorder.Size = new System.Drawing.Size(374, 339);
 			this.panelEditorBorder.TabIndex = 0;
 			// 
 			// textEditor
@@ -65,14 +65,14 @@
 			this.textEditor.Location = new System.Drawing.Point(1, 1);
 			this.textEditor.Margin = new System.Windows.Forms.Padding(1);
 			this.textEditor.Name = "textEditor";
-			this.textEditor.Size = new System.Drawing.Size(322, 337);
+			this.textEditor.Size = new System.Drawing.Size(372, 337);
 			this.textEditor.TabIndex = 0;
 			this.textEditor.Highlight += new System.Windows.Forms.ControlEventHandler(this.textEditor_Highlight);
 			// 
 			// btnOK
 			// 
 			this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnOK.Location = new System.Drawing.Point(466, 357);
+			this.btnOK.Location = new System.Drawing.Point(516, 357);
 			this.btnOK.Name = "btnOK";
 			this.btnOK.Size = new System.Drawing.Size(75, 23);
 			this.btnOK.TabIndex = 5;
@@ -84,7 +84,7 @@
 			// 
 			this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.btnCancel.Location = new System.Drawing.Point(547, 357);
+			this.btnCancel.Location = new System.Drawing.Point(597, 357);
 			this.btnCancel.Name = "btnCancel";
 			this.btnCancel.Size = new System.Drawing.Size(75, 23);
 			this.btnCancel.TabIndex = 6;
@@ -100,7 +100,7 @@
             this.columnDescription});
 			this.listMacro.FullRowSelect = true;
 			this.listMacro.HideSelection = false;
-			this.listMacro.Location = new System.Drawing.Point(342, 101);
+			this.listMacro.Location = new System.Drawing.Point(392, 101);
 			this.listMacro.MultiSelect = false;
 			this.listMacro.Name = "listMacro";
 			this.listMacro.Size = new System.Drawing.Size(280, 250);
@@ -123,7 +123,7 @@
 			// btnInsert
 			// 
 			this.btnInsert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnInsert.Location = new System.Drawing.Point(342, 72);
+			this.btnInsert.Location = new System.Drawing.Point(392, 72);
 			this.btnInsert.Name = "btnInsert";
 			this.btnInsert.Size = new System.Drawing.Size(120, 23);
 			this.btnInsert.TabIndex = 2;
@@ -148,7 +148,7 @@
 			this.panelHelpBorder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.panelHelpBorder.BackColor = System.Drawing.SystemColors.ControlDark;
 			this.panelHelpBorder.Controls.Add(this.labelHelp);
-			this.panelHelpBorder.Location = new System.Drawing.Point(342, 12);
+			this.panelHelpBorder.Location = new System.Drawing.Point(392, 12);
 			this.panelHelpBorder.Name = "panelHelpBorder";
 			this.panelHelpBorder.Size = new System.Drawing.Size(280, 54);
 			this.panelHelpBorder.TabIndex = 6;
@@ -175,7 +175,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.btnCancel;
-			this.ClientSize = new System.Drawing.Size(634, 392);
+			this.ClientSize = new System.Drawing.Size(684, 392);
 			this.Controls.Add(this.panelHelpBorder);
 			this.Controls.Add(this.checkDisable);
 			this.Controls.Add(this.btnInsert);
