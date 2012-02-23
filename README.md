@@ -1,4 +1,7 @@
-StyleCop+ is a plug-in that extends original StyleCop features.
+StyleCop+
+=========
+
+StyleCop+ is a plug-in that extends original [StyleCop](http://stylecop.codeplex.com/) features.
 It offers you a variety of rules for building C# code style that best suits your needs.
 
 Official project site: http://stylecopplus.codeplex.com/
