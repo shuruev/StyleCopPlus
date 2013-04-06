@@ -33,6 +33,11 @@ namespace StyleCopPlus.Plugin.MoreCustom
 		public LimitOptionsData PropertySizeOptions { get; private set; }
 
 		/// <summary>
+		/// Gets file size options.
+		/// </summary>
+		public LimitOptionsData FileSizeOptions { get; private set; }
+
+		/// <summary>
 		/// Initializes settings from specified document.
 		/// </summary>
 		public void Initialize(SourceAnalyzer analyzer, CodeDocument document)
@@ -61,6 +66,11 @@ namespace StyleCopPlus.Plugin.MoreCustom
 				analyzer,
 				document,
 				Rules.PropertyMustNotContainMoreLinesThan);
+
+			FileSizeOptions = GetOptionsData<LimitOptionsData>(
+				analyzer,
+				document,
+				Rules.FileMustNotContainMoreLinesThan);
 		}
 
 		/// <summary>
