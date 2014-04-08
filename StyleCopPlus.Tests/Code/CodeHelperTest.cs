@@ -25,7 +25,9 @@ namespace StyleCopPlus.Tests.Code
 
 			CodeProject project = new CodeProject(0, string.Empty, new Configuration(null));
 			CsParser parser = new CsParser();
+			parser.FileTypes.Add("CS");
 			parser.PreParse();
+
 			CodeFile file = new CodeFile(tempFile, project, parser);
 
 			CodeDocument doc = null;
