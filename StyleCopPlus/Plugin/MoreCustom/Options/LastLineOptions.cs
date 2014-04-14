@@ -47,13 +47,10 @@ namespace StyleCopPlus.Plugin.MoreCustom
 			if (radioEmpty.Checked)
 			{
 				options.Mode = LastLineMode.Empty;
-				return;
 			}
-
-			if (radioNotEmpty.Checked)
+			else if (radioNotEmpty.Checked)
 			{
 				options.Mode = LastLineMode.NotEmpty;
-				return;
 			}
 		}
 

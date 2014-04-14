@@ -130,11 +130,11 @@ namespace StyleCopPlus.Tests.Complex
 			int index = 0;
 			while (index < blockText.Length)
 			{
-				int start = blockText.IndexOf("//# [", index);
+				int start = blockText.IndexOf("//# [", index, StringComparison.Ordinal);
 				if (start < 0)
 					break;
 
-				int end = blockText.IndexOf("//# [END]", start);
+				int end = blockText.IndexOf("//# [END]", start, StringComparison.Ordinal);
 				if (end < 0)
 					break;
 

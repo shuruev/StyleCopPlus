@@ -289,7 +289,6 @@ namespace StyleCopPlus.Plugin.MoreCustom
 			else
 			{
 				sub.Font = tag.Modified ? m_bold : m_regular;
-				return;
 			}
 		}
 

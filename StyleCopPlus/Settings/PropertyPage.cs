@@ -125,7 +125,6 @@ namespace StyleCopPlus
 		/// </summary>
 		public void PostApply(bool wasDirty)
 		{
-			return;
 		}
 
 		/// <summary>
@@ -133,7 +132,6 @@ namespace StyleCopPlus
 		/// </summary>
 		public void Activate(bool activated)
 		{
-			return;
 		}
 
 		/// <summary>

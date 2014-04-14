@@ -292,7 +292,7 @@ namespace StyleCopPlus.Plugin.AdvancedNaming
 						rich.SelectionStart = current + index;
 						rich.SelectionLength = markup.Length;
 						rich.SelectionColor = Color.Green;
-						index = line.IndexOf(markup, index + 1);
+						index = line.IndexOf(markup, index + 1, StringComparison.Ordinal);
 					}
 				}
 

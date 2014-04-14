@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Oleg Shuruev")]
 [assembly: AssemblyProduct("StyleCopPlus.Tests")]
-[assembly: AssemblyCopyright("Copyright © Oleg Shuruev 2011")]
+[assembly: AssemblyCopyright("Copyright © Oleg Shuruev 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StyleCopPlus.Tests", "StyleCopPlus.Tests\StyleCopPlus.Tests.csproj", "{440553E2-2EB0-487C-9F72-8C3B4852BD6B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StyleCopPlus", "StyleCopPlus\StyleCopPlus.csproj", "{BDC82CFD-67BF-4562-8BBD-E374C9538297}"
