@@ -207,6 +207,13 @@ namespace StyleCopPlus.Tests.Code
 			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueNUnitMethodAttributeParenthesis")));
 			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueNUnitMethodAttributeParameter")));
 			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueNUnitMethodAttributeParameters")));
+
+            Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueXUnitFactMethod")));
+            Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueXUnitFactMethodParameter")));
+            Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueXUnitFactMethodParameters")));            
+            Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueXUnitTheoryMethod")));
+            Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueXUnitTheoryMethodParameter")));
+            Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueXUnitTheoryMethodParameters")));
 		}
 
 		#endregion

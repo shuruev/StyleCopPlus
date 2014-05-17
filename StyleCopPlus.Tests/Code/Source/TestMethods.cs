@@ -100,5 +100,39 @@ namespace StyleCopPlus.Tests
 		}
 
 		#endregion
-	}
+
+        #region XUnit Methods
+
+        [Fact]
+	    public void TrueXUnitFactMethod()
+	    {
+	    }
+
+        [Fact("A")]
+        public void TrueXUnitFactMethodParameter()
+        {
+        }
+
+        [Fact("A", "B" = 2)]
+        public void TrueXUnitFactMethodParameters()
+        {
+        }
+
+	    [Theory]
+	    public void TrueXUnitTheoryMethod()
+	    {
+	    }
+
+        [Theory("A")]
+        public void TrueXUnitTheoryMethodParameter()
+        {
+        }
+
+        [Theory("A", "B" = 2)]
+        public void TrueXUnitTheoryMethodParameters()
+        {
+        }
+
+        #endregion
+    }
 }
