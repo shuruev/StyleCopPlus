@@ -102,7 +102,9 @@ namespace StyleCopPlus
 						if (node.Value.Text == "TestMethod"
 							|| node.Value.Text == "TestMethodAttribute"
 							|| node.Value.Text == "Test"
-							|| node.Value.Text == "TestAttribute")
+							|| node.Value.Text == "TestAttribute"
+							|| node.Value.Text == "Fact"
+							|| node.Value.Text == "Theory")
 							return true;
 					}
 				}
