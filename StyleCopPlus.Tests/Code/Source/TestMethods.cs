@@ -100,5 +100,89 @@ namespace StyleCopPlus.Tests
 		}
 
 		#endregion
+
+		#region XUnit Methods
+
+		[Fact]
+		public void TrueXUnitFactMethod()
+		{
+		}
+
+		[Fact()]
+		public void TrueXUnitFactMethodParenthesis()
+		{
+		}
+
+		[Fact("A")]
+		public void TrueXUnitFactMethodParameter()
+		{
+		}
+
+		[Fact("A", "B" = 2)]
+		public void TrueXUnitFactMethodParameters()
+		{
+		}
+
+		[FactAttribute]
+		public void TrueXUnitFactMethodAttribute()
+		{
+		}
+
+		[FactAttribute()]
+		public void TrueXUnitFactMethodAttributeParenthesis()
+		{
+		}
+
+		[FactAttribute("A")]
+		public void TrueXUnitFactMethodAttributeParameter()
+		{
+		}
+
+		[FactAttribute("A", "B" = 2)]
+		public void TrueXUnitFactMethodAttributeParameters()
+		{
+		}
+
+		[Theory]
+		public void TrueXUnitTheoryMethod()
+		{
+		}
+
+		[Theory()]
+		public void TrueXUnitTheoryMethodParenthesis()
+		{
+		}
+
+		[Theory("A")]
+		public void TrueXUnitTheoryMethodParameter()
+		{
+		}
+
+		[Theory("A", "B" = 2)]
+		public void TrueXUnitTheoryMethodParameters()
+		{
+		}
+
+		[TheoryAttribute]
+		public void TrueXUnitTheoryMethodAttribute()
+		{
+		}
+
+		[TheoryAttribute()]
+		public void TrueXUnitTheoryMethodAttributeParenthesis()
+		{
+		}
+
+		[TheoryAttribute("A")]
+		public void TrueXUnitTheoryMethodAttributeParameter()
+		{
+		}
+
+		[TheoryAttribute("A", "B" = 2)]
+		public void TrueXUnitTheoryMethodAttributeParameters()
+		{
+		}
+
+		#endregion
 	}
 }

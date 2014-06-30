@@ -102,7 +102,11 @@ namespace StyleCopPlus
 						if (node.Value.Text == "TestMethod"
 							|| node.Value.Text == "TestMethodAttribute"
 							|| node.Value.Text == "Test"
-							|| node.Value.Text == "TestAttribute")
+							|| node.Value.Text == "TestAttribute"
+							|| node.Value.Text == "Fact"
+							|| node.Value.Text == "FactAttribute"
+							|| node.Value.Text == "Theory"
+							|| node.Value.Text == "TheoryAttribute")
 							return true;
 					}
 				}
@@ -290,11 +294,11 @@ namespace StyleCopPlus
 			foreach (Parameter parameter in parameters)
 			{
 				result.Add(new ParameterItem
-					{
-						Name = parameter.Name,
-						Tokens = parameter.Tokens,
-						LineNumber = parameter.LineNumber
-					});
+				{
+					Name = parameter.Name,
+					Tokens = parameter.Tokens,
+					LineNumber = parameter.LineNumber
+				});
 			}
 
 			return result;
@@ -365,11 +369,11 @@ namespace StyleCopPlus
 						if (inner.Value.CsTokenClass == CsTokenClass.Type)
 						{
 							result.Add(new TypeParameterItem
-								{
-									Name = inner.Value.Text,
-									Tokens = new[] { inner.Value },
-									LineNumber = inner.Value.LineNumber
-								});
+							{
+								Name = inner.Value.Text,
+								Tokens = new[] { inner.Value },
+								LineNumber = inner.Value.LineNumber
+							});
 						}
 					}
 				}
@@ -410,14 +414,14 @@ namespace StyleCopPlus
 				foreach (Variable variable in statement.Variables)
 				{
 					declarations.Add(new LocalDeclarationItem
-						{
-							Name = variable.Name,
-							Tokens = statement.Tokens,
+					{
+						Name = variable.Name,
+						Tokens = statement.Tokens,
 
-							// TODO: variable can span multiple lines,
-							// probably this should become a separate method.
-							LineNumber = variable.Location.LineNumber + variable.Location.LineSpan - 1
-						});
+						// TODO: variable can span multiple lines,
+						// probably this should become a separate method.
+						LineNumber = variable.Location.LineNumber + variable.Location.LineSpan - 1
+					});
 				}
 
 				return true;
@@ -429,12 +433,12 @@ namespace StyleCopPlus
 				foreach (VariableDeclaratorExpression declarator in declaration.Declarators)
 				{
 					declarations.Add(new LocalDeclarationItem
-						{
-							Name = declarator.Identifier.Text,
-							Tokens = declarator.Tokens,
-							IsConstant = declaration.Constant,
-							LineNumber = declarator.LineNumber
-						});
+					{
+						Name = declarator.Identifier.Text,
+						Tokens = declarator.Tokens,
+						IsConstant = declaration.Constant,
+						LineNumber = declarator.LineNumber
+					});
 				}
 			}
 
@@ -466,11 +470,11 @@ namespace StyleCopPlus
 
 			LabelStatement label = (LabelStatement)statement;
 			result.Add(new LabelItem
-				{
-					Name = label.Identifier.Text,
-					Tokens = label.Tokens,
-					LineNumber = label.LineNumber
-				});
+			{
+				Name = label.Identifier.Text,
+				Tokens = label.Tokens,
+				LineNumber = label.LineNumber
+			});
 
 			return true;
 		}

@@ -207,6 +207,23 @@ namespace StyleCopPlus.Tests.Code
 			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueNUnitMethodAttributeParenthesis")));
 			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueNUnitMethodAttributeParameter")));
 			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueNUnitMethodAttributeParameters")));
+
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueXUnitFactMethod")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueXUnitFactMethodParenthesis")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueXUnitFactMethodParameter")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueXUnitFactMethodParameters")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueXUnitFactMethodAttribute")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueXUnitFactMethodAttributeParenthesis")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueXUnitFactMethodAttributeParameter")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueXUnitFactMethodAttributeParameters")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueXUnitTheoryMethod")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueXUnitTheoryMethodParenthesis")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueXUnitTheoryMethodParameter")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueXUnitTheoryMethodParameters")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueXUnitTheoryMethodAttribute")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueXUnitTheoryMethodAttributeParenthesis")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueXUnitTheoryMethodAttributeParameter")));
+			Assert.IsTrue(CodeHelper.IsTestMethod(GetElementByName(document, "method TrueXUnitTheoryMethodAttributeParameters")));
 		}
 
 		#endregion
