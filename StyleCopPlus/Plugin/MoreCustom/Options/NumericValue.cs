@@ -7,7 +7,6 @@ namespace StyleCopPlus.Plugin.MoreCustom
 	/// </summary>
 	public class NumericValue
 	{
-		private readonly int m_defaultValue;
 		private readonly int m_minValue;
 		private readonly int m_maxValue;
 
@@ -23,11 +22,10 @@ namespace StyleCopPlus.Plugin.MoreCustom
 				|| defaultValue < minValue)
 				throw new InvalidOperationException("Failed constraint: minValue <= defaultValue <= maxValue.");
 
-			m_defaultValue = defaultValue;
 			m_minValue = minValue;
 			m_maxValue = maxValue;
 
-			Value = m_defaultValue;
+			Value = defaultValue;
 		}
 
 		#region Properties

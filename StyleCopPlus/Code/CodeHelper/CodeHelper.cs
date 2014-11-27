@@ -536,7 +536,7 @@ namespace StyleCopPlus
 		/// </summary>
 		public static ICodeElement GetElementByLine(CsDocument document, int lineNumber)
 		{
-			object[] args = new object[] { lineNumber, null };
+			object[] args = { lineNumber, null };
 			document.WalkDocument(FindByLineElementVisitor, null, args);
 
 			return (ICodeElement)args[1];
@@ -570,7 +570,7 @@ namespace StyleCopPlus
 		/// </summary>
 		public static Expression GetExpressionByLine(CsDocument document, int lineNumber)
 		{
-			object[] args = new object[] { lineNumber, null };
+			object[] args = { lineNumber, null };
 			document.WalkDocument(null, null, FindByLineExpressionVisitor, args);
 
 			return (Expression)args[1];
