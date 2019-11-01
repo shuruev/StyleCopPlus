@@ -67,6 +67,16 @@ namespace StyleCopPlus.Plugin.MoreCustom
 				CheckLineLength(document, currentLine, currentLineNumber, settings);
 			}
 
+			if (lines.Count > settings.FileSizeOptions.Limit.Value)
+			{
+				AddViolation(
+					document,
+					1,
+					Rules.FileMustNotContainMoreLinesThan,
+					settings.FileSizeOptions.Limit.Value,
+					lines.Count);
+			}
+
 			CheckLastLine(document, source, lines.Count, settings);
 		}
 
