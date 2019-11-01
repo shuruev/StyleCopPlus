@@ -170,6 +170,17 @@ namespace StyleCopPlus.Tests
 }
 //# [END]
 
+//# [OK]
+//# Don't count aligned * as indention errors.
+namespace StyleCopPlus.Tests
+{
+	/*
+	 * multi-line
+	 * comment
+	 */
+}
+//# [END]
+
 #endregion
 
 #region CheckWhetherLastCodeLineIsEmpty // Suppressing

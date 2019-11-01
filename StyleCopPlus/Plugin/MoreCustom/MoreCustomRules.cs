@@ -111,7 +111,12 @@ namespace StyleCopPlus.Plugin.MoreCustom
 			int currentLineNumber,
 			CustomRulesSettings settings)
 		{
-			if (currentLine.Trim().Length == 0)
+			string trimmed = currentLine.Trim();
+
+			if (trimmed.Length == 0)
+				return;
+
+			if (trimmed.StartsWith("*"))
 				return;
 
 			string currentIndent = ExtractIndentation(currentLine);
